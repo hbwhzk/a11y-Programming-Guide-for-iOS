@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Introduction</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta charset="utf-8">
+    <meta id="book-resource-type" name="book-resource-type" content="Guide">
+    <meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40008785">
+    <meta id="document-version" name="document-version" content="2.2.0">
+    <meta id="build" name="build" content="37ac3450599f2573f9aaa97e21318091">
+    <meta id="chapterId" name="chapterId" content="TP40008785-CH1">
+    <meta id="date" name="date" content="2012-02-16">
+    <meta id="description" name="description" content="Describes how to make an iPhone application accessible to users with disabilities.">
+    <meta id="book-title" name="book-title" content="Accessibility Programming Guide for iOS">
+    <meta id="book-root" name="book-root" content="../">
+    <meta id="book-json" name="book-json" content="../book.json">
+    <meta id="devcenter" name="devcenter" content="iOS Dev Center">
+    <meta id="devcenter-url" name="devcenter-url" content="http://developer.apple.com/devcenter/ios">
+    <meta id="reflib" name="reflib" content="iOS Developer Library">
+    <meta id="book-assignments" name="book-assignments" content="{Type/Guide}, {Framework/Cocoa Touch Layer/UIKit}, {Topic/User Experience}">
+    
+    
+    <meta id="copyright" name="copyright" content="Copyright 2016 Apple Inc. All Rights Reserved.">
+    <meta id="xcode-display" name="xcode-display" content="render">
+    <meta id="IndexTitle" name="IndexTitle" content="Accessibility Programming Guide for iOS: Introduction">
+    <meta id="resources-uri" name="resources-uri" content="../../../../../Resources/1163">
+    <link id="book-index-page" rel="Start" title="Accessibility Programming Guide for iOS" type="text/html" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/index.html">
+    <link id="next-page" rel="Next" type="text/html" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html">
+    <link id="previous-page" rel="Prev" type="text/html" href="">
+    <link rel="stylesheet" type="text/css" href="Introduction_files/screen.css">
+    
+    <!-- xcode_css -->
+    <link rel="stylesheet" type="text/css" href="Introduction_files/feedback.css">
+</head>    
+<body id=""><a name="//apple_ref/doc/uid/TP40008785-CH1" title="Introduction"></a>
+    <div id="_omniture_top">
+    <!-- SiteCatalyst code version: H.8. Copyright 1997-2006 Omniture, Inc. -->
+    <script type="text/javascript">
+    /* RSID: */
+    var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
+    </script>
+
+    <script type="text/javascript" src="Introduction_files/s_code_h.js"></script>
+    <script type="text/javascript">
+    s.pageName=AC.Tracking.pageName();
+    s.channel="www.us.developer"
+
+    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    var s_code=s.t();if(s_code)document.write(s_code)</script>
+    <!-- End SiteCatalyst code version: H.8. -->
+    </div>
+
+    <div id="adcHeader" class="hideOnPrint hideInXcode">
+        <div id="ssi_Header" class="hideInXcode phone">
+            <a onclick='s_objectID="https://developer.apple.com/library/ios/navigation/_1";return this.s_oc?this.s_oc(e):true' id="ssi_LibraryTitle" href="https://developer.apple.com/library/ios/navigation/">iOS Developer Library</a>
+            <a onclick='s_objectID="https://developer.apple.com/_1";return this.s_oc?this.s_oc(e):true' id="ssi_AppleDeveloperConnection" href="https://developer.apple.com/">Developer</a>
+            <div id="ssi_SearchButton" role="button" title="Search">Search</div>
+        </div>
+        <form id="ssi_SearchMenu" method="get" action="../../../../../search/" accept-charset="utf-8">
+            <label for="adcsearch">Search iOS Developer Library</label>
+            
+            
+                <input id="ssi_Platform" name="platform" value="iOS" type="hidden">
+            
+    
+            <input id="ssi_SearchField" name="q" accesskey="s" results="5" type="search">
+        </form>
+    </div>
+
+    <header id="header">
+        <div id="title" role="banner">
+            <h1>Accessibility Programming Guide for iOS</h1>
+            <span id="file_links">
+                <a class="" id="PDF_link" role="button" tabindex="4" rel="alternate" title="Download PDF"><span id="pdf_icon"></span>PDF</a>
+                <a class="" id="Companion_link" role="button" tabindex="3" title="Download Companion File"><span id="companion_icon"></span>Companion File</a>
+            </span>
+        </div>
+        <ul id="headerButtons" class="hideOnPrint" role="toolbar">
+            <li id="toc_button" style="">
+                <button tabindex="5" id="table_of_contents" class="open" role="checkbox" aria-label="Show Table of Contents"><span class="disclosure"></span>Table of Contents</button>
+            </li>
+            <li id="jumpto_button" style="display:none" role="navigation"><select tabindex="6" id="jumpTo"><option selected="selected" value="top">Jump To…</option></select></li>
+            <li id="downloadSample_button" style="display:none">
+                <a id="Sample_link"><button id="Sample_button">Download Sample Code</button></a>
+            </li>
+        </ul>
+    </header>
+    <nav class="isShowingTOC" id="tocContainer" tabindex="7">
+        <ul id="toc" role="tree"><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH1-SW1"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008785-CH1-SW1">Introduction</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW1" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_2";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW1">Understanding Accessibility on iOS</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW3"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_3";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW3">Accessibility and VoiceOver</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW4"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_4";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW4">Why You Should Make Your App Accessible</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW2" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_5";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW2">iOS Accessibility API and Tools</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW6"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_6";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW6">The UI Accessibility Programming Interface</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW7"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_7";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW7">Accessibility Attributes</a></span></li></ul></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW5" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_8";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW5">Making Your iOS App Accessible</a></span><ul><li class="children " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW17" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_9";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW17">Make User Interface Elements Accessible</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW9"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_10";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW9">Make Custom Individual Views Accessible</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW10"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_11";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW10">Make the Contents of Custom Container Views Accessible</a></span></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW4" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_12";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW4">Supply Accurate and Helpful Attribute Information</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW8"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_13";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW8">Enhancing Default Attribute Information</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW6" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_14";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW6">Crafting Useful Labels and Hints</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW20"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_15";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW20">Guidelines for Creating Labels</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW11"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_16";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW11">Guidelines for Creating Hints</a></span></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW7"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_17";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW7">Identifying Appropriate Traits</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW1"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_18";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW1">Defining Custom Attribute Information in Interface Builder</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW2"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_19";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW2">Defining Custom Attribute Information Programmatically</a></span></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW3"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_20";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW3">Enhance the Accessibility of Table Views</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW25"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_21";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW25">Make Dynamic Elements Accessible</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW26"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_22";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW26">Make Nontextual Data Accessible</a></span></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH99-SW1"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_23";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/RevisionHistory.html#//apple_ref/doc/uid/TP40008785-CH99-SW1">Revision History</a></span></li></ul>
+    </nav>
+
+    <article class="isShowingTOC" id="contents" tabindex="0" role="main">
+        <div id="pageNavigationLinks_top" class="pageNavigationLinks">
+            <a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_1";return this.s_oc?this.s_oc(e):true' class="nextLink" rel="next" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html">Next</a>
+        </div>
+        <a id="top" name="top"></a>
+        <a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_2";return this.s_oc?this.s_oc(e):true' id="INDEX" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/index.html" style="display:none;"></a>
+        
+        <a name="//apple_ref/doc/uid/TP40008785" title="Introduction"></a><a name="//apple_ref/doc/uid/TP40008785-CH1-SW1" title="Introduction"></a><h1 id="pageTitle">Introduction | 介绍</h1><a name="//apple_ref/doc/uid/TP40008785-CH1-DontLinkElementID_1"></a><p>Using
+ iOS 3.0 and later, VoiceOver is available to help users with visual 
+impairments use their iOS-based devices. The UI Accessibility 
+programming interface, introduced in iOS 3.0, helps developers make 
+their applications accessible to VoiceOver users. Briefly, VoiceOver 
+describes an application’s user interface and helps users navigate 
+through the application’s views and controls, using speech and sound. 
+Users familiar with VoiceOver in Mac OS X can leverage their experience 
+to help them quickly come up to speed using VoiceOver on their devices.</p>
+	<p>VoiceOver在iOS 3.0及之后版本，视觉障碍的用户可通过VoiceOver使用其iOS设备。iOS 
+3.0中引入了UI无障碍编程接口，它能帮助开发人员打造出可被VoiceOver用户使用的无障碍应用。简单来说，VoiceOver描述一个应用程序
+的用户界面，并能帮助用户通过语音和声音导航浏览该应用的视图及控件。那些熟悉Mac OS 
+X系统提供的VoiceOver用户，能够快速上手使用其设备中的VoiceOver。
+</p>
+	<a name="//apple_ref/doc/uid/TP40008785-CH1-DontLinkElementID_2"></a><p>iPhone
+ applications that run in iOS 3.0 and later should be accessible to 
+VoiceOver users. iOS and the iOS SDK support this goal by:</p>
+<p>那些运行在iOS 3.0及之后版本的iPhone应用程序，应该支持VoiceOver用户访问. iOS和iOS SDK通过以下方式支持该目标:</p>
+<ul class="ul"><li class="li"><p>Making standard UIKit controls and views accessible by default</p><p>默认情况下，标准UIKit控件和视图是无障碍的</p></li><li class="li"><p>Supplying
+ the UI Accessibility programming interface, which defines a streamlined
+ process for making an iPhone application accessible</p><p>提供UI无障碍编程接口，此接口定义了开发iPhone无障碍应用程序的合理化流程</p></li><li class="li"><p>Providing tools that help you implement accessibility in your code and test the accessibility of your application</p><p>提供相关工具，帮您在代码实施和测试应用程序中的无障碍特性
+</p></li></ul><p>If
+ you’re developing or updating an iPhone application, you should read 
+this document to learn how to make your application accessible to 
+VoiceOver users.</p><p>如果你正在开发或升级一个iPhone应用程序，你应该阅读此文档以学习如何开发可被VoiceOver用户使用的无障碍应用程序。
+</p><a name="//apple_ref/doc/uid/TP40008785-CH1-DontLinkElementID_3" title="Organization of This Document"></a><h2 class="jump">Organization of This Document | 文档结构</h2><p>This document contains the following chapters:</p><p>该文档包含如下章节：</p><ul class="ul"><li class="li"><p><span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_3";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW1" data-renderer-version="1">Understanding Accessibility on iOS</a></span>
+ briefly describes how VoiceOver works on the device and introduces the 
+programming interface and tools you can use to make your application 
+accessible.</p><p>“理解iOS上的无障碍特性”简要描述VoiceOver是如何在设备上的运行，同时介绍了可用于打造无障碍应用程序的编程接口及工具。</p></li><li class="li"><p><span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_4";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW5" data-renderer-version="1">Making Your iOS App Accessible</a></span> provides in-depth guidance for making your application accessible to VoiceOver users.</p><p>“让您的iOS应用程序无障碍” 深入指导如何让的应用程序可被VoiceOver用户无障碍使用。
+</p></li></ul><div id="seeAlsoSection"><a name="//apple_ref/doc/uid/TP40008785-CH1-DontLinkElementID_4" title="See Also"></a><h2 class="jump">See Also | 辅助参考</h2><p>This
+ document used to contain information related to testing your app’s 
+accessibility experience with VoiceOver and Accessibility Inspector. 
+That content has moved to a dedicated document titled <em><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestingtheAccessi_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestingtheAccessibilityofiOSApps/TestingtheAccessibilityofiOSApps.html#//apple_ref/doc/uid/TP40012619" data-renderer-version="1" target="_self">Verifying App Accessibility on iOS</a></em>.</p><p>本文档之前包含的内容：通过VoiceOver和无障碍检测器对您的应用进行无障碍体验 - 已经被转移到文档 “在iOS中验证应用的无障碍性” 中。</p></div>
+        <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
+            <a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_5";return this.s_oc?this.s_oc(e):true' class="nextLink" rel="next" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html">Next</a>
+        </div><br>
+        <div class="copyright"><br><hr><div align="center"><p class="content_text" dir="ltr" lang="en"> Copyright © 2012 Apple Inc. All Rights Reserved. <a onclick='s_objectID="http://www.apple.com/legal/internet-services/terms/site.html_1";return this.s_oc?this.s_oc(e):true' href="http://www.apple.com/legal/internet-services/terms/site.html" target="_blank">Terms of Use</a>   |  <a onclick='s_objectID="http://www.apple.com/privacy/_1";return this.s_oc?this.s_oc(e):true' href="http://www.apple.com/privacy/" target="_blank">Privacy Policy</a>  |  Updated: 2012-02-16</p></div></div>
+
+        <div id="pediaWindow">
+            <div id="pediaHeader"></div>
+            <div id="pediaBody"></div>
+        </div>
+    </article>
+
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="leave_feedback" class="button" role="button" tabindex="0">Feedback</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback…</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We’re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" name="helped" value="1" type="radio"> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" name="helped" value="2" type="radio"> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" name="helped" value="3" type="radio"> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input name="typo" type="checkbox"> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input name="infoIncorrect" type="checkbox"> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input name="needs_examples" type="checkbox"> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input name="needs_art" type="checkbox"> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input name="missingInfo" type="checkbox"> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required=""></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" value="Send" type="button">
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a onclick='s_objectID="https://developer.apple.com/bugreporter/_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/bugreporter/" target="_blank">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a onclick='s_objectID="http://www.apple.com/legal/policies/ideas.html_1";return this.s_oc?this.s_oc(e):true' href="http://www.apple.com/legal/policies/ideas.html" target="_blank">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+    
+    <script charset="utf-8" src="Introduction_files/prototype.js"></script>
+    <script src="Introduction_files/library.js"></script>
+    <script src="Introduction_files/feedback.js"></script>
+
+
+</body></html>

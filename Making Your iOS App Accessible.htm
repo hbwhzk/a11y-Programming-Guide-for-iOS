@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Making Your iOS App Accessible</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta charset="utf-8">
+    <meta id="book-resource-type" name="book-resource-type" content="Guide">
+    <meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40008785">
+    <meta id="document-version" name="document-version" content="2.2.0">
+    <meta id="build" name="build" content="4d9a35cb9eef19c859386a2ec2889b98">
+    <meta id="chapterId" name="chapterId" content="TP40008785-CH102">
+    <meta id="date" name="date" content="2012-02-16">
+    <meta id="description" name="description" content="Describes how to make an iPhone application accessible to users with disabilities.">
+    <meta id="book-title" name="book-title" content="Accessibility Programming Guide for iOS">
+    <meta id="book-root" name="book-root" content="../">
+    <meta id="book-json" name="book-json" content="../book.json">
+    <meta id="devcenter" name="devcenter" content="iOS Dev Center">
+    <meta id="devcenter-url" name="devcenter-url" content="http://developer.apple.com/devcenter/ios">
+    <meta id="reflib" name="reflib" content="iOS Developer Library">
+    <meta id="book-assignments" name="book-assignments" content="{Type/Guide}, {Framework/Cocoa Touch Layer/UIKit}, {Topic/User Experience}">
+    
+    
+    <meta id="copyright" name="copyright" content="Copyright 2016 Apple Inc. All Rights Reserved.">
+    <meta id="xcode-display" name="xcode-display" content="render">
+    <meta id="IndexTitle" name="IndexTitle" content="Accessibility Programming Guide for iOS: Making Your iOS App Accessible">
+    <meta id="resources-uri" name="resources-uri" content="../../../../../Resources/1163">
+    <link id="book-index-page" rel="Start" title="Accessibility Programming Guide for iOS" type="text/html" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/index.html">
+    <link id="next-page" rel="Next" type="text/html" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/RevisionHistory.html">
+    <link id="previous-page" rel="Prev" type="text/html" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html">
+    <link rel="stylesheet" type="text/css" href="Making%20Your%20iOS%20App%20Accessible_files/screen.css">
+    
+    <!-- xcode_css -->
+    <link rel="stylesheet" type="text/css" href="Making%20Your%20iOS%20App%20Accessible_files/feedback.css">
+</head>    
+<body id=""><a name="//apple_ref/doc/uid/TP40008785-CH102" title="Making Your iOS App Accessible"></a>
+    <div id="_omniture_top">
+    <!-- SiteCatalyst code version: H.8. Copyright 1997-2006 Omniture, Inc. -->
+    <script type="text/javascript">
+    /* RSID: */
+    var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
+    </script>
+
+    <script type="text/javascript" src="Making%20Your%20iOS%20App%20Accessible_files/s_code_h.js"></script>
+    <script type="text/javascript">
+    s.pageName=AC.Tracking.pageName();
+    s.channel="www.us.developer"
+
+    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    var s_code=s.t();if(s_code)document.write(s_code)</script>
+    <!-- End SiteCatalyst code version: H.8. -->
+    </div>
+
+    <div id="adcHeader" class="hideOnPrint hideInXcode">
+        <div id="ssi_Header" class="hideInXcode phone">
+            <a onclick='s_objectID="https://developer.apple.com/library/ios/navigation/_1";return this.s_oc?this.s_oc(e):true' id="ssi_LibraryTitle" href="https://developer.apple.com/library/ios/navigation/">iOS Developer Library</a>
+            <a onclick='s_objectID="https://developer.apple.com/_1";return this.s_oc?this.s_oc(e):true' id="ssi_AppleDeveloperConnection" href="https://developer.apple.com/">Developer</a>
+            <div id="ssi_SearchButton" role="button" title="Search">Search</div>
+        </div>
+        <form id="ssi_SearchMenu" method="get" action="../../../../../search/" accept-charset="utf-8">
+            <label for="adcsearch">Search iOS Developer Library</label>
+            
+            
+                <input id="ssi_Platform" name="platform" value="iOS" type="hidden">
+            
+    
+            <input id="ssi_SearchField" name="q" accesskey="s" results="5" type="search">
+        </form>
+    </div>
+
+    <header id="header">
+        <div id="title" role="banner">
+            <h1>Accessibility Programming Guide for iOS</h1>
+            <span id="file_links">
+                <a class="" id="PDF_link" role="button" tabindex="4" rel="alternate" title="Download PDF"><span id="pdf_icon"></span>PDF</a>
+                <a class="" id="Companion_link" role="button" tabindex="3" title="Download Companion File"><span id="companion_icon"></span>Companion File</a>
+            </span>
+        </div>
+        <ul id="headerButtons" class="hideOnPrint" role="toolbar">
+            <li id="toc_button" style="">
+                <button tabindex="5" id="table_of_contents" class="open" role="checkbox" aria-label="Show Table of Contents"><span class="disclosure"></span>Table of Contents</button>
+            </li>
+            <li id="jumpto_button" style="display:none" role="navigation"><select tabindex="6" id="jumpTo"><option selected="selected" value="top">Jump To…</option></select></li>
+            <li id="downloadSample_button" style="display:none">
+                <a id="Sample_link"><button id="Sample_button">Download Sample Code</button></a>
+            </li>
+        </ul>
+    </header>
+    <nav class="isShowingTOC" id="tocContainer" tabindex="7">
+        <ul id="toc" role="tree"><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH1-SW1"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008785-CH1-SW1">Introduction</a></span></li><li class="children open" data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW1" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_2";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW1">Understanding Accessibility on iOS</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW3"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_3";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW3">Accessibility and VoiceOver</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW4"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_4";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW4">Why You Should Make Your App Accessible</a></span></li><li class="children open" data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW2" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_5";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW2">iOS Accessibility API and Tools</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW6"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_6";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW6">The UI Accessibility Programming Interface</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH100-SW7"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_7";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW7">Accessibility Attributes</a></span></li></ul></li></ul></li><li class="children open" data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW5" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_8";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW5">Making Your iOS App Accessible</a></span><ul><li class="children open" data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW17" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_9";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW17">Make User Interface Elements Accessible</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW9"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_10";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW9">Make Custom Individual Views Accessible</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW10"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_11";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW10">Make the Contents of Custom Container Views Accessible</a></span></li></ul></li><li class="children open" data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW4" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_12";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW4">Supply Accurate and Helpful Attribute Information</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW8"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_13";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW8">Enhancing Default Attribute Information</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW6" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_14";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW6">Crafting Useful Labels and Hints</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW20"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_15";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW20">Guidelines for Creating Labels</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW11"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_16";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW11">Guidelines for Creating Hints</a></span></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW7"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_17";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW7">Identifying Appropriate Traits</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW1"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_18";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW1">Defining Custom Attribute Information in Interface Builder</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW2"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_19";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW2">Defining Custom Attribute Information Programmatically</a></span></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW3"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_20";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW3">Enhance the Accessibility of Table Views</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW25"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_21";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW25">Make Dynamic Elements Accessible</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH102-SW26"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_22";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW26">Make Nontextual Data Accessible</a></span></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008785-CH99-SW1"><span class="nodisclosure"></span><span class="sectionName"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_23";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/RevisionHistory.html#//apple_ref/doc/uid/TP40008785-CH99-SW1">Revision History</a></span></li></ul>
+    </nav>
+
+    <article class="isShowingTOC" id="contents" tabindex="0" role="main">
+        <div id="pageNavigationLinks_top" class="pageNavigationLinks">
+            <a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_1";return this.s_oc?this.s_oc(e):true' class="nextLink" rel="next" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/RevisionHistory.html">Next</a><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_2";return this.s_oc?this.s_oc(e):true' class="previousLink" rel="prev" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html">Previous</a>
+        </div>
+        <a id="top" name="top"></a>
+        <a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_3";return this.s_oc?this.s_oc(e):true' id="INDEX" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/index.html" style="display:none;"></a>
+        
+        <a name="//apple_ref/doc/uid/TP40008785-CH102-SW5" title="Making Your iOS App Accessible"></a><h1 id="pageTitle">Making Your iOS App Accessible | 让您的iOS应用程序无障碍</h1><p>To
+ be accessible, an iPhone application must supply information about its 
+user interface elements to VoiceOver users. At a high level, this means 
+you should make sure that:</p>
+<p>要做到可用性，一个iPhone应用必须提供用户界面元素中的相关信息提供给VoiceOver用户。更高层次上，这意味着你应该确保：
+</p><ul class="ul"><li class="li"><p>Every 
+user interface element with which users can interact is accessible. This
+ includes elements that merely supply information, such as static text, 
+as well as controls that perform actions.</p>
+<p>
+每个用户界面元素和用户的交互都能够是无障碍的，包括那些仅仅提供信息的元素，比如，静态文本，以及执行动作的控件。</p></li><li class="li"><p>All accessible elements supply accurate and helpful information.</p>
+
+<p>所有可以无障碍使用的元素都包含准确并且有用的信息。</p></li></ul><p>In
+ addition to these fundamentals, there are also a few things you can do 
+to enhance a VoiceOver user’s experience with table views and to make 
+sure dynamic elements in your application are always accessible.</p>
+
+<p>除了上述原则外，您还可以通过表格视图，以及确保应用中的动态元素的无障碍，提升VoiceOver用户的体验。
+</p><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW17" title="Make User Interface Elements Accessible"></a><h2 class="jump">Make User Interface Elements Accessible</h2><p>As mentioned in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_4";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW3" data-renderer-version="1">Accessibility and VoiceOver</a></span>
+ a user interface element is accessible if it reports itself as an 
+accessibility element. Although being accessible is not enough to make a
+ user interface element useful to VoiceOver users, it represents the 
+first step in the process of making your application accessible.</p><p>As stated in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_5";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW2" data-renderer-version="1">iOS Accessibility API and Tools</a></span>,
+ standard UIKit controls and views are automatically accessible. If you 
+use only standard UIKit controls, you probably don’t have to do much 
+additional work to make sure your application is accessible. In this 
+case, your next step is to ensure that the default attribute information
+ supplied by these controls makes sense in your application. To learn 
+how to do this, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_6";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW4" data-renderer-version="1">Supply Accurate and Helpful Attribute Information</a></span>.</p><p>If
+ you create custom views that display information or with which users 
+need to interact, you must ensure the accessibility of these views 
+yourself. After you’ve done this, you need to make sure these views 
+supply accessibility information that helps people use them (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_7";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW4" data-renderer-version="1">Supply Accurate and Helpful Attribute Information</a></span>).</p><p>From the perspective of accessibility, a custom view is either an individual view or a container view. An <em class="newTerm">individual view</em> does not contain any other views that need to be accessible. For example, a custom subclass of <code>UIControl</code>
+ that displays an icon and behaves like a button does not contain any 
+other elements with which the user can interact, apart from the button 
+itself. Read <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_8";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW9" data-renderer-version="1">Make Custom Individual Views Accessible</a></span> to learn how to make an individual view accessible.</p><p>A <em class="newTerm">container view</em>, on the other hand, contains other elements with which users can interact. For example, in a custom subclass of <code>UIView</code>
+ that performs its own drawing of geometric shapes, the shapes represent
+ elements with which users can interact, and which are distinct from the
+ container view. Such separate elements within a container view are not 
+automatically accessible (because they are not subclasses of <code>UIView</code>) and do not provide any accessibility information. To learn how to make the contents of a container view accessible, read <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_9";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW10" data-renderer-version="1">Make the Contents of Custom Container Views Accessible</a></span>.</p><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW9" title="Make Custom Individual Views Accessible"></a><h3 class="jump">Make Custom Individual Views Accessible</h3><p>If
+ your application contains a custom individual view with which users 
+need to interact, you must make the view accessible. (Recall that an 
+individual view is a view containing no other views with which users 
+interact.) </p><p>In addition to using Interface Builder to make a 
+custom individual view accessible, there are two programmatic ways to do
+ this. One way is to set your custom view’s accessibility status in the 
+code that instantiates it. The following code snippet shows how to do 
+this:</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomViewController<span></span></pre></td></tr><tr><td scope="row"><pre>- (id)init<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; _view = [[[MyCustomView alloc] initWithFrame:CGRectZero] autorelease];<span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; [_view setIsAccessibilityElement:YES];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>  /* Set attributes here. */<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr></tbody></table></div><p>Another way is to implement the <code>isAccessibilityElement</code> method of the <code>UIAccessibility</code> protocol in the implementation of your custom subclass. The following code snippet shows how to do this:</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomView<span></span></pre></td></tr><tr><td scope="row"><pre>  /* Implement attribute methods here. */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (BOOL)isAccessibilityElement<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return YES;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr></tbody></table></div><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW18" title="Note"></a><p><strong>Note:</strong>&nbsp;In
+ both of these code snippets, you can see comments in place of the code 
+needed to set accessibility attributes. For more complete code snippets 
+that show how to do this, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_10";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW2" data-renderer-version="1">Defining Custom Attribute Information Programmatically</a></span>.</p><p></p></aside></div></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW10" title="Make the Contents of Custom Container Views Accessible"></a><h3 class="jump">Make the Contents of Custom Container Views Accessible</h3><p>If
+ your application displays a custom view that contains other elements 
+with which users interact, you need to make the contained elements 
+separately accessible. At the same time, you need to make sure that the 
+container view itself is not accessible. The reason is that users 
+interact with the contents of the container, not with the container 
+itself.</p><p>To accomplish this, your custom container view should implement the <code>UIAccessibilityContainer</code> protocol. This protocol defines methods that make the contained elements available in an array. </p><p>The
+ following code snippet shows the partial implementation of a custom 
+container view. Note that this container view creates the array of 
+accessible elements only when methods of the <code>UIAccessibilityContainer</code> protocol are called. As a result, if iPhone accessibility is not currently active, the array is not created.</p><a name="//apple_ref/doc/uid/TP40008785-CH102-SW19" title="Listing 2-1Make the contents of a custom container view accessible as separate accessibility elements"></a><p class="codesample clear"><strong class="caption_number">Listing 2-1</strong>&nbsp;&nbsp;Make the contents of a custom container view accessible as separate accessibility elements</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MultiFacetedView<span></span></pre></td></tr><tr><td scope="row"><pre>- (NSArray *)accessibleElements<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   if ( _accessibleElements != nil )<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      return _accessibleElements;<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre>   _accessibleElements = [[NSMutableArray alloc] init];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   /* Create an accessibility element to represent the first contained element and initialize it as a component of MultiFacetedView. */<span></span></pre></td></tr><tr><td scope="row"><pre>   UIAccessibilityElement *element1 = [[[UIAccessibilityElement alloc] initWithAccessibilityContainer:self] autorelease];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   /* Set attributes of the first contained element here. */<span></span></pre></td></tr><tr><td scope="row"><pre>   [_accessibleElements addObject:element1];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   /* Perform similar steps for the second contained element. */<span></span></pre></td></tr><tr><td scope="row"><pre>   UIAccessibilityElement *element2 = [[[UIAccessibilityElement alloc] initWithAccessibilityContainer:self] autorelease];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   /* Set attributes of the second contained element here. */<span></span></pre></td></tr><tr><td scope="row"><pre>   [_accessibleElements addObject:element2];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   return _accessibleElements;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>/* The container itself is not accessible, so MultiFacetedView should return NO in isAccessiblityElement. */<span></span></pre></td></tr><tr><td scope="row"><pre>- (BOOL)isAccessibilityElement<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return NO;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>/* The following methods are implementations of UIAccessibilityContainer protocol methods. */<span></span></pre></td></tr><tr><td scope="row"><pre>- (NSInteger)accessibilityElementCount<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return [[self accessibleElements] count];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (id)accessibilityElementAtIndex:(NSInteger)index<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return [[self accessibleElements] objectAtIndex:index];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (NSInteger)indexOfAccessibilityElement:(id)element<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return [[self accessibleElements] indexOfObject:element];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div><p></p><p></p></section></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW4" title="Supply Accurate and Helpful Attribute Information"></a><h2 class="jump">Supply Accurate and Helpful Attribute Information</h2><p>There are two parts to the process of supplying attribute information for accessible elements:</p><ul class="ul"><li class="li"><p>Crafting concise, accurate, and helpful information</p></li><li class="li"><p>Ensuring that the accessible elements in your application report that content correctly</p></li></ul><p>If you use custom views, you must supply all appropriate attribute information for them. For guidance, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_11";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW6" data-renderer-version="1">Crafting Useful Labels and Hints</a></span>, <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_12";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW11" data-renderer-version="1">Guidelines for Creating Hints</a></span>, and <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_13";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW7" data-renderer-version="1">Identifying Appropriate Traits</a></span>.</p><p>Even
+ if you use only standard UIKit controls and views, you might find that 
+some of the default attribute information they supply could be enhanced 
+to make more sense in the context of your application. For more 
+information, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_14";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW8" data-renderer-version="1">Enhancing Default Attribute Information</a></span>.</p><p>If
+ you need to supply or change accessibility attributes on either 
+standard or custom UI elements, you can do so either in Interface 
+Builder (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_15";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW1" data-renderer-version="1">Defining Custom Attribute Information in Interface Builder</a></span>) or programmatically (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_16";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW2" data-renderer-version="1">Defining Custom Attribute Information Programmatically</a></span>).</p><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW8" title="Enhancing Default Attribute Information"></a><h3 class="jump">Enhancing Default Attribute Information</h3><p>As
+ part of the built-in accessibility of standard UIKit controls and 
+views, iOS also provides default attribute information that describes 
+these elements to VoiceOver users. In most cases, this information is 
+appropriate for applications that use the standard controls and views. 
+However, there might be times when supplying custom attribute 
+information can enhance a VoiceOver user’s experience with your 
+application:</p><ul class="ul"><li class="li"><p>If you use a standard 
+UIKit control or view that displays a system-provided icon or title, 
+first make sure you’re using it in accordance with its intended purpose 
+(see <em><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.h_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.html#//apple_ref/doc/uid/TP40006556" data-renderer-version="2" target="_self">iOS Human Interface Guidelines</a></em>
+ for more information). Then, decide whether the default label attribute
+ accurately conveys the result of using that control or view in your 
+application. If not, consider providing a hint attribute.</p><p>For example, if you place an Add button in your navigation bar by using the system-provided Add (+) icon in a <code>UIBarButtonItem</code>
+ object, you get the default label attribute, Add, automatically. If 
+it’s always obvious which item the user is adding when they activate 
+this button, there’s no need to provide a hint attribute. But if there 
+might be confusion, you should consider providing a custom hint that 
+describes the result of using that control in your application, such as 
+"Adds an account" or "Adds a comment."</p></li><li class="li"><p>If you display a custom icon or image in a standard UIKit view, such as a <code>UIButton</code> object, you need to supply a custom label attribute that describes it.</p></li></ul></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW6" title="Crafting Useful Labels and Hints"></a><h3 class="jump">Crafting Useful Labels and Hints</h3><p>When
+ VoiceOver users run your application, they rely on the descriptions 
+VoiceOver speaks to understand what your application does and how to use
+ it. Because these descriptions represent the bulk of the VoiceOver 
+user’s experience with your application it’s essential that they be as 
+accurate and helpful as possible. The guidelines in this section help 
+you create labels and hints that will make your application easy and 
+enjoyable for people with disabilities to use.</p><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW20" title="Guidelines for Creating Labels"></a><h4 class="jump">Guidelines for Creating Labels</h4><p>The
+ label attribute identifies the user interface element. Every accessible
+ user interface element, standard and custom, must supply content for 
+the label attribute. </p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW21" title="Note"></a><p><strong>Note:</strong>&nbsp;A
+ table row can also have a label attribute. However, the guidelines for 
+creating a table row’s label differ from the guidelines for creating 
+labels for other types of controls and views. See <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_17";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW3" data-renderer-version="1">Enhance the Accessibility of Table Views</a></span> to learn how to create useful labels for table rows.</p><p></p></aside></div><p>A
+ good way to determine what a label should convey is to think about what
+ a sighted user infers about your application just by looking at it. If 
+you’ve designed a good user interface, sighted users should know what a 
+control or view does in the current application context by reading its 
+title or understanding its icon. This is the information you need to 
+make available to VoiceOver users in the label attribute.</p><p>If you 
+provide a custom control or view, or if you display a custom icon in a 
+standard control or view, you need to provide a label that:</p><ul class="ul"><li class="li"><p><strong>Very briefly describes the element</strong>. Ideally, the label consists of a single word, such as Add, Play, Delete, Search, Favorites, or Volume. </p><p>Strive
+ to design your application so that a single word identifies an element 
+and makes its usage obvious in the current context. Sometimes, however, 
+it might be necessary to use a brief phrase to properly identify an 
+element. When this is the case, create a very short phrase, such as 
+“Play music,” “Add name,” or “Add to event.” </p></li><li class="li"><p><strong>Does not include the type of the control or view</strong>. The type information is contained in the traits attribute of the element and should never be repeated in the label. </p><p>For
+ example, if you include the control type in the label of an Add button,
+ VoiceOver users hear “Add button button” every time they access that 
+control. This experience would quickly become annoying and might 
+motivate users to stop using your application.</p></li><li class="li"><p><strong>Begins with a capitalized word</strong>. This helps VoiceOver read the label with the appropriate inflection.</p></li><li class="li"><p><strong>Does not end with a period</strong>. The label is not a sentence and therefore should not end with a period.</p></li><li class="li"><p><strong>Is localized</strong>.
+ Be sure to make your application available to as wide an audience as 
+possible by localizing all strings, including accessibility attribute 
+strings. In general, VoiceOver speaks in the language that the user 
+specifies in International settings.</p></li></ul></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW11" title="Guidelines for Creating Hints"></a><h4 class="jump">Guidelines for Creating Hints</h4><p>The
+ hint attribute describes the results of performing an action on a 
+control or view. You should provide a hint only when the results of an 
+action are not obvious from the element’s label.</p><p>For example, if 
+you provide a Play button in your application, the context in which the 
+button appears should make it easy for users to understand what happens 
+when they tap it. However, if you allow users to play a song by tapping 
+the song title in a list, you might want to provide a hint that 
+describes this result. The reason is that the label of the list item 
+describes the item itself (in this case, the song title), not what 
+happens when a user taps it.</p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW22" title="Note"></a><p><strong>Note:</strong>&nbsp;VoiceOver
+ users can choose whether to hear available hints by selecting an option
+ in VoiceOver settings on their device. Spoken hints are turned on by 
+default.</p><p></p></aside></div><p>If the results of a user’s action on a control or view are not clearly implied by its label, create a hint that:</p><ul class="ul"><li class="li"><p><strong>Very briefly describes the results</strong>.
+ Even though few controls and views need hints, strive to make the hints
+ you do need to provide as brief as possible. Doing so decreases the 
+amount of time users must spend listening before they can use the 
+element.</p><p>That said, however, avoid sacrificing clarity and good 
+grammar for brevity. For example, changing “Adds a city” to “Adds city” 
+does not significantly decrease the length of the hint, but does make it
+ sound awkward and a bit less clear.</p></li><li class="li"><p><strong>Begins with a verb and omits the subject</strong>.
+ Be sure to use the third-person singular declarative form of a verb, 
+such as “Plays,” and not the imperative, such as “Play.” You want to 
+avoid using the imperative, because using it can make the hint sound 
+like a command. For example, you don’t want to tell users to “Play the 
+song”; instead, you want to tell users that tapping the element “Plays 
+the song.”</p><p>To help you find the right word, imagine that you’re 
+describing the use of a control to a friend. You might say something 
+like “Tapping this control plays the song.” Often, you can use the 
+second phrase in such a sentence (in this case, “Plays the song”) as a 
+hint.</p></li><li class="li"><p><strong>Begins with a capitalized word and ends with a period</strong>.
+ Even though a hint is a phrase, not a sentence, ending the hint with a 
+period helps VoiceOver speak it with the appropriate inflection.</p></li><li class="li"><p><strong>Does not include the name of the action or gesture</strong>.
+ A hint does not tell users how to perform the action, it tells users 
+what will happen when that action occurs. Therefore, do not create hints
+ such as “Tap to play the song,” “Tapping purchases the item,” or “Swipe
+ to delete the item.”</p><p>This is especially important because 
+VoiceOver users can use VoiceOver-specific gestures to interact with 
+elements in your application. If you name a different gesture in a hint,
+ it would be very confusing.</p></li><li class="li"><p><strong>Does not include the name of the control or view</strong>.
+ The user gets this information from the label attribute, so you should 
+not repeat it in the hint. Therefore, do not create hints such as “Save 
+saves your edits” or “Back returns to the previous screen.”</p></li><li class="li"><p><strong>Does not include the type of the control or view</strong>.
+ The user already knows whether, for example, the control or view 
+behaves like a button or a search field, because this information is 
+available in the element’s traits attribute. Therefore, do not create 
+hints such as “Button that adds a name” or “Slider that controls the 
+scale.”</p></li><li class="li"><p><strong>Is localized</strong>. As with accessibility labels, hints should be available in the user’s preferred language.</p></li></ul></section></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW7" title="Identifying Appropriate Traits"></a><h3 class="jump">Identifying Appropriate Traits</h3><p>The
+ traits attribute contains one or more individual traits that, taken 
+together, describe the behavior of an accessible user interface element.
+ Because some individual traits can be combined to describe a single 
+element, the element’s behavior can be precisely characterized.</p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW23" title="Note"></a><p><strong>Note:</strong>&nbsp;Individual
+ traits are combined using the OR operator. Outside of code examples, 
+this document uses the shorter terms “combine” and “combination” without
+ specifying the method of combination. </p><p></p></aside></div><p>A 
+standard UIKit control, such as a button or text field, provides default
+ content in the traits attribute. If you use only standard UIKit 
+controls in your application (and do not customize their behavior in any
+ way), you do not have to make any changes to the traits attribute of 
+these controls.</p><p>If you customize the behavior of a standard 
+control, you might need to combine a new trait with the control’s 
+default traits. If you create a custom control or view, you need to 
+provide content for the element’s traits attribute. </p><p></p><p>The UI
+ Accessibility programming interface defines 12 individual traits, some 
+of which can be combined. Some traits characterize an element by 
+identifying its behavior with the behavior of a particular type of 
+control (such as a button) or type of object (such as an image). Other 
+traits characterize an element by describing a specific behavior the 
+element can exhibit, such the ability to play sound. </p><p>You use the following traits to characterize elements in your application:</p><ul class="ul"><li class="li"><p>Button</p></li><li class="li"><p>Link</p></li><li class="li"><p>Search Field</p></li><li class="li"><p>Keyboard Key</p></li><li class="li"><p>Static Text</p></li><li class="li"><p>Image</p></li><li class="li"><p>Plays Sound</p></li><li class="li"><p>Selected</p></li><li class="li"><p>Summary Element</p></li><li class="li"><p>Updates Frequently</p></li><li class="li"><p>Not Enabled</p></li><li class="li"><p>None</p></li></ul><p>In
+ general, traits that correspond to controls can successfully be 
+combined with traits that describe behaviors. For example, you might 
+combine the Button trait with the Plays Sound trait to characterize a 
+custom control that behaves like a button and plays sound when it is 
+tapped.</p><p>For the most part, you should consider the traits that 
+correspond to particular controls, specifically, the Button, Link, 
+Search Field, and Keyboard Key traits, to be mutually exclusive. That 
+is, you should not use more than one of these traits to characterize an 
+element in your application. Instead, think about which one of these 
+four traits corresponds most closely to the element in your application.
+ Then, if your element has additional behaviors, you can combine the 
+first trait with one of the behavioral traits.</p><p>For example, 
+suppose you display an image in your application that responds to a 
+user’s tap by opening a link in Safari on iPhone. You could characterize
+ this element by combining the Image and Link traits. Another example is
+ a keyboard key that modifies other keyboard keys when it is tapped. You
+ could characterize this element by combining the Keyboard Key and 
+Selected traits.</p><p>To see some examples of how traits characterize 
+controls, you can use Accessibility Inspector to see the default traits 
+that are set on the standard controls. For information on how to use 
+Accessibility Inspector, read <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibility_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityiniOSSimulatorwithAccessibilityInspector/TestAccessibilityiniOSSimulatorwithAccessibilityInspector.html#//apple_ref/doc/uid/TP40012619-CH4" data-renderer-version="1" target="_self">Debug Accessibility in iOS Simulator with the Accessibility Inspector</a></span>.</p></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW1" title="Defining Custom Attribute Information in Interface Builder"></a><h3 class="jump">Defining Custom Attribute Information in Interface Builder</h3><p>When
+ you install iOS SDK 3.0, you get a version of Interface Builder that 
+includes features that help you make your application accessible. If 
+your application contains standard UIKit controls and views, you might 
+be able to do all your accessibility work in Interface Builder.</p><p>Using
+ Interface Builder, you can set an element’s accessibility status and 
+provide custom content for the label, hint, and traits attributes. To do
+ this, select the user interface element in your nib file and open the 
+Identity inspector. Reveal the Accessibility section in the inspector 
+and you should see something like <span class="content_text">Figure 2-1</span>:</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH102-SW13" title="Figure 2-1Default accessibility information for a standard text field, displayed in Interface Builder"></a><figcaption><strong class="caption_number">Figure 2-1</strong>&nbsp;&nbsp;Default accessibility information for a standard text field, displayed in Interface Builder</figcaption><img src="Making%20Your%20iOS%20App%20Accessible_files/ax_textfield_ib.png" class="wide-image" alt="" width="689" height="693"><img src="Making%20Your%20iOS%20App%20Accessible_files/ax_textfield_ib.png" class="ipad-scaled-image" alt="" width="670" height="673"></figure><p>As you can see in <span class="content_text">Figure 2-1</span>,
+ the standard text field used in the nib file is accessible by default 
+and includes default information for the label, hint, and traits 
+attributes. (Note that, for a text field that displays placeholder text,
+ the default label is the placeholder text.) You can change any of these
+ default values by supplying new information in the Identify inspector, 
+as shown in <span class="content_text">Figure 2-2</span>. (<span class="content_text">Figure 2-2</span> also shows how Accessibility Inspector displays the accessibility information for the text field. See <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibility_2";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityiniOSSimulatorwithAccessibilityInspector/TestAccessibilityiniOSSimulatorwithAccessibilityInspector.html#//apple_ref/doc/uid/TP40012619-CH4" data-renderer-version="1" target="_self">Debug Accessibility in iOS Simulator with the Accessibility Inspector</a></span> to learn about Accessibility Inspector.)</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH102-SW14" title="Figure 2-2Supplying accessibility information in Interface Builder"></a><figcaption><strong class="caption_number">Figure 2-2</strong>&nbsp;&nbsp;Supplying accessibility information in Interface Builder</figcaption><img src="Making%20Your%20iOS%20App%20Accessible_files/ax_textfield_hint.png" alt="" width="649" height="658"></figure></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW2" title="Defining Custom Attribute Information Programmatically"></a><h3 class="jump">Defining Custom Attribute Information Programmatically</h3><p>If
+ you prefer, you can supply custom information for attributes 
+programmatically. You might want to do this if you’re not using 
+Interface Builder at all or if you generate your views in code instead 
+of using Interface Builder.</p><p>As described in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_18";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW9" data-renderer-version="1">Make Custom Individual Views Accessible</a></span>,
+ you can set accessibility information in the implementation of your 
+view subclass or in the code that instantiates the view. Both techniques
+ are valid, but there is one reason why you might want to implement 
+attribute methods in your subclass instead of setting attributes in the 
+instantiation code: If your view displays data that is dynamic or that 
+changes frequently, such as the time of day, you should implement the 
+subclass methods to return fresh data as needed. For those situations, 
+if you only set attributes when you instantiate the subclass, the 
+returned data is likely to be out of date.</p><p>The code snippets in this section build on those in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_19";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW9" data-renderer-version="1">Make Custom Individual Views Accessible</a></span>,
+ by including some of the attribute-specific methods. For example, if 
+you want to implement accessibility methods in your subclass, you would 
+write code similar to that in <span class="content_text">Listing 2-2</span>.</p><a name="//apple_ref/doc/uid/TP40008785-CH102-SW15" title="Listing 2-2Providing attribute information in a custom subclass implementation"></a><p class="codesample clear"><strong class="caption_number">Listing 2-2</strong>&nbsp;&nbsp;Providing attribute information in a custom subclass implementation</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomView<span></span></pre></td></tr><tr><td scope="row"><pre>- (BOOL)isAccessibilityElement<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return YES;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return NSLocalizedString(@"MyCustomView.label", nil);<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>/* This custom view behaves like a button. */<span></span></pre></td></tr><tr><td scope="row"><pre>- (UIAccessibilityTraits)accessibilityTraits<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return UIAccessibilityTraitButton;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityHint<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return NSLocalizedString(@"MyCustomView.hint", nil);<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div><p>If you want to use the property-setting methods of the <code>UIAccessibility</code> protocol in the code that instantiates your custom view, you can write code similar to that in <span class="content_text">Listing 2-3</span>.</p><a name="//apple_ref/doc/uid/TP40008785-CH102-SW16" title="Listing 2-3Providing attribute information in the code that instantiates a custom subclass object"></a><p class="codesample clear"><strong class="caption_number">Listing 2-3</strong>&nbsp;&nbsp;Providing attribute information in the code that instantiates a custom subclass object</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomViewController<span></span></pre></td></tr><tr><td scope="row"><pre>- (id)init<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; _view = [[MyCustomView alloc] initWithFrame:CGRectZero];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; [_view setIsAccessibilityElement:YES];<span></span></pre></td></tr><tr><td scope="row"><pre>  [_view setAccessibilityTraits:UIAccessibilityTraitButton];<span></span></pre></td></tr><tr><td scope="row"><pre>  [_view setAccessibilityLabel:NSLocalizedString(@"view.label", nil)];<span></span></pre></td></tr><tr><td scope="row"><pre>  [_view setAccessibilityHint:NSLocalizedString(@"view.hint", nil)];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr></tbody></table></div></section></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW3" title="Enhance the Accessibility of Table Views"></a><h2 class="jump">Enhance the Accessibility of Table Views</h2><p>If
+ your application displays a table view in which each cell contains 
+items other than (or in addition to) text, there are a few things you 
+can do to make it more accessible. Similarly, if your table view 
+displays more than one piece of information per row, you can enhance a 
+VoiceOver user’s experience by aggregating the information in a single, 
+easy-to-understand label.</p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW24" title="Note"></a><p><strong>Note:</strong>&nbsp;If
+ your table cells contain any of the standard table-view elements, such 
+as the disclosure indicator, detail disclosure button, or delete 
+control, you do not have to do anything to make these elements 
+accessible. If, however, your table cells include other types of 
+controls, such as a switch or a slider, you need to make sure that these
+ elements are appropriately accessible.</p><p></p></aside></div><p>If 
+the table cells in your application contain a mix of different elements,
+ determine whether users interact with each cell as a unit, or with 
+individual elements inside the cell. If users need to access individual 
+elements inside the cell, you should:</p><ul class="ul"><li class="li"><p>Make each individual element accessible separately.</p></li><li class="li"><p>Make sure the table cell itself is <em>not</em> accessible.</p></li><li class="li"><p>Succinctly
+ describe the overall contents of the cell and use this description for 
+the label attribute of the cell. Note that, in this case, the label is 
+considered to be one of the accessible elements within the cell.</p></li></ul><p>You’ve
+ probably recognized that a table cell that contains multiple items, 
+such as text and controls, fits the criteria of a container view, as 
+defined by the UI Accessibility programming interface. However, you do 
+not have to identify the cell as a container view or implement any of 
+the methods of the <code>UIAccessibilityContainer</code> protocol, because the table cell is automatically designated as a container.</p><p>If
+ your table contains cells that provide information in discrete chunks, 
+you should consider combining the information from these chunks in the 
+label attribute. When you do this, VoiceOver users can get the meaning 
+of the cell’s contents with one gesture, instead of having to access 
+each piece of information separately. </p><p>A good example of how this 
+can work is in the built-in Stocks application. Instead of providing the
+ company name, current stock price, and change in price as separate 
+strings, Stocks combines this information in the label, which might 
+sound like this: “Apple Inc., $432.39, up 1.3%." Notice the commas in 
+this label. When you combine discrete pieces of information in this way,
+ you can use commas to tell VoiceOver to pause briefly between phrases, 
+making it easier for users to understand the information.</p><p>Here’s a
+ code snippet that shows how to combine the information in the labels of
+ two separate elements into a single label that describes both:</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation CurrentWeather<span></span></pre></td></tr><tr><td scope="row"><pre>/* This is a view that provides weather information. It contains a city subview and a temperature subview, each of which provides a separate label. */<span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>    NSString *weatherCityLabel = [self.weatherCity accessibilityLabel];<span></span></pre></td></tr><tr><td scope="row"><pre>    NSString *weatherTempLabel = [self.weatherTemp accessibilityLabel];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>    /* Combine the city and temperature information so that VoiceOver users can get the weather information with one gesture. */<span></span></pre></td></tr><tr><td scope="row"><pre>    return [NSString stringWithFormat:@"%@, %@", weatherCityLabel, weatherTempLabel];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW25" title="Make Dynamic Elements Accessible"></a><h2 class="jump">Make Dynamic Elements Accessible</h2><p>If
+ user interface elements in your application can change dynamically, you
+ need to make sure that the accessibility information they supply is 
+accurate and up-to-date. You also need to send notifications when 
+changes occur in the layout of application screens, so that VoiceOver 
+can help users navigate the new layout. The UI Accessibility programming
+ interface provides two notification types you can use when these kinds 
+of changes occur on the screen. (To learn about these notifications, see
+ "Notifications” in <em><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibility_Protocol/in_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibility_Protocol/index.html#//apple_ref/doc/uid/TP40008786" data-renderer-version="2" target="_self">UIAccessibility Protocol Reference</a></em>.)</p><p>If
+ user interface elements can be in different states depending on other 
+conditions in your application, you need to add logic to your code that 
+returns the correct accessibility information for each state an element 
+can be in. Because these changes can occur as the result of user 
+actions, it’s best to add this logic to a subclass’s implementation, not
+ to the code that instantiates the subclass.</p><p>The following code 
+shows how to handle dynamic state changes and how to send a notification
+ when a screen layout changes. The code represents the implementation of
+ a <code>UIView</code> subclass that behaves like a custom keyboard key.
+ The key’s accessibility label changes depending on whether the instance
+ represents a letter or other type of character, and on whether a shift 
+key is currently selected. The key also returns different accessibility 
+traits, depending on what type of keyboard key it represents and whether
+ it is currently selected. Note that the code in <span class="content_text">Listing 2-4</span> assumes that there are a number of methods that query the state of the keyboard.</p><a name="//apple_ref/doc/uid/TP40008785-CH102-SW12" title="Listing 2-4Returning the correct accessibility information for the current conditions and sending a layout-change notification"></a><p class="codesample clear"><strong class="caption_number">Listing 2-4</strong>&nbsp;&nbsp;Returning the correct accessibility information for the current conditions and sending a layout-change notification</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation BigKey<span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   NSString *keyLabel = [_keyLabel accessibilityLabel];<span></span></pre></td></tr><tr><td scope="row"><pre>   if ( [self isLetterKey] )<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>      if ( [self isShifted] )<span></span></pre></td></tr><tr><td scope="row"><pre>      {<span></span></pre></td></tr><tr><td scope="row"><pre>         return [keyLabel uppercaseString];<span></span></pre></td></tr><tr><td scope="row"><pre>      }<span></span></pre></td></tr><tr><td scope="row"><pre>      else<span></span></pre></td></tr><tr><td scope="row"><pre>      {<span></span></pre></td></tr><tr><td scope="row"><pre>         return [keyLabel lowercaseString];<span></span></pre></td></tr><tr><td scope="row"><pre>      }<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre>   else<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      return keyLabel;<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (UIAccessibilityTraits)accessibilityTraits<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   UIAccessibilityTraits traits = [super accessibilityTraits] | UIAccessibilityTraitKeyboardKey;<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   /* If this is the shift key and it's selected, users need to know that shift is currently in effect. */<span></span></pre></td></tr><tr><td scope="row"><pre>   if ( [self isShiftKey] &amp;&amp; [self isSelected] )<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      traits |= UIAccessibilityTraitSelected;<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   return traits;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (void)keyboardChangedToNumbers<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   /* Code to perform the change to a number keyboard here. */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   /* Send a notification of this change to the screen layout. */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW26" title="Make Nontextual Data Accessible"></a><h2 class="jump">Make Nontextual Data Accessible</h2><p>Sometimes
+ your application displays data that’s not automatically compatible with
+ the way accessibility works. For example, if you display an image, you 
+should provide a description of it in its accessibility label so that 
+VoiceOver users can understand the information the image conveys. Or, if
+ you provide information in a graphical way, such as a rating system 
+that displays stars, you should make sure the accessibility label 
+conveys the meaning behind the graphical representation.</p><p>The 
+following code snippet uses the example of a custom view that draws the 
+number of stars that corresponds to the rating of an item. The code 
+shows how this view returns an appropriate accessibility label, 
+depending on how many stars it draws.</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation RatingView<span></span></pre></td></tr><tr><td scope="row"><pre>/* Other subclass implementation code here. */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   /* _starCount is an instance variable that contains how many stars to draw. */<span></span></pre></td></tr><tr><td scope="row"><pre>   NSInteger starCount = _starCount;<span></span></pre></td></tr><tr><td scope="row"><pre>   if ( starCount == 1 )<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      ratingString = NSLocalizedString(@"rating.singular.label", nil); // here, ratingString is "star"<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre>   else<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      ratingString = NSLocalizedString(@"rating.plural.label", nil); // here, ratingString is "stars"<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   return [NSString stringWithFormat:@"%d %@", starCount, ratingString];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div></section>
+        <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
+            <a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_20";return this.s_oc?this.s_oc(e):true' class="nextLink" rel="next" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/RevisionHistory.html">Next</a><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_21";return this.s_oc?this.s_oc(e):true' class="previousLink" rel="prev" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html">Previous</a>
+        </div><br>
+        <div class="copyright"><br><hr><div align="center"><p class="content_text" dir="ltr" lang="en"> Copyright © 2012 Apple Inc. All Rights Reserved. <a onclick='s_objectID="http://www.apple.com/legal/internet-services/terms/site.html_1";return this.s_oc?this.s_oc(e):true' href="http://www.apple.com/legal/internet-services/terms/site.html" target="_blank">Terms of Use</a>   |  <a onclick='s_objectID="http://www.apple.com/privacy/_1";return this.s_oc?this.s_oc(e):true' href="http://www.apple.com/privacy/" target="_blank">Privacy Policy</a>  |  Updated: 2012-02-16</p></div></div>
+
+        <div id="pediaWindow">
+            <div id="pediaHeader"></div>
+            <div id="pediaBody"></div>
+        </div>
+    </article>
+
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="leave_feedback" class="button" role="button" tabindex="0">Feedback</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback…</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We’re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" name="helped" value="1" type="radio"> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" name="helped" value="2" type="radio"> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" name="helped" value="3" type="radio"> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input name="typo" type="checkbox"> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input name="infoIncorrect" type="checkbox"> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input name="needs_examples" type="checkbox"> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input name="needs_art" type="checkbox"> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input name="missingInfo" type="checkbox"> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required=""></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" value="Send" type="button">
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a onclick='s_objectID="https://developer.apple.com/bugreporter/_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/bugreporter/" target="_blank">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a onclick='s_objectID="http://www.apple.com/legal/policies/ideas.html_1";return this.s_oc?this.s_oc(e):true' href="http://www.apple.com/legal/policies/ideas.html" target="_blank">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+    
+    <script charset="utf-8" src="Making%20Your%20iOS%20App%20Accessible_files/prototype.js"></script>
+    <script src="Making%20Your%20iOS%20App%20Accessible_files/library.js"></script>
+    <script src="Making%20Your%20iOS%20App%20Accessible_files/feedback.js"></script>
+
+
+</body></html>
