@@ -27,10 +27,10 @@
     <link id="book-index-page" rel="Start" title="Accessibility Programming Guide for iOS" type="text/html" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/index.html">
     <link id="next-page" rel="Next" type="text/html" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/RevisionHistory.html">
     <link id="previous-page" rel="Prev" type="text/html" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html">
-    <link rel="stylesheet" type="text/css" href="Making%20Your%20iOS%20App%20Accessible_files/screen.css">
+    <link rel="stylesheet" type="text/css" href="Making_Your_iOS_App_Accessible_files/screen.css">
     
     <!-- xcode_css -->
-    <link rel="stylesheet" type="text/css" href="Making%20Your%20iOS%20App%20Accessible_files/feedback.css">
+    <link rel="stylesheet" type="text/css" href="Making_Your_iOS_App_Accessible_files/feedback.css">
 </head>    
 <body id=""><a name="//apple_ref/doc/uid/TP40008785-CH102" title="Making Your iOS App Accessible"></a>
     <div id="_omniture_top">
@@ -40,7 +40,7 @@
     var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
     </script>
 
-    <script type="text/javascript" src="Making%20Your%20iOS%20App%20Accessible_files/s_code_h.js"></script>
+    <script type="text/javascript" src="Making_Your_iOS_App_Accessible_files/s_code_h.js"></script>
     <script type="text/javascript">
     s.pageName=AC.Tracking.pageName();
     s.channel="www.us.developer"
@@ -313,13 +313,13 @@ be able to do all your accessibility work in Interface Builder.</p><p>Using
 provide custom content for the label, hint, and traits attributes. To do
  this, select the user interface element in your nib file and open the 
 Identity inspector. Reveal the Accessibility section in the inspector 
-and you should see something like <span class="content_text">Figure 2-1</span>:</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH102-SW13" title="Figure 2-1Default accessibility information for a standard text field, displayed in Interface Builder"></a><figcaption><strong class="caption_number">Figure 2-1</strong>&nbsp;&nbsp;Default accessibility information for a standard text field, displayed in Interface Builder</figcaption><img src="Making%20Your%20iOS%20App%20Accessible_files/ax_textfield_ib.png" class="wide-image" alt="" width="689" height="693"><img src="Making%20Your%20iOS%20App%20Accessible_files/ax_textfield_ib.png" class="ipad-scaled-image" alt="" width="670" height="673"></figure><p>As you can see in <span class="content_text">Figure 2-1</span>,
+and you should see something like <span class="content_text">Figure 2-1</span>:</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH102-SW13" title="Figure 2-1Default accessibility information for a standard text field, displayed in Interface Builder"></a><figcaption><strong class="caption_number">Figure 2-1</strong>&nbsp;&nbsp;Default accessibility information for a standard text field, displayed in Interface Builder</figcaption><img src="Making_Your_iOS_App_Accessible_files/ax_textfield_ib.png" class="wide-image" alt="" width="689" height="693"><img src="Making_Your_iOS_App_Accessible_files/ax_textfield_ib.png" class="ipad-scaled-image" alt="" width="670" height="673"></figure><p>As you can see in <span class="content_text">Figure 2-1</span>,
  the standard text field used in the nib file is accessible by default 
 and includes default information for the label, hint, and traits 
 attributes. (Note that, for a text field that displays placeholder text,
  the default label is the placeholder text.) You can change any of these
  default values by supplying new information in the Identify inspector, 
-as shown in <span class="content_text">Figure 2-2</span>. (<span class="content_text">Figure 2-2</span> also shows how Accessibility Inspector displays the accessibility information for the text field. See <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibility_2";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityiniOSSimulatorwithAccessibilityInspector/TestAccessibilityiniOSSimulatorwithAccessibilityInspector.html#//apple_ref/doc/uid/TP40012619-CH4" data-renderer-version="1" target="_self">Debug Accessibility in iOS Simulator with the Accessibility Inspector</a></span> to learn about Accessibility Inspector.)</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH102-SW14" title="Figure 2-2Supplying accessibility information in Interface Builder"></a><figcaption><strong class="caption_number">Figure 2-2</strong>&nbsp;&nbsp;Supplying accessibility information in Interface Builder</figcaption><img src="Making%20Your%20iOS%20App%20Accessible_files/ax_textfield_hint.png" alt="" width="649" height="658"></figure></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW2" title="Defining Custom Attribute Information Programmatically"></a><h3 class="jump">Defining Custom Attribute Information Programmatically</h3><p>If
+as shown in <span class="content_text">Figure 2-2</span>. (<span class="content_text">Figure 2-2</span> also shows how Accessibility Inspector displays the accessibility information for the text field. See <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibility_2";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityiniOSSimulatorwithAccessibilityInspector/TestAccessibilityiniOSSimulatorwithAccessibilityInspector.html#//apple_ref/doc/uid/TP40012619-CH4" data-renderer-version="1" target="_self">Debug Accessibility in iOS Simulator with the Accessibility Inspector</a></span> to learn about Accessibility Inspector.)</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH102-SW14" title="Figure 2-2Supplying accessibility information in Interface Builder"></a><figcaption><strong class="caption_number">Figure 2-2</strong>&nbsp;&nbsp;Supplying accessibility information in Interface Builder</figcaption><img src="Making_Your_iOS_App_Accessible_files/ax_textfield_hint.png" alt="" width="649" height="658"></figure></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW2" title="Defining Custom Attribute Information Programmatically"></a><h3 class="jump">Defining Custom Attribute Information Programmatically</h3><p>If
  you prefer, you can supply custom information for attributes 
 programmatically. You might want to do this if you’re not using 
 Interface Builder at all or if you generate your views in code instead 
@@ -509,9 +509,9 @@ depending on how many stars it draws.</p><div class="codesample clear"><table><t
 </div>
 
     
-    <script charset="utf-8" src="Making%20Your%20iOS%20App%20Accessible_files/prototype.js"></script>
-    <script src="Making%20Your%20iOS%20App%20Accessible_files/library.js"></script>
-    <script src="Making%20Your%20iOS%20App%20Accessible_files/feedback.js"></script>
+    <script charset="utf-8" src="Making_Your_iOS_App_Accessible_files/prototype.js"></script>
+    <script src="Making_Your_iOS_App_Accessible_files/library.js"></script>
+    <script src="Making_Your_iOS_App_Accessible_files/feedback.js"></script>
 
 
 </body></html>
