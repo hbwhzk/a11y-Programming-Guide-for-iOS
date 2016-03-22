@@ -114,39 +114,65 @@ to enhance a VoiceOver user’s experience with table views and to make
 sure dynamic elements in your application are always accessible.</p>
 
 <p>除了上述原则外，您还可以通过表格视图，以及确保应用中的动态元素的无障碍，提升VoiceOver用户的体验。
-</p><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW17" title="Make User Interface Elements Accessible"></a><h2 class="jump">Make User Interface Elements Accessible</h2><p>As mentioned in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_4";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW3" data-renderer-version="1">Accessibility and VoiceOver</a></span>
+</p><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW17" title="Make User Interface Elements Accessible"></a><h2 class="jump">Make User Interface Elements Accessible | 让用户界面元素具有可访问性</h2><p>As mentioned in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_4";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW3" data-renderer-version="1">Accessibility and VoiceOver</a></span>
  a user interface element is accessible if it reports itself as an 
 accessibility element. Although being accessible is not enough to make a
  user interface element useful to VoiceOver users, it represents the 
-first step in the process of making your application accessible.</p><p>As stated in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_5";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW2" data-renderer-version="1">iOS Accessibility API and Tools</a></span>,
+first step in the process of making your application accessible.</p>
+<p>正如“无障碍特性和VoiceOver”所提及的，用户界面元素如果能报知其为无障碍元素，那么这个用户界面元素是具有可访问性的。这表明您应用程序进入无障碍化的第一步，但并不说明用户界面元素对于用户的VoiceOver具有可访问性。
+</p><p>As stated in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_5";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW2" data-renderer-version="1">iOS Accessibility API and Tools</a></span>,
  standard UIKit controls and views are automatically accessible. If you 
 use only standard UIKit controls, you probably don’t have to do much 
 additional work to make sure your application is accessible. In this 
 case, your next step is to ensure that the default attribute information
  supplied by these controls makes sense in your application. To learn 
-how to do this, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_6";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW4" data-renderer-version="1">Supply Accurate and Helpful Attribute Information</a></span>.</p><p>If
+how to do this, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_6";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW4" data-renderer-version="1">Supply Accurate and Helpful Attribute Information</a></span>.</p>
+
+<p>也如“iOS无障碍API及工具”中所述，标准的UIKit控件和视图是自动具有可访问性的。如果您只使用了标准的UIKit控件，那可能您的应用无障碍不再需要太多的其它的工作。详情参见“提供准确和帮助性的属性信息”。
+</p><p>If
  you create custom views that display information or with which users 
 need to interact, you must ensure the accessibility of these views 
 yourself. After you’ve done this, you need to make sure these views 
-supply accessibility information that helps people use them (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_7";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW4" data-renderer-version="1">Supply Accurate and Helpful Attribute Information</a></span>).</p><p>From the perspective of accessibility, a custom view is either an individual view or a container view. An <em class="newTerm">individual view</em> does not contain any other views that need to be accessible. For example, a custom subclass of <code>UIControl</code>
+supply accessibility information that helps people use them (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_7";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW4" data-renderer-version="1">Supply Accurate and Helpful Attribute Information</a></span>).</p>
+<p>如果您创建一个自定义视图用以展示信息或是与用户进行交互，您必须确保这些视图的无障碍特性。在您完成这些之后，你需要确保这些视图提供的无障碍信息可以帮助到用户。（参见“提供准确和有用的属性信息”）。</p>
+<p>From the perspective of accessibility, a custom view is either an individual view or a container view. An <em class="newTerm">individual view</em> does not contain any other views that need to be accessible. For example, a custom subclass of <code>UIControl</code>
  that displays an icon and behaves like a button does not contain any 
 other elements with which the user can interact, apart from the button 
-itself. Read <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_8";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW9" data-renderer-version="1">Make Custom Individual Views Accessible</a></span> to learn how to make an individual view accessible.</p><p>A <em class="newTerm">container view</em>, on the other hand, contains other elements with which users can interact. For example, in a custom subclass of <code>UIView</code>
+itself. Read <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_8";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW9" data-renderer-version="1">Make Custom Individual Views Accessible</a></span> to learn how to make an individual view accessible.</p>
+
+<p>从无障碍的角度来说，自定义视图可能是一个独立的视图也可能是一个容器视图。独立视图不包含其他需要无障碍化的视图。例如，一个自定义的<code>UIControl</code>子类会展示一个图标，并且具有按钮的表象，但是除了按钮本身，其并不包含任何可以与用户进行交互的元素。请阅读“让自定义的独立视图具有无障碍特性”了解如何让一个独立视图具有无障碍特性。
+</p><p>A <em class="newTerm">container view</em>, on the other hand, contains other elements with which users can interact. For example, in a custom subclass of <code>UIView</code>
  that performs its own drawing of geometric shapes, the shapes represent
  elements with which users can interact, and which are distinct from the
  container view. Such separate elements within a container view are not 
-automatically accessible (because they are not subclasses of <code>UIView</code>) and do not provide any accessibility information. To learn how to make the contents of a container view accessible, read <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_9";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW10" data-renderer-version="1">Make the Contents of Custom Container Views Accessible</a></span>.</p><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW9" title="Make Custom Individual Views Accessible"></a><h3 class="jump">Make Custom Individual Views Accessible</h3><p>If
+automatically accessible (because they are not subclasses of <code>UIView</code>) and do not provide any accessibility information. To learn how to make the contents of a container view accessible, read <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_9";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW10" data-renderer-version="1">Make the Contents of Custom Container Views Accessible</a></span>.</p>
+
+<p>
+另一方面，容器视图包含其他可以和用户进行交互的元素。例如，在一个自定义的<code>UIView</code>子类中绘制一个几何图形，这个图形是可以和用户进行交互的元素，这也容器视图不同。容器视图内的独立元素并非自动能被无障碍使用（因为它们不是<code>UIView</code>的子类），也不会提供任何无障碍信息。请阅读“让自定义容器视图的内容具有无障碍特性”了解如何让容器视图的内容具有无障碍特性。
+
+
+</p><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW9" title="Make Custom Individual Views Accessible"></a><h3 class="jump">Make Custom Individual Views Accessible | 让自定义的独立视图具有无障碍特性</h3><p>If
  your application contains a custom individual view with which users 
 need to interact, you must make the view accessible. (Recall that an 
 individual view is a view containing no other views with which users 
-interact.) </p><p>In addition to using Interface Builder to make a 
+interact.) </p>
+
+<p>如果您的应用包含一个需要与用户进行交互的自定义的独立视图，您必须确保这个视图的无障碍特性。（回想一下，一个独立视图是指：一个视图不包含其它需要与用户交互的视图。</p><p>In addition to using Interface Builder to make a 
 custom individual view accessible, there are two programmatic ways to do
  this. One way is to set your custom view’s accessibility status in the 
 code that instantiates it. The following code snippet shows how to do 
-this:</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomViewController<span></span></pre></td></tr><tr><td scope="row"><pre>- (id)init<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; _view = [[[MyCustomView alloc] initWithFrame:CGRectZero] autorelease];<span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; [_view setIsAccessibilityElement:YES];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>  /* Set attributes here. */<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr></tbody></table></div><p>Another way is to implement the <code>isAccessibilityElement</code> method of the <code>UIAccessibility</code> protocol in the implementation of your custom subclass. The following code snippet shows how to do this:</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomView<span></span></pre></td></tr><tr><td scope="row"><pre>  /* Implement attribute methods here. */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (BOOL)isAccessibilityElement<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return YES;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr></tbody></table></div><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW18" title="Note"></a><p><strong>Note:</strong>&nbsp;In
+this:</p><p>
+除了使用Interface Builder构建自定义视图的无障碍特性，还可以通过两种编程方法让自定义独立视图具有无障碍特性。第一种方法是视图在代码实例化设置它的无障碍状态。如下面的代码片段所示：</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomViewController<span></span></pre></td></tr><tr><td scope="row"><pre>- (id)init<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; _view = [[[MyCustomView alloc] initWithFrame:CGRectZero] autorelease];<span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; [_view setIsAccessibilityElement:YES];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>  /* Set attributes here. 此处设置属性*/<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr></tbody></table></div><p>Another way is to implement the <code>isAccessibilityElement</code> method of the <code>UIAccessibility</code> protocol in the implementation of your custom subclass. The following code snippet shows how to do this:</p>
+
+<p>
+另一种方法是在您的自定义子类实现中，<code>UIAccessibility</code>协议中使用<code>isAccessibilityElement</code>。如下面的代码片段所示：
+</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomView<span></span></pre></td></tr><tr><td scope="row"><pre>  /* Implement attribute methods here. 此处使用属性方法 */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (BOOL)isAccessibilityElement<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return YES;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr></tbody></table></div><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW18" title="Note"></a><p><strong>Note:</strong>&nbsp;In
  both of these code snippets, you can see comments in place of the code 
 needed to set accessibility attributes. For more complete code snippets 
-that show how to do this, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_10";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW2" data-renderer-version="1">Defining Custom Attribute Information Programmatically</a></span>.</p><p></p></aside></div></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW10" title="Make the Contents of Custom Container Views Accessible"></a><h3 class="jump">Make the Contents of Custom Container Views Accessible</h3><p>If
+that show how to do this, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_10";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW2" data-renderer-version="1">Defining Custom Attribute Information Programmatically</a></span>.</p>
+
+<p>注意：在这两段代码中，需要设置无障碍属性的代码有明确注释。展示如何实现的完整的代码，请阅读“程序化定义自定义属性信息”。
+</p><p></p></aside></div></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW10" title="Make the Contents of Custom Container Views Accessible"></a><h3 class="jump">Make the Contents of Custom Container Views Accessible</h3><p>If
  your application displays a custom view that contains other elements 
 with which users interact, you need to make the contained elements 
 separately accessible. At the same time, you need to make sure that the 
