@@ -246,83 +246,136 @@ describes the result of using that control in your application, such as
 的应用中提供一个自定义的提示可以描述使用这个按钮的效果，比如“添加一个账户”或者“添加一个评论”。</li><li class="li"><p>If you display a custom icon or image in a standard UIKit view, such as a <code>UIButton</code> object, you need to supply a custom label attribute that describes it.</p>
 <p>如果您在标签的UIKit视图中显示一个自定义的图标或者图像，比如<code>UIBarButtonItem</code>对象，需要提供一个自定义的标签属性用以描述它。
   
-</p></li></ul></section><h3 class="jump">Enhancing Default Attribute Information | 优化默认的属性信息</h3><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW6" title="Crafting Useful Labels and Hints"></a><h3 class="jump">Crafting Useful Labels and Hints</h3><p>When
+</p></li></ul></section><h3 class="jump">Enhancing Default Attribute Information | 优化默认的属性信息</h3><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW6" title="Crafting Useful Labels and Hints"></a><h3 class="jump">Crafting Useful Labels and Hints | 制作有用的标签和提示</h3><p>When
  VoiceOver users run your application, they rely on the descriptions 
 VoiceOver speaks to understand what your application does and how to use
  it. Because these descriptions represent the bulk of the VoiceOver 
 user’s experience with your application it’s essential that they be as 
 accurate and helpful as possible. The guidelines in this section help 
 you create labels and hints that will make your application easy and 
-enjoyable for people with disabilities to use.</p><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW20" title="Guidelines for Creating Labels"></a><h4 class="jump">Guidelines for Creating Labels</h4><p>The
+enjoyable for people with disabilities to use.</p>
+<p>当VoiceOver用户使用您的应用时，他们依赖VoiceOver的描述了解应用的作用以及如何使用，由于这些描述代表了大量的
+VoiceOver用户对于您的应用体验，所以有必要尽可能让其准确及有用。该指南会帮助您创建有用的标签和提示，让您的应用对于残障人士简单易用。
+</p><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW20" title="Guidelines for Creating Labels"></a><h4 class="jump">Guidelines for Creating Labels | 创建标签指南</h4><p>The
  label attribute identifies the user interface element. Every accessible
  user interface element, standard and custom, must supply content for 
-the label attribute. </p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW21" title="Note"></a><p><strong>Note:</strong>&nbsp;A
+the label attribute. </p>
+<p>标签属性定义了用户界面中的元素，每个无障碍的用户界面元素都必须为标签属性提供内容，无论是标准的还是自定义的。</p>
+<div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW21" title="Note"></a><p><strong>Note:</strong>&nbsp;A
  table row can also have a label attribute. However, the guidelines for 
 creating a table row’s label differ from the guidelines for creating 
-labels for other types of controls and views. See <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_17";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW3" data-renderer-version="1">Enhance the Accessibility of Table Views</a></span> to learn how to create useful labels for table rows.</p><p></p></aside></div><p>A
+labels for other types of controls and views. See <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_17";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW3" data-renderer-version="1">Enhance the Accessibility of Table Views</a></span> to learn how to create useful labels for table rows.</p>
+
+<p><strong>注意：</strong>表格中的一行也可以包含一个标签属性。然而，创建表格行标签的方法和其他类型控件和视图的方法不一样。具体的创建方法参见“优化表格视图无障碍特性”。
+
+
+</p><p></p></aside></div><p>A
  good way to determine what a label should convey is to think about what
  a sighted user infers about your application just by looking at it. If 
 you’ve designed a good user interface, sighted users should know what a 
 control or view does in the current application context by reading its 
 title or understanding its icon. This is the information you need to 
-make available to VoiceOver users in the label attribute.</p><p>If you 
+make available to VoiceOver users in the label attribute.</p>
+<p>判定标签应该传达什么内容的一个好办法，就是思考视觉用户通过视觉能够看到什么。如果你的用户界面设计得很好，视觉用户应该可以通过阅读标题或理解图标了解控件和视图了解当前应用的环境。这些信息就是VoiceOver用户可从标签属性获取。
+</p><p>If you 
 provide a custom control or view, or if you display a custom icon in a 
-standard control or view, you need to provide a label that:</p><ul class="ul"><li class="li"><p><strong>Very briefly describes the element</strong>. Ideally, the label consists of a single word, such as Add, Play, Delete, Search, Favorites, or Volume. </p><p>Strive
+standard control or view, you need to provide a label that:</p>
+<p>如果提供一个自定义的控件和视图，或者您在标准控件或视图中展示一个自定义的图标，您需要提供的标签：</p><ul class="ul"><li class="li"><p><strong>Very briefly describes the element</strong>. Ideally, the label consists of a single word, such as Add, Play, Delete, Search, Favorites, or Volume. </p>
+
+<p><strong>简要描述标签：</strong>理想化的标签是有一个单词构成，比如，添加、播放、删除、搜索、收藏、音量。</p>
+<p>Strive
  to design your application so that a single word identifies an element 
 and makes its usage obvious in the current context. Sometimes, however, 
 it might be necessary to use a brief phrase to properly identify an 
 element. When this is the case, create a very short phrase, such as 
-“Play music,” “Add name,” or “Add to event.” </p></li><li class="li"><p><strong>Does not include the type of the control or view</strong>. The type information is contained in the traits attribute of the element and should never be repeated in the label. </p><p>For
+“Play music,” “Add name,” or “Add to event.” </p>
+<p>仔细设计您的应用，尽量让一个单词定义一个元素元素并能使它在当前环境下明显。然而，有时候可能需要使用一个简单的短语才可能定义一个元素。遇到这种情况，创建一个短的句子，比如“播放音乐”、“添加姓名”或者“添加事件”。
+</p></li><li class="li"><p><strong>Does not include the type of the control or view</strong>. The type information is contained in the traits attribute of the element and should never be repeated in the label. </p>
+
+<p><strong>不要包含控件或者视图的类型：</strong>这类信息包含在元素的特质属性中，应该在标签中不被重复。
+</p><p>For
  example, if you include the control type in the label of an Add button,
  VoiceOver users hear “Add button button” every time they access that 
 control. This experience would quickly become annoying and might 
-motivate users to stop using your application.</p></li><li class="li"><p><strong>Begins with a capitalized word</strong>. This helps VoiceOver read the label with the appropriate inflection.</p></li><li class="li"><p><strong>Does not end with a period</strong>. The label is not a sentence and therefore should not end with a period.</p></li><li class="li"><p><strong>Is localized</strong>.
+motivate users to stop using your application.</p>
+<p>例如，如果您在添加按钮的标签，包含一个控制类型，VoiceOver用户每次访问该控件的时候都会听到的“添加按钮按钮”，这种体验非常骚扰，可能刺激用户停止使用您的应用。</p></li><li class="li"><p><strong>Begins with a capitalized word</strong>. This helps VoiceOver read the label with the appropriate inflection.</p>
+<p>
+<strong>单词首字母大写：</strong>可以帮助VoiceOver用适当的音调读取标签。
+</p></li><li class="li"><p><strong>Does not end with a period</strong>. The label is not a sentence and therefore should not end with a period.</p>
+<p><strong>不要在结束处用句号：</strong>标签不是一句话，因此不应该使用句号结束。</p></li><li class="li"><p><strong>Is localized</strong>.
  Be sure to make your application available to as wide an audience as 
 possible by localizing all strings, including accessibility attribute 
 strings. In general, VoiceOver speaks in the language that the user 
-specifies in International settings.</p></li></ul></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW11" title="Guidelines for Creating Hints"></a><h4 class="jump">Guidelines for Creating Hints</h4><p>The
+specifies in International settings.</p>
+<p><strong>本地化：</strong>本地化所有的字符串，一定能让您的应用被更广泛的受众使用，包括无障碍属性中的字符串。通常情况，VoiceOver朗读的语言是以用户设置的语言进行朗读。
+</p></li></ul></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW11" title="Guidelines for Creating Hints"></a><h4 class="jump">Guidelines for Creating Hints | 创建提示指南</h4><p>The
  hint attribute describes the results of performing an action on a 
 control or view. You should provide a hint only when the results of an 
-action are not obvious from the element’s label.</p><p>For example, if 
+action are not obvious from the element’s label.</p>
+<p>提示属性描述是：在控件或视图上的执行一个行动的结果。仅在动作的结果在属性标签中不是很明显的时候您应该提供一个提示。</p><p>For example, if 
 you provide a Play button in your application, the context in which the 
 button appears should make it easy for users to understand what happens 
 when they tap it. However, if you allow users to play a song by tapping 
 the song title in a list, you might want to provide a hint that 
 describes this result. The reason is that the label of the list item 
 describes the item itself (in this case, the song title), not what 
-happens when a user taps it.</p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW22" title="Note"></a><p><strong>Note:</strong>&nbsp;VoiceOver
+happens when a user taps it.</p><p>例如：如果您在应用中提供一个播放按钮，按钮周边环境可让用户很容易了解当他们
+按下按钮会发生的状况。然而，如果您允许用户通过歌曲列表中歌名点播歌曲，你可能要提供一个提示用以描述结果，因为列表项的标签仅介绍自己的属性（此例中
+指歌名），当用户点击时不知道会发生什么。</p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW22" title="Note"></a><p><strong>Note:</strong>&nbsp;VoiceOver
  users can choose whether to hear available hints by selecting an option
  in VoiceOver settings on their device. Spoken hints are turned on by 
-default.</p><p></p></aside></div><p>If the results of a user’s action on a control or view are not clearly implied by its label, create a hint that:</p><ul class="ul"><li class="li"><p><strong>Very briefly describes the results</strong>.
+default.</p><p></p></aside></div><p>If the results of a user’s action on a control or view are not clearly implied by its label, create a hint that:</p>
+
+<p>
+如果用户在控件或者视窗上的动作并未在标签被指出，创建一个这样的提示：
+</p>
+<ul class="ul"><li class="li"><p><strong>Very briefly describes the results</strong>.
  Even though few controls and views need hints, strive to make the hints
  you do need to provide as brief as possible. Doing so decreases the 
 amount of time users must spend listening before they can use the 
-element.</p><p>That said, however, avoid sacrificing clarity and good 
+element.</p>
+
+<p>
+<strong>尽量简单介绍结果：</strong>即使极少的控件和视图需要提示，尽可能的提供简短介绍。这样做可以让用户在使用元素前减少听描述的时间
+</p><p>That said, however, avoid sacrificing clarity and good 
 grammar for brevity. For example, changing “Adds a city” to “Adds city” 
 does not significantly decrease the length of the hint, but does make it
- sound awkward and a bit less clear.</p></li><li class="li"><p><strong>Begins with a verb and omits the subject</strong>.
+ sound awkward and a bit less clear.</p>
+<p>然而，请避免为了简短而牺牲语法的清晰。例如，将“添加一个城市”，改为“添加城市”，并不意味着提示长度缩短，，反面使读音更别扭，而且不够清楚。
+</p></li><li class="li"><p><strong>Begins with a verb and omits the subject</strong>.
  Be sure to use the third-person singular declarative form of a verb, 
 such as “Plays,” and not the imperative, such as “Play.” You want to 
 avoid using the imperative, because using it can make the hint sound 
 like a command. For example, you don’t want to tell users to “Play the 
 song”; instead, you want to tell users that tapping the element “Plays 
-the song.”</p><p>To help you find the right word, imagine that you’re 
+the song.”</p>
+
+
+<p>
+<strong>动词开头，省略主语：</strong>确认使用第三人称单数的动词形式。例如“Plays”不是祈使句。要避免使用祈使句，就为其放在提示中，像是一条件命令，不要告诉用户“Play the song”，要告诉用户按下元素会“Plays the song”。
+</p><p>To help you find the right word, imagine that you’re 
 describing the use of a control to a friend. You might say something 
 like “Tapping this control plays the song.” Often, you can use the 
 second phrase in such a sentence (in this case, “Plays the song”) as a 
-hint.</p></li><li class="li"><p><strong>Begins with a capitalized word and ends with a period</strong>.
+hint.</p>
+<p>帮助您找到正确的用词，想像您正在为朋友介绍一个控件的用法。你可能会这样说，“点击”</p></li><li class="li"><p><strong>Begins with a capitalized word and ends with a period</strong>.
  Even though a hint is a phrase, not a sentence, ending the hint with a 
-period helps VoiceOver speak it with the appropriate inflection.</p></li><li class="li"><p><strong>Does not include the name of the action or gesture</strong>.
+period helps VoiceOver speak it with the appropriate inflection.</p>
+<p><strong>大写字母开头，句号结尾：</strong>即使提示是一个短语，不是一个句子，使用句号结束这个句子是有助力于VoiceOver以恰当音调朗读它。</p></li><li class="li"><p><strong>Does not include the name of the action or gesture</strong>.
  A hint does not tell users how to perform the action, it tells users 
 what will happen when that action occurs. Therefore, do not create hints
  such as “Tap to play the song,” “Tapping purchases the item,” or “Swipe
- to delete the item.”</p><p>This is especially important because 
+ to delete the item.”</p>
+<p><strong>不要包含动作的名称或手势：</strong>一个提示不用告诉用户如何执行该动作，它告诉用户的是当动作发生时会产生什么。因此，不要创建类似于“存储保存您的修改”或者“后退返回到之前的屏幕”。</p><p>This is especially important because 
 VoiceOver users can use VoiceOver-specific gestures to interact with 
 elements in your application. If you name a different gesture in a hint,
- it would be very confusing.</p></li><li class="li"><p><strong>Does not include the name of the control or view</strong>.
+ it would be very confusing.</p>
+
+<p>这极其重要，因为VoiceOver用户使用特定手势与应用进行交互。如果您在一个提示中命名了不同的手势，会造成一定的混淆。</p></li><li class="li"><p><strong>Does not include the name of the control or view</strong>.
  The user gets this information from the label attribute, so you should 
 not repeat it in the hint. Therefore, do not create hints such as “Save 
-saves your edits” or “Back returns to the previous screen.”</p></li><li class="li"><p><strong>Does not include the type of the control or view</strong>.
+saves your edits” or “Back returns to the previous screen.”</p>
+<p><strong>不要包含控件和视图的名称：</strong>用户从标签属性里得到信息，所以你不应该在提示中重复相关信息。所以，不要创建类似于这样的提示“存储保存您的修改”或者“后退返回到之前的屏幕”。</p></li><li class="li"><p><strong>Does not include the type of the control or view</strong>.
  The user already knows whether, for example, the control or view 
 behaves like a button or a search field, because this information is 
 available in the element’s traits attribute. Therefore, do not create 
