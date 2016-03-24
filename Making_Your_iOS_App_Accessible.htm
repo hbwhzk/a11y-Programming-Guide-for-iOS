@@ -209,7 +209,7 @@ standard or custom UI elements, you can do so either in Interface
 Builder (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_15";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW1" data-renderer-version="1">Defining Custom Attribute Information in Interface Builder</a></span>) or programmatically (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_16";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW2" data-renderer-version="1">Defining Custom Attribute Information Programmatically</a></span>).</p>
 
 <p>
-无论是标准还是自定义的UI元素，如果您需要提供或者更改其无障碍属性，您都可以通过Interface Builder（请参阅“在Interface Builder中自定义属性信息”）或者编程化处理（请参阅“编程化处理算定义属性信息”）。
+无论是标准还是自定义的UI元素，如果您需要提供或者更改其无障碍属性，您都可以通过Interface Builder（请参阅“在Interface Builder中自定义属性信息”）或者编程化处理（请参阅“编程化处理自定义属性信息”）。
 </p>
 
 <p>
@@ -358,7 +358,7 @@ describing the use of a control to a friend. You might say something
 like “Tapping this control plays the song.” Often, you can use the 
 second phrase in such a sentence (in this case, “Plays the song”) as a 
 hint.</p>
-<p>帮助您找到正确的用词，想像您正在为朋友介绍一个控件的用法。你可能会这样说，“点击”</p></li><li class="li"><p><strong>Begins with a capitalized word and ends with a period</strong>.
+<p>帮助您找到正确的用词，想像您正在为朋友介绍一个控件的用法。你可能会这样说，“点击这个控制播放歌典”。通常用该句话的第二个短语（此例中为“播放歌曲”）作为一个提示。</p></li><li class="li"><p><strong>Begins with a capitalized word and ends with a period</strong>.
  Even though a hint is a phrase, not a sentence, ending the hint with a 
 period helps VoiceOver speak it with the appropriate inflection.</p>
 <p><strong>大写字母开头，句号结尾：</strong>即使提示是一个短语，不是一个句子，使用句号结束这个句子是有助力于VoiceOver以恰当音调朗读它。</p></li><li class="li"><p><strong>Does not include the name of the action or gesture</strong>.
@@ -380,68 +380,142 @@ saves your edits” or “Back returns to the previous screen.”</p>
 behaves like a button or a search field, because this information is 
 available in the element’s traits attribute. Therefore, do not create 
 hints such as “Button that adds a name” or “Slider that controls the 
-scale.”</p></li><li class="li"><p><strong>Is localized</strong>. As with accessibility labels, hints should be available in the user’s preferred language.</p></li></ul></section></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW7" title="Identifying Appropriate Traits"></a><h3 class="jump">Identifying Appropriate Traits</h3><p>The
+scale.”</p>
+<p>
+不要包含控件和视图的类型：用户已经知道控件表象为一个按钮或者搜索域，因为此信息在元素特质属性中是可获取的。因此，不要创建类似于“按钮用于添加名称”或者“滑动用于控制比例”提示。
+</p></li><li class="li"><p><strong>Is localized</strong>. As with accessibility labels, hints should be available in the user’s preferred language.</p>
+
+<p>本地化：与无障碍标签类似，用户选择语言后，提示是可用的。</p>
+
+
+</li></ul></section></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW7" title="Identifying Appropriate Traits"></a><h3 class="jump">Identifying Appropriate Traits | 定义恰当的特质</h3><p>The
  traits attribute contains one or more individual traits that, taken 
 together, describe the behavior of an accessible user interface element.
  Because some individual traits can be combined to describe a single 
-element, the element’s behavior can be precisely characterized.</p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW23" title="Note"></a><p><strong>Note:</strong>&nbsp;Individual
+element, the element’s behavior can be precisely characterized.</p>
+<p>特质属性包含一个或者多个独立特质，共同描述一个无障碍用户界面元素的行为。由于一些独立的特性可以组合起来一起描述一个单独元素，因此可以准确地表述一个元素的行为。
+
+</p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW23" title="Note"></a><p><strong>Note:</strong>&nbsp;Individual
  traits are combined using the OR operator. Outside of code examples, 
 this document uses the shorter terms “combine” and “combination” without
- specifying the method of combination. </p><p></p></aside></div><p>A 
+ specifying the method of combination. </p>
+
+<p>
+注意：独立的特质的组合通常是使用或运算符。代码实例以外，本文档的短语“组合”无特别指定组合方法。
+</p><p></p></aside></div><p>A 
 standard UIKit control, such as a button or text field, provides default
  content in the traits attribute. If you use only standard UIKit 
 controls in your application (and do not customize their behavior in any
  way), you do not have to make any changes to the traits attribute of 
-these controls.</p><p>If you customize the behavior of a standard 
+these controls.</p>
+
+<p>
+一个标准的UIKit控件，如一个按钮或者文本域，在特性属性中提供默认的内容。如果在应用中仅用标准UIKit控件（特指没有用任何方式自定义其行为），这些控件的特质属性不会有任何变化。  
+</p><p>If you customize the behavior of a standard 
 control, you might need to combine a new trait with the control’s 
 default traits. If you create a custom control or view, you need to 
-provide content for the element’s traits attribute. </p><p></p><p>The UI
+provide content for the element’s traits attribute. </p>
+
+<p>
+如果是自定义行为的标准控件，您可能需要将某个新的特质与该控件默认的特质组合。如果创建算定义的控件视图，您需要提供该元素特质属性的内容。
+</p><p></p><p>The UI
  Accessibility programming interface defines 12 individual traits, some 
 of which can be combined. Some traits characterize an element by 
 identifying its behavior with the behavior of a particular type of 
 control (such as a button) or type of object (such as an image). Other 
 traits characterize an element by describing a specific behavior the 
-element can exhibit, such the ability to play sound. </p><p>You use the following traits to characterize elements in your application:</p><ul class="ul"><li class="li"><p>Button</p></li><li class="li"><p>Link</p></li><li class="li"><p>Search Field</p></li><li class="li"><p>Keyboard Key</p></li><li class="li"><p>Static Text</p></li><li class="li"><p>Image</p></li><li class="li"><p>Plays Sound</p></li><li class="li"><p>Selected</p></li><li class="li"><p>Summary Element</p></li><li class="li"><p>Updates Frequently</p></li><li class="li"><p>Not Enabled</p></li><li class="li"><p>None</p></li></ul><p>In
+element can exhibit, such the ability to play sound. </p>
+<p>
+UI无障碍编程界面定义12个独立的特质，其中某些是可以被组合的。某些特质是通过特定控制类型的行为表述一个元素（如按钮）或者对象类型（如图像）。其它特质通过描述特定元素的展示行为表述元素，如播放声音的功能
+</p><p>You use the following traits to characterize elements in your application:</p>
+<p>
+如下的特质可用于应用中表述元素：
+</p><ul class="ul"><li class="li"><p>Button | 按键</p></li><li class="li"><p>Link | 链接</p></li><li class="li"><p>Search Field | 搜索域</p></li><li class="li"><p>Keyboard Key | 键盘按键</p></li><li class="li"><p>Static Text | 静态文本</p></li><li class="li"><p>Image | 图像</p></li><li class="li"><p>Plays Sound | 播放声音</p></li><li class="li"><p>Selected | 选中</p></li><li class="li"><p>Summary Element | 总结元素</p></li><li class="li"><p>Updates Frequently | 常态更新</p></li><li class="li"><p>Not Enabled | 不可用</p></li><li class="li"><p>None | 空</p></li></ul><p>In
  general, traits that correspond to controls can successfully be 
 combined with traits that describe behaviors. For example, you might 
 combine the Button trait with the Plays Sound trait to characterize a 
 custom control that behaves like a button and plays sound when it is 
-tapped.</p><p>For the most part, you should consider the traits that 
+tapped.</p>
+<p>
+通常，控件相对应特质能够结合描述行为的特质，例如，“按钮”特质可能和“播放音乐”特质用以表述一个自定义控件，其表象是一个按钮，点击即可播放音乐。
+</p><p>For the most part, you should consider the traits that 
 correspond to particular controls, specifically, the Button, Link, 
 Search Field, and Keyboard Key traits, to be mutually exclusive. That 
 is, you should not use more than one of these traits to characterize an 
 element in your application. Instead, think about which one of these 
 four traits corresponds most closely to the element in your application.
  Then, if your element has additional behaviors, you can combine the 
-first trait with one of the behavioral traits.</p><p>For example, 
+first trait with one of the behavioral traits.</p>
+
+<p>
+  大多数情况下，应该考虑特质对应特定控件，尤其是，按钮、链接、搜索域、键盘键的特质，是互斥的。这时，不应该使用超过一个特质去表述应用中的某个元素，如果此元素有其它行为，可以将第一个特质和某一个行为特质结合。
+</p>
+
+<p>For example, 
 suppose you display an image in your application that responds to a 
 user’s tap by opening a link in Safari on iPhone. You could characterize
  this element by combining the Image and Link traits. Another example is
  a keyboard key that modifies other keyboard keys when it is tapped. You
  could characterize this element by combining the Keyboard Key and 
-Selected traits.</p><p>To see some examples of how traits characterize 
+Selected traits.</p>
+
+<p>
+例如，假设显示在您应用中的一个图像，其响应的是，当用户点击时会在iPhone中的Safari打开一个链接，你应该通过结合图像和链接的特质表述该元素。另如，一个键盘键当点击时修改其它键盘键，您应该通过结合键盘键和选中的特质表述该元素。
+</p><p>To see some examples of how traits characterize 
 controls, you can use Accessibility Inspector to see the default traits 
 that are set on the standard controls. For information on how to use 
-Accessibility Inspector, read <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibility_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityiniOSSimulatorwithAccessibilityInspector/TestAccessibilityiniOSSimulatorwithAccessibilityInspector.html#//apple_ref/doc/uid/TP40012619-CH4" data-renderer-version="1" target="_self">Debug Accessibility in iOS Simulator with the Accessibility Inspector</a></span>.</p></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW1" title="Defining Custom Attribute Information in Interface Builder"></a><h3 class="jump">Defining Custom Attribute Information in Interface Builder</h3><p>When
+Accessibility Inspector, read <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibility_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityiniOSSimulatorwithAccessibilityInspector/TestAccessibilityiniOSSimulatorwithAccessibilityInspector.html#//apple_ref/doc/uid/TP40012619-CH4" data-renderer-version="1" target="_self">Debug Accessibility in iOS Simulator with the Accessibility Inspector</a></span>.</p>
+
+<p>
+了解如何表述控件的案例，可以用Accessibility 
+Inspector看在标准控件中已被设定的默认的特质。更多关于如何使用Accessibility 
+Inspector，请参阅“通过Accessibility Inspector在iOS Simulator无障碍排错”。</p></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW1" title="Defining Custom Attribute Information in Interface Builder"></a><h3 class="jump">Defining Custom Attribute Information in Interface Builder | 在Interface Builder中自定义属性信息</h3><p>When
  you install iOS SDK 3.0, you get a version of Interface Builder that 
 includes features that help you make your application accessible. If 
 your application contains standard UIKit controls and views, you might 
-be able to do all your accessibility work in Interface Builder.</p><p>Using
+be able to do all your accessibility work in Interface Builder.</p>
+<p>
+安装iOS SDK 3.0后，您获取的Interface Builder版本包含帮助应用达到无障碍特性的功能。如果应用包含标准UIKit的控件和视图，可通过Interface Builder做所有的无障碍工作。
+</p><p>Using
  Interface Builder, you can set an element’s accessibility status and 
 provide custom content for the label, hint, and traits attributes. To do
  this, select the user interface element in your nib file and open the 
 Identity inspector. Reveal the Accessibility section in the inspector 
-and you should see something like <span class="content_text">Figure 2-1</span>:</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH102-SW13" title="Figure 2-1Default accessibility information for a standard text field, displayed in Interface Builder"></a><figcaption><strong class="caption_number">Figure 2-1</strong>&nbsp;&nbsp;Default accessibility information for a standard text field, displayed in Interface Builder</figcaption><img src="Making_Your_iOS_App_Accessible_files/ax_textfield_ib.png" class="wide-image" alt="" width="689" height="693"><img src="Making_Your_iOS_App_Accessible_files/ax_textfield_ib.png" class="ipad-scaled-image" alt="" width="670" height="673"></figure><p>As you can see in <span class="content_text">Figure 2-1</span>,
+and you should see something like <span class="content_text">Figure 2-1</span>:</p>
+
+
+<p>
+使用Interface 
+Builder，可以设置元素的无障碍状态，并且为标签和特质属性提供自定义内容。为此，在nib文件中选择用户界面元素，并且打开Identity 
+inspector，在inspector中的Accessibility处，应该可以看到如图2-1所示内容：
+</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH102-SW13" title="Figure 2-1Default accessibility information for a standard text field, displayed in Interface Builder"></a><figcaption><strong class="caption_number">Figure 2-1</strong>&nbsp;&nbsp;Default accessibility information for a standard text field, displayed in Interface Builder</figcaption>
+
+<figcaption><strong class="caption_number">图 2-1</strong>&nbsp;&nbsp;显示在Interface Builder中的标准文本域的默认无障碍信息</figcaption><img src="Making_Your_iOS_App_Accessible_files/ax_textfield_ib.png" class="wide-image" alt="" height="693" width="689"><img src="Making_Your_iOS_App_Accessible_files/ax_textfield_ib.png" class="ipad-scaled-image" alt="" height="673" width="670"></figure><p>As you can see in <span class="content_text">Figure 2-1</span>,
  the standard text field used in the nib file is accessible by default 
 and includes default information for the label, hint, and traits 
 attributes. (Note that, for a text field that displays placeholder text,
  the default label is the placeholder text.) You can change any of these
  default values by supplying new information in the Identify inspector, 
-as shown in <span class="content_text">Figure 2-2</span>. (<span class="content_text">Figure 2-2</span> also shows how Accessibility Inspector displays the accessibility information for the text field. See <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibility_2";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityiniOSSimulatorwithAccessibilityInspector/TestAccessibilityiniOSSimulatorwithAccessibilityInspector.html#//apple_ref/doc/uid/TP40012619-CH4" data-renderer-version="1" target="_self">Debug Accessibility in iOS Simulator with the Accessibility Inspector</a></span> to learn about Accessibility Inspector.)</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH102-SW14" title="Figure 2-2Supplying accessibility information in Interface Builder"></a><figcaption><strong class="caption_number">Figure 2-2</strong>&nbsp;&nbsp;Supplying accessibility information in Interface Builder</figcaption><img src="Making_Your_iOS_App_Accessible_files/ax_textfield_hint.png" alt="" width="649" height="658"></figure></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW2" title="Defining Custom Attribute Information Programmatically"></a><h3 class="jump">Defining Custom Attribute Information Programmatically</h3><p>If
+as shown in <span class="content_text">Figure 2-2</span>. (<span class="content_text">Figure 2-2</span> also shows how Accessibility Inspector displays the accessibility information for the text field. See <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibility_2";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityiniOSSimulatorwithAccessibilityInspector/TestAccessibilityiniOSSimulatorwithAccessibilityInspector.html#//apple_ref/doc/uid/TP40012619-CH4" data-renderer-version="1" target="_self">Debug Accessibility in iOS Simulator with the Accessibility Inspector</a></span> to learn about Accessibility Inspector.)</p>
+
+
+<p>
+如图2-1所示，用于nib文件中的标准文本域默认是无障碍的，并且标签、提示、特质的属性中包含默认的信息，（注意，文本域显示占位符文本，默认的标签
+就是占位符文本），在Identify 
+inspector中可以任意提供新的信息改变默认值。如在图2-2所示，（图2-2显示的也是Accessibility 
+Inspector如何显示文本域中的无障碍信息。参阅“通过Accessibility Inspector在iOS 
+Simulator无障碍排错”） 
+</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH102-SW14" title="Figure 2-2Supplying accessibility information in Interface Builder"></a><figcaption><strong class="caption_number">Figure 2-2</strong>&nbsp;&nbsp;Supplying accessibility information in Interface Builder</figcaption>
+
+<figcaption><strong class="caption_number">图 2-2</strong>&nbsp;&nbsp;在Interface Builder中提供无障碍信息</figcaption><img src="Making_Your_iOS_App_Accessible_files/ax_textfield_hint.png" alt="" height="658" width="649"></figure></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW2" title="Defining Custom Attribute Information Programmatically"></a><h3 class="jump">Defining Custom Attribute Information Programmatically | 编程化处理自定义属性信息</h3><p>If
  you prefer, you can supply custom information for attributes 
 programmatically. You might want to do this if you’re not using 
 Interface Builder at all or if you generate your views in code instead 
-of using Interface Builder.</p><p>As described in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_18";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW9" data-renderer-version="1">Make Custom Individual Views Accessible</a></span>,
+of using Interface Builder.</p>
+
+<p>
+如果愿意，你可以通过编程为属性提供自定义信息。如果您完全不用Interface Builder或者更喜欢在代码中生成视图，这可能是您想用的方法。
+</p><p>As described in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_18";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW9" data-renderer-version="1">Make Custom Individual Views Accessible</a></span>,
  you can set accessibility information in the implementation of your 
 view subclass or in the code that instantiates the view. Both techniques
  are valid, but there is one reason why you might want to implement 
@@ -450,48 +524,109 @@ instantiation code: If your view displays data that is dynamic or that
 changes frequently, such as the time of day, you should implement the 
 subclass methods to return fresh data as needed. For those situations, 
 if you only set attributes when you instantiate the subclass, the 
-returned data is likely to be out of date.</p><p>The code snippets in this section build on those in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_19";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW9" data-renderer-version="1">Make Custom Individual Views Accessible</a></span>,
+returned data is likely to be out of date.</p>
+
+<p>
+在“让自定义的独立视图具有无障碍特性”介绍过，您可以在视图子类或是在代码里实例化视图中实现无障碍信息。两种方法都是有效的，但是为什么你可能需要在
+子类中实现属性方法而不是通过代码实例化，有个原因是：如果显示的数据是动态的，或者快速发生变化，如时间，应该根据需要实施子类方法返回刷新数据。这些
+情况下，如果仅设置属性，当您实例化子类，返回的数据可能是过期的。
+</p><p>The code snippets in this section build on those in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_19";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW9" data-renderer-version="1">Make Custom Individual Views Accessible</a></span>,
  by including some of the attribute-specific methods. For example, if 
 you want to implement accessibility methods in your subclass, you would 
-write code similar to that in <span class="content_text">Listing 2-2</span>.</p><a name="//apple_ref/doc/uid/TP40008785-CH102-SW15" title="Listing 2-2Providing attribute information in a custom subclass implementation"></a><p class="codesample clear"><strong class="caption_number">Listing 2-2</strong>&nbsp;&nbsp;Providing attribute information in a custom subclass implementation</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomView<span></span></pre></td></tr><tr><td scope="row"><pre>- (BOOL)isAccessibilityElement<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return YES;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return NSLocalizedString(@"MyCustomView.label", nil);<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>/* This custom view behaves like a button. */<span></span></pre></td></tr><tr><td scope="row"><pre>- (UIAccessibilityTraits)accessibilityTraits<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return UIAccessibilityTraitButton;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityHint<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return NSLocalizedString(@"MyCustomView.hint", nil);<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div><p>If you want to use the property-setting methods of the <code>UIAccessibility</code> protocol in the code that instantiates your custom view, you can write code similar to that in <span class="content_text">Listing 2-3</span>.</p><a name="//apple_ref/doc/uid/TP40008785-CH102-SW16" title="Listing 2-3Providing attribute information in the code that instantiates a custom subclass object"></a><p class="codesample clear"><strong class="caption_number">Listing 2-3</strong>&nbsp;&nbsp;Providing attribute information in the code that instantiates a custom subclass object</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomViewController<span></span></pre></td></tr><tr><td scope="row"><pre>- (id)init<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; _view = [[MyCustomView alloc] initWithFrame:CGRectZero];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; [_view setIsAccessibilityElement:YES];<span></span></pre></td></tr><tr><td scope="row"><pre>  [_view setAccessibilityTraits:UIAccessibilityTraitButton];<span></span></pre></td></tr><tr><td scope="row"><pre>  [_view setAccessibilityLabel:NSLocalizedString(@"view.label", nil)];<span></span></pre></td></tr><tr><td scope="row"><pre>  [_view setAccessibilityHint:NSLocalizedString(@"view.hint", nil)];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr></tbody></table></div></section></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW3" title="Enhance the Accessibility of Table Views"></a><h2 class="jump">Enhance the Accessibility of Table Views</h2><p>If
+write code similar to that in <span class="content_text">Listing 2-2</span>.</p>
+
+
+<p>
+此章节的代码片段是基于“让自定义的独立视图具有无障碍特性”，包含一些属性特有的方法。例如：如果你想在子类中实现无障碍方法，您将写类似表2-2的代码：
+  
+ 
+</p><a name="//apple_ref/doc/uid/TP40008785-CH102-SW15" title="Listing 2-2Providing attribute information in a custom subclass implementation"></a><p class="codesample clear"><strong class="caption_number">Listing 2-2</strong>&nbsp;&nbsp;Providing attribute information in a custom subclass implementation</p>
+
+
+<p class="codesample clear"><strong class="caption_number">表 2-2</strong>&nbsp;&nbsp;在自定义子类实施中提供属性信息</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomView<span></span></pre></td></tr><tr><td scope="row"><pre>- (BOOL)isAccessibilityElement<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return YES;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return NSLocalizedString(@"MyCustomView.label", nil);<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>/* This custom view behaves like a button. */<span></span></pre></td></tr><tr><td scope="row"><pre>- (UIAccessibilityTraits)accessibilityTraits<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return UIAccessibilityTraitButton;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityHint<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   return NSLocalizedString(@"MyCustomView.hint", nil);<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div><p>If you want to use the property-setting methods of the <code>UIAccessibility</code> protocol in the code that instantiates your custom view, you can write code similar to that in <span class="content_text">Listing 2-3</span>.</p>
+
+<p>
+如果您要在代码中用<code>UIAccessibility</code>协议的属性设定方法，实例化自定义的视图，您将写类似于表2-3中的代码。
+</p><a name="//apple_ref/doc/uid/TP40008785-CH102-SW16" title="Listing 2-3Providing attribute information in the code that instantiates a custom subclass object"></a><p class="codesample clear"><strong class="caption_number">Listing 2-3</strong>&nbsp;&nbsp;Providing attribute information in the code that instantiates a custom subclass object</p>
+
+
+<p class="codesample clear"><strong class="caption_number">表 2-3</strong>&nbsp;&nbsp;在代码中提供属性信息，实例化自定义 的子类对象</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation MyCustomViewController<span></span></pre></td></tr><tr><td scope="row"><pre>- (id)init<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; _view = [[MyCustomView alloc] initWithFrame:CGRectZero];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>&nbsp; [_view setIsAccessibilityElement:YES];<span></span></pre></td></tr><tr><td scope="row"><pre>  [_view setAccessibilityTraits:UIAccessibilityTraitButton];<span></span></pre></td></tr><tr><td scope="row"><pre>  [_view setAccessibilityLabel:NSLocalizedString(@"view.label", nil)];<span></span></pre></td></tr><tr><td scope="row"><pre>  [_view setAccessibilityHint:NSLocalizedString(@"view.hint", nil)];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr></tbody></table></div></section></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW3" title="Enhance the Accessibility of Table Views"></a><h2 class="jump">Enhance the Accessibility of Table Views | 优化表格视图无障碍特性</h2><p>If
  your application displays a table view in which each cell contains 
 items other than (or in addition to) text, there are a few things you 
 can do to make it more accessible. Similarly, if your table view 
 displays more than one piece of information per row, you can enhance a 
 VoiceOver user’s experience by aggregating the information in a single, 
-easy-to-understand label.</p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW24" title="Note"></a><p><strong>Note:</strong>&nbsp;If
+easy-to-understand label.</p>
+<p>
+如果应用中展示了一个表格，它的每个单元格中包含非文本（或者是除了文本）的内容，可做某些事，让它更具加无障碍。同样地，如果表格视图中每行展示的信息不止一条，那可以把这些信息聚合到一条易于理解标签中，以优化VoiceOver用户体验。
+</p>
+<div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW24" title="Note"></a><p><strong>Note:</strong>&nbsp;If
  your table cells contain any of the standard table-view elements, such 
 as the disclosure indicator, detail disclosure button, or delete 
 control, you do not have to do anything to make these elements 
 accessible. If, however, your table cells include other types of 
 controls, such as a switch or a slider, you need to make sure that these
- elements are appropriately accessible.</p><p></p></aside></div><p>If 
+ elements are appropriately accessible.</p>
+
+<p>
+注意：如果你的表格单元中包含任何的标准表格视图元素，比如信息展示器、详细信息展示按钮、删除控件，您不需要做任何事就能让这些元素具有无障碍特性。但是如果你的表格单元包括其它控件类型，比如一个开关或者滑动条，需要确认这些元素有恰当的无障碍特性。
+</p><p></p></aside></div><p>If 
 the table cells in your application contain a mix of different elements,
  determine whether users interact with each cell as a unit, or with 
 individual elements inside the cell. If users need to access individual 
-elements inside the cell, you should:</p><ul class="ul"><li class="li"><p>Make each individual element accessible separately.</p></li><li class="li"><p>Make sure the table cell itself is <em>not</em> accessible.</p></li><li class="li"><p>Succinctly
+elements inside the cell, you should:</p>
+
+<p>
+如果应用中的表格单元混合了的不同元素，检查用户交互是与单元还是与单元里的独立元素。如果用户需要访问单元里的独立元素，您应该：
+</p><ul class="ul"><li class="li"><p>Make each individual element accessible separately.</p>
+<p>使每个独立元素具有分离的无障碍特性。</p></li><li class="li"><p>Make sure the table cell itself is <em>not</em> accessible.</p>
+
+<p>
+确保表格单元自己<em>不具有</em>无障碍特性。
+</p></li><li class="li"><p>Succinctly
  describe the overall contents of the cell and use this description for 
 the label attribute of the cell. Note that, in this case, the label is 
-considered to be one of the accessible elements within the cell.</p></li></ul><p>You’ve
+considered to be one of the accessible elements within the cell.</p>
+
+<p>
+简要介绍单元格中的全局内容，用此介绍做为单元格的属性标签。注意，此案例中，标签被视为单元格中无障碍元素。
+</p></li></ul><p>You’ve
  probably recognized that a table cell that contains multiple items, 
 such as text and controls, fits the criteria of a container view, as 
 defined by the UI Accessibility programming interface. However, you do 
 not have to identify the cell as a container view or implement any of 
-the methods of the <code>UIAccessibilityContainer</code> protocol, because the table cell is automatically designated as a container.</p><p>If
+the methods of the <code>UIAccessibilityContainer</code> protocol, because the table cell is automatically designated as a container.</p>
+<p>
+您可能已经意识到表格单元中可能会包含多个项，如文本和控件，被UI无障碍编程接口所定义，匹配容器视图的标准。然而，您不必定义单元格做为容器视图，或者实施 <code>UIAccessibilityContainer</code>协议中的任何方法，因为表格单元是自动被指派为一个容器的。
+</p><p>If
  your table contains cells that provide information in discrete chunks, 
 you should consider combining the information from these chunks in the 
 label attribute. When you do this, VoiceOver users can get the meaning 
 of the cell’s contents with one gesture, instead of having to access 
-each piece of information separately. </p><p>A good example of how this 
+each piece of information separately. </p>
+
+<p>如果表格包含在离散组块中提供信息的单元格，您应该考虑从这些在标签属性的组块中结合信息。当您做这个是，VoiceOver用户使用一个手势获取单元格的意义，而不需要访问每个独立块中的信息。
+</p>
+<p>A good example of how this 
 can work is in the built-in Stocks application. Instead of providing the
  company name, current stock price, and change in price as separate 
 strings, Stocks combines this information in the label, which might 
 sound like this: “Apple Inc., $432.39, up 1.3%." Notice the commas in 
 this label. When you combine discrete pieces of information in this way,
  you can use commas to tell VoiceOver to pause briefly between phrases, 
-making it easier for users to understand the information.</p><p>Here’s a
+making it easier for users to understand the information.</p>
+
+<p>
+这个的工作原理用一个好例子解释，就是内建的股票应用。它不是用单独字符串去提供公司名、当前股票价格和价格波动，而是组合到一个标签中，这样听起来类
+似：“苹果公司，432.39美元，涨幅1.3%。”。注意标签中的逗号，当结合多个片段的时候，可以使用逗号， 
+这样VoiceOver就会在每个逗号短暂停留，让用户更容易理解信息。
+</p><p>Here’s a
  code snippet that shows how to combine the information in the labels of
- two separate elements into a single label that describes both:</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation CurrentWeather<span></span></pre></td></tr><tr><td scope="row"><pre>/* This is a view that provides weather information. It contains a city subview and a temperature subview, each of which provides a separate label. */<span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>    NSString *weatherCityLabel = [self.weatherCity accessibilityLabel];<span></span></pre></td></tr><tr><td scope="row"><pre>    NSString *weatherTempLabel = [self.weatherTemp accessibilityLabel];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>    /* Combine the city and temperature information so that VoiceOver users can get the weather information with one gesture. */<span></span></pre></td></tr><tr><td scope="row"><pre>    return [NSString stringWithFormat:@"%@, %@", weatherCityLabel, weatherTempLabel];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW25" title="Make Dynamic Elements Accessible"></a><h2 class="jump">Make Dynamic Elements Accessible</h2><p>If
+ two separate elements into a single label that describes both:</p>
+
+<p>
+此处的代码片段展示了如何组织两个单独元素中的信息到一个单独标签：
+</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation CurrentWeather<span></span></pre></td></tr><tr><td scope="row"><pre>/* This is a view that provides weather information. It contains a city subview and a temperature subview, each of which provides a separate label. */<span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>    NSString *weatherCityLabel = [self.weatherCity accessibilityLabel];<span></span></pre></td></tr><tr><td scope="row"><pre>    NSString *weatherTempLabel = [self.weatherTemp accessibilityLabel];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>    /* Combine the city and temperature information so that VoiceOver users can get the weather information with one gesture. */<span></span></pre></td></tr><tr><td scope="row"><pre>    return [NSString stringWithFormat:@"%@, %@", weatherCityLabel, weatherTempLabel];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW25" title="Make Dynamic Elements Accessible"></a><h2 class="jump">Make Dynamic Elements Accessible | 让动态元素具有无障碍特性</h2><p>If
  user interface elements in your application can change dynamically, you
  need to make sure that the accessibility information they supply is 
 accurate and up-to-date. You also need to send notifications when 
@@ -499,13 +634,26 @@ changes occur in the layout of application screens, so that VoiceOver
 can help users navigate the new layout. The UI Accessibility programming
  interface provides two notification types you can use when these kinds 
 of changes occur on the screen. (To learn about these notifications, see
- "Notifications” in <em><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibility_Protocol/in_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibility_Protocol/index.html#//apple_ref/doc/uid/TP40008786" data-renderer-version="2" target="_self">UIAccessibility Protocol Reference</a></em>.)</p><p>If
+ "Notifications” in <em><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibility_Protocol/in_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibility_Protocol/index.html#//apple_ref/doc/uid/TP40008786" data-renderer-version="2" target="_self">UIAccessibility Protocol Reference</a></em>.)</p>
+
+<p>
+如果您的应用中界面元素能够动态改变，您需要确认它们使用的无障碍信息准确及时的。当应用的屏幕改变发生时，您需要送一个通知，这样VoiceOver能
+够帮助用户导航新布局。UI无障碍编程界面提供两个通知类型，当这类事件发生时，可以被使用。（了解这些通知，请在“UIAccessibility协议
+参考”中的通知）
+</p><p>If
  user interface elements can be in different states depending on other 
 conditions in your application, you need to add logic to your code that 
 returns the correct accessibility information for each state an element 
 can be in. Because these changes can occur as the result of user 
 actions, it’s best to add this logic to a subclass’s implementation, not
- to the code that instantiates the subclass.</p><p>The following code 
+ to the code that instantiates the subclass.</p>
+
+<p>
+如果用户界面元素可以有不同的状态，那你需要在代码中返回所有状态对应的无障碍信息。由于这些改变在用户的动作发生 后发生，所以最好把实现添加到子类中而不是实例化子类的代码中。
+  
+</p>
+
+<p>The following code 
 shows how to handle dynamic state changes and how to send a notification
  when a screen layout changes. The code represents the implementation of
  a <code>UIView</code> subclass that behaves like a custom keyboard key.
@@ -513,18 +661,36 @@ shows how to handle dynamic state changes and how to send a notification
  represents a letter or other type of character, and on whether a shift 
 key is currently selected. The key also returns different accessibility 
 traits, depending on what type of keyboard key it represents and whether
- it is currently selected. Note that the code in <span class="content_text">Listing 2-4</span> assumes that there are a number of methods that query the state of the keyboard.</p><a name="//apple_ref/doc/uid/TP40008785-CH102-SW12" title="Listing 2-4Returning the correct accessibility information for the current conditions and sending a layout-change notification"></a><p class="codesample clear"><strong class="caption_number">Listing 2-4</strong>&nbsp;&nbsp;Returning the correct accessibility information for the current conditions and sending a layout-change notification</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation BigKey<span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   NSString *keyLabel = [_keyLabel accessibilityLabel];<span></span></pre></td></tr><tr><td scope="row"><pre>   if ( [self isLetterKey] )<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>      if ( [self isShifted] )<span></span></pre></td></tr><tr><td scope="row"><pre>      {<span></span></pre></td></tr><tr><td scope="row"><pre>         return [keyLabel uppercaseString];<span></span></pre></td></tr><tr><td scope="row"><pre>      }<span></span></pre></td></tr><tr><td scope="row"><pre>      else<span></span></pre></td></tr><tr><td scope="row"><pre>      {<span></span></pre></td></tr><tr><td scope="row"><pre>         return [keyLabel lowercaseString];<span></span></pre></td></tr><tr><td scope="row"><pre>      }<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre>   else<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      return keyLabel;<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (UIAccessibilityTraits)accessibilityTraits<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   UIAccessibilityTraits traits = [super accessibilityTraits] | UIAccessibilityTraitKeyboardKey;<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   /* If this is the shift key and it's selected, users need to know that shift is currently in effect. */<span></span></pre></td></tr><tr><td scope="row"><pre>   if ( [self isShiftKey] &amp;&amp; [self isSelected] )<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      traits |= UIAccessibilityTraitSelected;<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   return traits;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (void)keyboardChangedToNumbers<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   /* Code to perform the change to a number keyboard here. */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   /* Send a notification of this change to the screen layout. */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW26" title="Make Nontextual Data Accessible"></a><h2 class="jump">Make Nontextual Data Accessible</h2><p>Sometimes
+ it is currently selected. Note that the code in <span class="content_text">Listing 2-4</span> assumes that there are a number of methods that query the state of the keyboard.</p>
+
+
+<p>
+下面的代码展示了如何处理动态状态的改变以及如何在屏幕布局发生改变的时候发送通知。代码中的UIView子类的行为类似 
+一个自定义键盘按键。按键的无障碍标签会根据实例的内容进行改变，并且会根据shift键是否按下进行改变。按键也会根据 
+实例内容和是否被选中返回不同的无障碍特性。注意，下面的代码假设会有许多方法查询键盘的状态：
+</p><a name="//apple_ref/doc/uid/TP40008785-CH102-SW12" title="Listing 2-4Returning the correct accessibility information for the current conditions and sending a layout-change notification"></a><p class="codesample clear"><strong class="caption_number">Listing 2-4</strong>&nbsp;&nbsp;Returning the correct accessibility information for the current conditions and sending a layout-change notification</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation BigKey<span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   NSString *keyLabel = [_keyLabel accessibilityLabel];<span></span></pre></td></tr><tr><td scope="row"><pre>   if ( [self isLetterKey] )<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>      if ( [self isShifted] )<span></span></pre></td></tr><tr><td scope="row"><pre>      {<span></span></pre></td></tr><tr><td scope="row"><pre>         return [keyLabel uppercaseString];<span></span></pre></td></tr><tr><td scope="row"><pre>      }<span></span></pre></td></tr><tr><td scope="row"><pre>      else<span></span></pre></td></tr><tr><td scope="row"><pre>      {<span></span></pre></td></tr><tr><td scope="row"><pre>         return [keyLabel lowercaseString];<span></span></pre></td></tr><tr><td scope="row"><pre>      }<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre>   else<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      return keyLabel;<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (UIAccessibilityTraits)accessibilityTraits<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   UIAccessibilityTraits traits = [super accessibilityTraits] | UIAccessibilityTraitKeyboardKey;<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   /* If this is the shift key and it's selected, users need to know that shift is currently in effect. */<span></span></pre></td></tr><tr><td scope="row"><pre>   if ( [self isShiftKey] &amp;&amp; [self isSelected] )<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      traits |= UIAccessibilityTraitSelected;<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   return traits;<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (void)keyboardChangedToNumbers<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   /* Code to perform the change to a number keyboard here. */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   /* Send a notification of this change to the screen layout. */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW26" title="Make Nontextual Data Accessible"></a><h2 class="jump">Make Nontextual Data Accessible | 让非文本数据具有无障碍特性</h2><p>Sometimes
  your application displays data that’s not automatically compatible with
  the way accessibility works. For example, if you display an image, you 
 should provide a description of it in its accessibility label so that 
 VoiceOver users can understand the information the image conveys. Or, if
  you provide information in a graphical way, such as a rating system 
 that displays stars, you should make sure the accessibility label 
-conveys the meaning behind the graphical representation.</p><p>The 
+conveys the meaning behind the graphical representation.</p>
+
+<p>
+有时应用会展示那些不是自动兼容无障碍方法的数据，比如，显示一个图像，应该在它的无障碍标签中提供它的介绍这，这样VoiceOver用户就可以理解图像传达的信息。或者如果通过图形方式提供形象，比如显示星级的评价系统，应该确认无障碍标签传达了图形所表达的意思。
+
+</p><p>The 
 following code snippet uses the example of a custom view that draws the 
 number of stars that corresponds to the rating of an item. The code 
 shows how this view returns an appropriate accessibility label, 
-depending on how many stars it draws.</p><div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation RatingView<span></span></pre></td></tr><tr><td scope="row"><pre>/* Other subclass implementation code here. */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   /* _starCount is an instance variable that contains how many stars to draw. */<span></span></pre></td></tr><tr><td scope="row"><pre>   NSInteger starCount = _starCount;<span></span></pre></td></tr><tr><td scope="row"><pre>   if ( starCount == 1 )<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      ratingString = NSLocalizedString(@"rating.singular.label", nil); // here, ratingString is "star"<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre>   else<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      ratingString = NSLocalizedString(@"rating.plural.label", nil); // here, ratingString is "stars"<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   return [NSString stringWithFormat:@"%d %@", starCount, ratingString];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div></section>
+depending on how many stars it draws.</p>
+
+<p>
+如下的代码段，示范了一个无障碍视图，通过绘制的星星数量对应评价项。代码显示视图如何通过绘制的星星数量返回一个恰当的无障碍标签。
+</p>
+
+<div class="codesample clear"><table><tbody><tr><td scope="row"><pre>@implementation RatingView<span></span></pre></td></tr><tr><td scope="row"><pre>/* Other subclass implementation code here. */<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>- (NSString *)accessibilityLabel<span></span></pre></td></tr><tr><td scope="row"><pre>{<span></span></pre></td></tr><tr><td scope="row"><pre>   /* _starCount is an instance variable that contains how many stars to draw. */<span></span></pre></td></tr><tr><td scope="row"><pre>   NSInteger starCount = _starCount;<span></span></pre></td></tr><tr><td scope="row"><pre>   if ( starCount == 1 )<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      ratingString = NSLocalizedString(@"rating.singular.label", nil); // here, ratingString is "star"<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre>   else<span></span></pre></td></tr><tr><td scope="row"><pre>   {<span></span></pre></td></tr><tr><td scope="row"><pre>      ratingString = NSLocalizedString(@"rating.plural.label", nil); // here, ratingString is "stars"<span></span></pre></td></tr><tr><td scope="row"><pre>   }<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>   return [NSString stringWithFormat:@"%d %@", starCount, ratingString];<span></span></pre></td></tr><tr><td scope="row"><pre>}<span></span></pre></td></tr><tr><td scope="row"><pre>@end<span></span></pre></td></tr></tbody></table></div></section>
         <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
             <a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_20";return this.s_oc?this.s_oc(e):true' class="nextLink" rel="next" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/RevisionHistory.html">Next</a><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_21";return this.s_oc?this.s_oc(e):true' class="previousLink" rel="prev" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html">Previous</a>
         </div><br>
