@@ -103,10 +103,9 @@ fonts in Mail, and zooming in webpages, photos, and maps. With the
 addition of the following accessibility features, it’s even easier for 
 people with visual, auditory, and physical disabilities to use their 
 devices:</p>
-<p>一直以来，基于iOS的设备就包含了几项能够帮助所有人简单使用其设备的特性。包括可视化的语音邮件，邮件中的大字体，网页、照片、地图的缩放。当前如下的无障碍特性，更加方便了有视碍、听碍、肢体残障的人士使用他们的设备。
-
-</p><ul class="ul"><li class="li"><p>Zoom. Magnifies the entire device screen.</p> <p>缩放：放大整个设备屏幕。</p></li><li class="li"><p>White on Black. Inverts the colors on the display.</p><p>黑底白色：可转换屏幕上的颜色。 </p></li><li class="li"><p>Mono Audio. Combines the sound of the left and right channels into a mono signal played on both sides.</p><p> 单声道音频：把左右声道混合成一个单声道信号，可在分别在两边播放。 </p></li><li class="li"><p>Speak Auto-text. Speaks the text corrections and suggestions iPhone makes while users type.</p><p>朗读自动文本：当用户在iPhone中打字时，朗读文本纠错与候选建议</p></li><li class="li"><p>Voice Control. Allows users to make phone calls and control iPod playback using voice commands.</p><p>语音控制：允许用户通过语音命令拨打电话和控制iPod回放。
-</p></li></ul><p>In addition, visually impaired users can rely on VoiceOver to help them use their devices. </p><p>此外，视力损伤用户能够依赖VoiceOver辅助使用其设备。</p><section><a name="//apple_ref/doc/uid/TP40008785-CH100-SW3" title="Accessibility and VoiceOver"></a><h2 class="jump">Accessibility and VoiceOver | 无障碍特性和VoiceOver</h2><p>VoiceOver
+<p>从一开始iOS的设备就包含了几个特性，能够帮助所有人简单使用设备。包括可视化的语音邮件、邮件中的大字体，以及网页、照片、地图的缩放。当前如下的无障碍特性，更加方便了有视碍、听碍、肢体残障的人士使用他们的设备。
+</p><ul class="ul"><li class="li"><p>Zoom. Magnifies the entire device screen.</p> <p>缩放：放大整个设备屏幕。</p></li><li class="li"><p>White on Black. Inverts the colors on the display.</p><p>黑底白色：可转换屏幕上的颜色。 </p></li><li class="li"><p>Mono Audio. Combines the sound of the left and right channels into a mono signal played on both sides.</p><p> 单声道音频：把左右声道混合成一个单声道信号，可以分别在两边播放。 </p></li><li class="li"><p>Speak Auto-text. Speaks the text corrections and suggestions iPhone makes while users type.</p><p>朗读自动文本：当用户在iPhone中打字时，朗读文本纠错与候选建议</p></li><li class="li"><p>Voice Control. Allows users to make phone calls and control iPod playback using voice commands.</p><p>语音控制：允许用户通过语音命令拨打电话和控制iPod回放。
+</p></li></ul><p>In addition, visually impaired users can rely on VoiceOver to help them use their devices. </p><p>此外，视力障碍用户能够依赖VoiceOver辅助其使用设备。</p><section><a name="//apple_ref/doc/uid/TP40008785-CH100-SW3" title="Accessibility and VoiceOver"></a><h2 class="jump">Accessibility and VoiceOver | 无障碍特性和VoiceOver</h2><p>VoiceOver
  is Apple’s innovative screen-reading technology, which gives users 
 control over their devices without having to see the screen. VoiceOver 
 does this by acting as an intermediary between an application's user 
@@ -117,12 +116,12 @@ phone number, because VoiceOver tells them where they are in the user
 interface, what actions they can take, and what the results of those 
 actions will be.</p><p>VoiceOver是苹果公司创新性的读屏技术，通过该技术，用户可以无需观看屏幕就完全控制其设备。
 VoiceOver在应用中的用户界面与用户触控之间充当媒介，通过音频描述了应用中的元素与行为。当VoiceOver激活时，用户不用担心意外地删除
-了联系人或者拨打了电话，因为VoiceOver会告知用户其所处的用户界面位置，他们可以如何操作，以及该操作会导致的结果。
+了联系人或者拨打了电话，因为VoiceOver会告知用户在用户界面所处的位置、可以如何操作，以及该操作会导致的结果。
 </p><p>An application is accessible when all user
  interface elements with which users can interact are accessible. A user
  interface element is accessible when it properly reports itself as an 
 accessibility element. </p>
-<p>当一个应用中所有的用户界面元素能够无障碍地交互，该应用是无障碍的。当一个界面元素恰当地告知用户它是无障碍的元素，该界面元素是无障碍的。
+<p>当一个应用中所有的用户界面元素可以和用户交互，该应用是无障碍的。当一个界面元素恰当地告知用户它是无障碍元素，该界面元素是可访问的。
 </p><p>To be useful, however, an accessible user 
 interface element must provide accurate and helpful information about 
 its screen position, name, behavior, value, and type. This is the 
@@ -131,28 +130,28 @@ programming interface and tools that help you ensure that the user
 interface elements in your application are both accessible and useful 
 (for more information, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_4";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH100-SW2" data-renderer-version="1">iOS Accessibility API and Tools</a></span>).</p>
 <p>
-以上都是关键，但是，一个无障碍的用户界面元素还必须准确、有效地提供其信息，包括屏幕位置、名称、行为、值和类型。这些信息将被VoiceOver朗读
-给用户。iOS SDK包含了一个编程接口和工具，帮助您确认应用中的用户界面元素是无障碍及可用的 （相关信息请参阅“iOS无障碍API与工具”）。
+但是，要想做到有效，一个无障碍的用户界面元素还必须提供准确有效的信息，包括屏幕位置、名称、行为、值和类型。这些信息将被VoiceOver朗读
+给用户。iOS SDK包含了一个编程接口和工具，帮助您确认应用中的用户界面元素是可访问及可用的 （相关信息请参阅“iOS无障碍API与工具”）。
 
-</p></section><section><a name="//apple_ref/doc/uid/TP40008785-CH100-SW4" title="Why You Should Make Your App Accessible"></a><h2 class="jump">Why You Should Make Your App Accessible | 为什么您应该打造应用的无障碍特性</h2><p>You should make your iPhone application accessible to VoiceOver users because:</p>
+</p></section><section><a name="//apple_ref/doc/uid/TP40008785-CH100-SW4" title="Why You Should Make Your App Accessible"></a><h2 class="jump">Why You Should Make Your App Accessible | 为什么您应该构建应用的无障碍特性</h2><p>You should make your iPhone application accessible to VoiceOver users because:</p>
 <p>您应该让您的iPhone应用可以被VoiceOver用户无障碍使用，因为：
 </p>
 <ul class="ul"><li class="li"><p>It
  increases your user base. You've worked hard to create a great 
 application; don’t miss the opportunity to make it available to even 
 more users.</p>
-<p>它能增加您的用户基数。您已经非常努力的创建了很好的应用，这是一个好机会让它被更多用户使用。
+<p>它能增加您的用户基数。您已经非常努力地创建了伟大应用，这是一个好机会让它被更多用户使用。
 </p>
 </li><li class="li"><p>It allows people to use your 
 application without seeing the screen. Users with visual impairments can
  use your application with the help of VoiceOver.</p>
-<p>允许用户在不看屏幕的场景下使用您的应用。视力损伤用户在VoiceOver的帮助能够使用您的应用。
+<p>允许用户在不看屏幕的场景下使用您的应用。视力损伤用户在VoiceOver的帮助下，能够使用您的应用。
 </p>
 </li><li class="li"><p>It
  helps you address accessibility guidelines. Various governing bodies 
 create guidelines for accessibility and making your iPhone application 
 accessible to VoiceOver users can help you meet them.</p>
-<p>有助于您跟踪无障碍准则。许多管理部门开发了无障碍规范，让您的iPhone应用能被VoiceOver用户访问，有助于您符合规范。 
+<p>有助于您跟踪无障碍准则。许多管理部门开发了无障碍规范，让您的iPhone应用能被VoiceOver用户访问，有助于符合规范。 
 </p></li><li class="li"><p>It's the right thing to do.</p>
 <p>这是正确的做法。
 </p></li></ul><p>It’s
@@ -161,14 +160,14 @@ your ability to innovate and create beautiful iPhone applications. The
 UI Accessibility programming interface allows you to add a thin layer of
  functionality that does not alter your application’s appearance, or 
 interfere with its main logic.</p>
-<p>重要提示：支持无障碍并不会影响您在iPhone应用上的创新，UI无障碍编程接口允许您加入轻量经的功能层，但不会改变应用的外观，或者干涉其主要逻辑。
-</p></section><section><a name="//apple_ref/doc/uid/TP40008785-CH100-SW2" title="iOS Accessibility API and Tools"></a><h2 class="jump">iOS Accessibility API and Tools | iOS无障碍API及工具</h2><p>iOS
+<p>重要的是要知道：支持无障碍并不会影响您在iPhone应用上的创新，UI无障碍编程接口允许您加入轻量经的功能层，但不会改变应用的外观，或者干扰其主要逻辑。
+</p></section><section><a name="//apple_ref/doc/uid/TP40008785-CH100-SW2" title="iOS Accessibility API and Tools"></a><h2 class="jump">iOS Accessibility API and Tools | iOS的无障碍API及工具</h2><p>iOS
  3.0 and later includes the UI Accessibility programming interface, 
 which is a lightweight API that helps an application provide all the 
 information VoiceOver needs to describe the user interface and help 
 visually impaired people use the application.</p>
 <p>
-iOS 3.0及之后的版本包含了UI无障碍编程接口，这个轻量级的API可以让应用提供所有VoiceOver需要的信息，让其描述用户界面，以帮助视力损伤人群使用应用。  
+iOS 3.0及之后的版本包含了UI无障碍编程接口，这个轻量级的API可以让VoiceOve从一个应用中提取所需要的信息，用以描述用户界面，帮助视力障碍用户使用应用。  
 </p><p>The UI Accessibility
  programming interface is part of UIKit and is implemented on standard 
 UIKit controls and views by default. This means that, when you use 
@@ -194,26 +193,26 @@ your application’s user interface and allows you to verify this
 information when you run your application in iOS Simulator. To learn how
  to examine the accessibility information in your application, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibility_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityiniOSSimulatorwithAccessibilityInspector/TestAccessibilityiniOSSimulatorwithAccessibilityInspector.html#//apple_ref/doc/uid/TP40012619-CH4" data-renderer-version="1" target="_self">Debug Accessibility in iOS Simulator with the Accessibility Inspector</a></span>.</p>
 <p>
-Accessibility Inspector可以显示那些嵌入到您的应用用户界面中的无障碍信息，并且允许您在iOS Simulator中运行应用以验证这些信
-息。了解如何检验应用中的无障碍信息，请看“在iOS模拟器中使用Accessibility Inspector来除错”。
+在应用里，那些嵌入在用户界面中的无障碍信息，可以在Accessibility Inspector中显示，并且允许您运行iOS Simulator以验证这些信
+息。了解如何检验应用中的无障碍信息，请看“在iOS模拟器中使用Accessibility Inspector调试无障碍特性”。
 
 </p></li></ul><p>In
  addition, you can use VoiceOver itself to test the accessibility of 
 your application. To learn how to test your application with VoiceOver, 
 see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibility_2";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html#//apple_ref/doc/uid/TP40012619-CH3" data-renderer-version="1" target="_self">Test Accessibility on Your Device with VoiceOver</a></span>.</p>
-<p>此外，您可以使用VoiceOver测试您应用的无障碍特性。了解如何使用VoiceOver测试您的应用，请看“通过您设备的VoiceOver测试无障碍”
+<p>另外，您可以使用VoiceOver测试您应用的无障碍特性。了解如何使用VoiceOver测试您的应用，请看“通过您设备的VoiceOver测试无障碍特性”。
 </p>
-<section><a name="//apple_ref/doc/uid/TP40008785-CH100-SW6" title="The UI Accessibility Programming Interface"></a><h3 class="jump">The UI Accessibility Programming Interface | UI无障碍编程接口 可能翻译的有问题</h3><p>The
+<section><a name="//apple_ref/doc/uid/TP40008785-CH100-SW6" title="The UI Accessibility Programming Interface"></a><h3 class="jump">The UI Accessibility Programming Interface | UI无障碍编程接口</h3><p>The
  UI Accessibility programming interface consists of two informal 
 protocols, one class, a function, and a handful of constants:</p>
 <p>
-UI无障碍编程接口是由两个非正式协议，一个类，一个函数，和少数常量构成。
+UI无障碍编程接口是由两个非正式协议、一个类、一个函数，以及少数常量构成。
 </p><ul class="ul"><li class="li"><p>The <code>UIAccessibility</code> informal protocol. Objects that implement the <code>UIAccessibility</code>
  protocol report their accessibility status (that is, whether they are 
 accessible) and supply descriptive information about themselves. 
 Standard UIKit controls and views implement the <code>UIAccessibility</code> protocol by default.</p>
 
-<p> <code>UIAccessibility</code>非正式协议：实现 <code>UIAccessibility</code>协议的对象可以报告无障碍状态（即他们是否是无障碍的）并且提供关于其描述性信息。 <code>UIAccessibility</code>协议默认由标准UIKit控件和视图实现。 </p></li><li class="li"><p>The <code>UIAccessibilityContainer</code> informal protocol. This protocol allows a subclass of <code>UIView</code>
+<p> <code>UIAccessibility</code>非正式协议：执行 <code>UIAccessibility</code>协议的对象，可以报告无障碍状态（即他们是否是可访问的），并且提供其自身的描述信息。 标准UIKit控件和视图默认已执行了<code>UIAccessibility</code>协议。 </p></li><li class="li"><p>The <code>UIAccessibilityContainer</code> informal protocol. This protocol allows a subclass of <code>UIView</code>
  to make some or all of the objects it contains accessible as separate 
 elements. This is particularly useful when the objects contained in such
  a view are not themselves subclasses of <code>UIView</code> and, for this reason, are not automatically accessible.</p>
@@ -299,7 +298,7 @@ provide a hint. </p>
  contents depends on user input and is usually of the form 
 “username@address.” <span class="content_text">Figure 1-1</span> shows some of the information VoiceOver might provide.</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH100-SW5" title="Figure 1-1VoiceOver speaks the information provided by accessible elements"></a><figcaption><strong class="caption_number">Figure 1-1</strong>&nbsp;&nbsp;VoiceOver speaks the information provided by accessible elements</figcaption>
 
-<figcaption><strong class="caption_number">图 1-1</strong>&nbsp;&nbsp;VoiceOver朗读由无障碍原素提供的信息</figcaption><img src="Understanding_Accessibility_on_iOS_files/iphoneax_axinfo_2x.png" class="wide-image" alt="" width="670" height="515"><img src="Understanding_Accessibility_on_iOS_files/iphoneax_axinfo_2x.png" class="ipad-scaled-image" alt="" width="670" height="515"></figure><p>VoiceOver
+<figcaption><strong class="caption_number">图 1-1</strong>&nbsp;&nbsp;VoiceOver朗读由无障碍原素提供的信息</figcaption><img src="Understanding_Accessibility_on_iOS_files/iphoneax_axinfo_2x.png" class="wide-image" alt="" height="515" width="670"><img src="Understanding_Accessibility_on_iOS_files/iphoneax_axinfo_2x.png" class="ipad-scaled-image" alt="" height="515" width="670"></figure><p>VoiceOver
  users rely on the labels and hints they hear to help them use your 
 application. For this reason, it’s especially important to make sure 
 that every accessible user interface element in your application 
