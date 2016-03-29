@@ -100,7 +100,7 @@
  be accessible, an iPhone application must supply information about its 
 user interface elements to VoiceOver users. At a high level, this means 
 you should make sure that:</p>
-<p>要做到可用性，一个iPhone应用必须提供用户界面元素中的相关信息提供给VoiceOver用户。更高层次上，这意味着你应该确保：
+<p>要做到可用性，一个iPhone应用必须提供用户界面元素中的相关信息提供给VoiceOver用户。更高层次上，这意味着您应该确保：
 </p><ul class="ul"><li class="li"><p>Every 
 user interface element with which users can interact is accessible. This
  includes elements that merely supply information, such as static text, 
@@ -134,7 +134,7 @@ how to do this, see <span class="content_text"><a onclick='s_objectID="https://d
 need to interact, you must ensure the accessibility of these views 
 yourself. After you’ve done this, you need to make sure these views 
 supply accessibility information that helps people use them (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_7";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW4" data-renderer-version="1">Supply Accurate and Helpful Attribute Information</a></span>).</p>
-<p>如果您创建一个自定义视图用以展示信息或是与用户进行交互，您必须确保这些视图的无障碍特性。在您完成这些之后，你需要确保这些视图提供的无障碍信息可以帮助到用户。（参见“提供准确和有用的属性信息”）。</p>
+<p>如果您创建一个自定义视图用以展示信息或是与用户进行交互，您必须确保这些视图的无障碍特性。在您完成这些之后，您需要确保这些视图提供的无障碍信息可以帮助到用户。（参见“提供准确和有用的属性信息”）。</p>
 <p>From the perspective of accessibility, a custom view is either an individual view or a container view. An <em class="newTerm">individual view</em> does not contain any other views that need to be accessible. For example, a custom subclass of <code>UIControl</code>
  that displays an icon and behaves like a button does not contain any 
 other elements with which the user can interact, apart from the button 
@@ -276,7 +276,7 @@ you’ve designed a good user interface, sighted users should know what a
 control or view does in the current application context by reading its 
 title or understanding its icon. This is the information you need to 
 make available to VoiceOver users in the label attribute.</p>
-<p>判定标签应该传达什么内容的一个好办法，就是思考视觉用户通过视觉能够看到什么。如果你的用户界面设计得很好，视觉用户应该可以通过阅读标题或理解图标了解控件和视图了解当前应用的环境。这些信息就是VoiceOver用户可从标签属性获取。
+<p>判定标签应该传达什么内容的一个好办法，就是思考视觉用户通过视觉能够看到什么。如果您的用户界面设计得很好，视觉用户应该可以通过阅读标题或理解图标了解控件和视图了解当前应用的环境。这些信息就是VoiceOver用户可从标签属性获取。
 </p><p>If you 
 provide a custom control or view, or if you display a custom icon in a 
 standard control or view, you need to provide a label that:</p>
@@ -320,7 +320,7 @@ the song title in a list, you might want to provide a hint that
 describes this result. The reason is that the label of the list item 
 describes the item itself (in this case, the song title), not what 
 happens when a user taps it.</p><p>例如：如果您在应用中提供一个播放按钮，按钮周边环境可让用户很容易了解当他们
-按下按钮会发生的状况。然而，如果您允许用户通过歌曲列表中歌名点播歌曲，你可能要提供一个提示用以描述结果，因为列表项的标签仅介绍自己的属性（此例中
+按下按钮会发生的状况。然而，如果您允许用户通过歌曲列表中歌名点播歌曲，您可能要提供一个提示用以描述结果，因为列表项的标签仅介绍自己的属性（此例中
 指歌名），当用户点击时不知道会发生什么。</p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW22" title="Note"></a><p><strong>Note:</strong>&nbsp;VoiceOver
  users can choose whether to hear available hints by selecting an option
  in VoiceOver settings on their device. Spoken hints are turned on by 
@@ -358,7 +358,7 @@ describing the use of a control to a friend. You might say something
 like “Tapping this control plays the song.” Often, you can use the 
 second phrase in such a sentence (in this case, “Plays the song”) as a 
 hint.</p>
-<p>帮助您找到正确的用词，想像您正在为朋友介绍一个控件的用法。你可能会这样说，“点击这个控制播放歌典”。通常用该句话的第二个短语（此例中为“播放歌曲”）作为一个提示。</p></li><li class="li"><p><strong>Begins with a capitalized word and ends with a period</strong>.
+<p>帮助您找到正确的用词，想像您正在为朋友介绍一个控件的用法。您可能会这样说，“点击这个控制播放歌典”。通常用该句话的第二个短语（此例中为“播放歌曲”）作为一个提示。</p></li><li class="li"><p><strong>Begins with a capitalized word and ends with a period</strong>.
  Even though a hint is a phrase, not a sentence, ending the hint with a 
 period helps VoiceOver speak it with the appropriate inflection.</p>
 <p><strong>大写字母开头，句号结尾：</strong>即使提示是一个短语，不是一个句子，使用句号结束这个句子是有助力于VoiceOver以恰当音调朗读它。</p></li><li class="li"><p><strong>Does not include the name of the action or gesture</strong>.
@@ -375,7 +375,7 @@ elements in your application. If you name a different gesture in a hint,
  The user gets this information from the label attribute, so you should 
 not repeat it in the hint. Therefore, do not create hints such as “Save 
 saves your edits” or “Back returns to the previous screen.”</p>
-<p><strong>不要包含控件和视图的名称：</strong>用户从标签属性里得到信息，所以你不应该在提示中重复相关信息。所以，不要创建类似于这样的提示“存储保存您的修改”或者“后退返回到之前的屏幕”。</p></li><li class="li"><p><strong>Does not include the type of the control or view</strong>.
+<p><strong>不要包含控件和视图的名称：</strong>用户从标签属性里得到信息，所以您不应该在提示中重复相关信息。所以，不要创建类似于这样的提示“存储保存您的修改”或者“后退返回到之前的屏幕”。</p></li><li class="li"><p><strong>Does not include the type of the control or view</strong>.
  The user already knows whether, for example, the control or view 
 behaves like a button or a search field, because this information is 
 available in the element’s traits attribute. Therefore, do not create 
@@ -460,7 +460,7 @@ user’s tap by opening a link in Safari on iPhone. You could characterize
 Selected traits.</p>
 
 <p>
-例如，假设显示在您应用中的一个图像，其响应的是，当用户点击时会在iPhone中的Safari打开一个链接，你应该通过结合图像和链接的特质表述该元素。另如，一个键盘键当点击时修改其它键盘键，您应该通过结合键盘键和选中的特质表述该元素。
+例如，假设显示在您应用中的一个图像，其响应的是，当用户点击时会在iPhone中的Safari打开一个链接，您应该通过结合图像和链接的特质表述该元素。另如，一个键盘键当点击时修改其它键盘键，您应该通过结合键盘键和选中的特质表述该元素。
 </p><p>To see some examples of how traits characterize 
 controls, you can use Accessibility Inspector to see the default traits 
 that are set on the standard controls. For information on how to use 
@@ -514,7 +514,7 @@ Interface Builder at all or if you generate your views in code instead
 of using Interface Builder.</p>
 
 <p>
-如果愿意，你可以通过编程为属性提供自定义信息。如果您完全不用Interface Builder或者更喜欢在代码中生成视图，这可能是您想用的方法。
+如果愿意，您可以通过编程为属性提供自定义信息。如果您完全不用Interface Builder或者更喜欢在代码中生成视图，这可能是您想用的方法。
 </p><p>As described in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_18";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW9" data-renderer-version="1">Make Custom Individual Views Accessible</a></span>,
  you can set accessibility information in the implementation of your 
 view subclass or in the code that instantiates the view. Both techniques
@@ -527,7 +527,7 @@ if you only set attributes when you instantiate the subclass, the
 returned data is likely to be out of date.</p>
 
 <p>
-在“让自定义的独立视图具有无障碍特性”介绍过，您可以在视图子类或是在代码里实例化视图中实现无障碍信息。两种方法都是有效的，但是为什么你可能需要在
+在“让自定义的独立视图具有无障碍特性”介绍过，您可以在视图子类或是在代码里实例化视图中实现无障碍信息。两种方法都是有效的，但是为什么您可能需要在
 子类中实现属性方法而不是通过代码实例化，有个原因是：如果显示的数据是动态的，或者快速发生变化，如时间，应该根据需要实施子类方法返回刷新数据。这些
 情况下，如果仅设置属性，当您实例化子类，返回的数据可能是过期的。
 </p><p>The code snippets in this section build on those in <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_19";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW9" data-renderer-version="1">Make Custom Individual Views Accessible</a></span>,
@@ -537,7 +537,7 @@ write code similar to that in <span class="content_text">Listing 2-2</span>.</p>
 
 
 <p>
-此章节的代码片段是基于“让自定义的独立视图具有无障碍特性”，包含一些属性特有的方法。例如：如果你想在子类中实现无障碍方法，您将写类似表2-2的代码：
+此章节的代码片段是基于“让自定义的独立视图具有无障碍特性”，包含一些属性特有的方法。例如：如果您想在子类中实现无障碍方法，您将写类似表2-2的代码：
   
  
 </p><a name="//apple_ref/doc/uid/TP40008785-CH102-SW15" title="Listing 2-2Providing attribute information in a custom subclass implementation"></a><p class="codesample clear"><strong class="caption_number">Listing 2-2</strong>&nbsp;&nbsp;Providing attribute information in a custom subclass implementation</p>
@@ -569,7 +569,7 @@ controls, such as a switch or a slider, you need to make sure that these
  elements are appropriately accessible.</p>
 
 <p>
-注意：如果你的表格单元中包含任何的标准表格视图元素，比如信息展示器、详细信息展示按钮、删除控件，您不需要做任何事就能让这些元素具有无障碍特性。但是如果你的表格单元包括其它控件类型，比如一个开关或者滑动条，需要确认这些元素有恰当的无障碍特性。
+注意：如果您的表格单元中包含任何的标准表格视图元素，比如信息展示器、详细信息展示按钮、删除控件，您不需要做任何事就能让这些元素具有无障碍特性。但是如果您的表格单元包括其它控件类型，比如一个开关或者滑动条，需要确认这些元素有恰当的无障碍特性。
 </p><p></p></aside></div><p>If 
 the table cells in your application contain a mix of different elements,
  determine whether users interact with each cell as a unit, or with 
@@ -649,7 +649,7 @@ actions, it’s best to add this logic to a subclass’s implementation, not
  to the code that instantiates the subclass.</p>
 
 <p>
-如果用户界面元素可以有不同的状态，那你需要在代码中返回所有状态对应的无障碍信息。由于这些改变在用户的动作发生 后发生，所以最好把实现添加到子类中而不是实例化子类的代码中。
+如果用户界面元素可以有不同的状态，那您需要在代码中返回所有状态对应的无障碍信息。由于这些改变在用户的动作发生 后发生，所以最好把实现添加到子类中而不是实例化子类的代码中。
   
 </p>
 

@@ -105,30 +105,29 @@ describes an application’s user interface and helps users navigate
 through the application’s views and controls, using speech and sound. 
 Users familiar with VoiceOver in Mac OS X can leverage their experience 
 to help them quickly come up to speed using VoiceOver on their devices.</p>
-	<p>VoiceOver在iOS 3.0及之后版本，视觉障碍的用户可通过VoiceOver使用其iOS设备。iOS 
-3.0中引入了UI无障碍编程接口，它能帮助开发人员打造出可被VoiceOver用户使用的无障碍应用。简单来说，VoiceOver描述一个应用程序
-的用户界面，并能帮助用户通过语音和声音导航浏览该应用的视图及控件。那些熟悉Mac OS 
-X系统提供的VoiceOver用户，能够快速上手使用其设备中的VoiceOver。
+	<p>iOS 3.0及之后的版本，视觉障碍用户可通过VoiceOver使用iOS设备。iOS 
+3.0引入的UI无障碍编程接口，帮助开发人员打造的应用能够让VoiceOver用户访问。简单地说，VoiceOver描述一个应用程序
+的用户界面，用户通过语音朗读以及声音，导航浏览该应用中的视图及控件。熟练掌握Mac OS 
+X的VoiceOver用户，能够快速上手，利用设备上的VoiceOver。
 </p>
 	<a name="//apple_ref/doc/uid/TP40008785-CH1-DontLinkElementID_2"></a><p>iPhone
  applications that run in iOS 3.0 and later should be accessible to 
 VoiceOver users. iOS and the iOS SDK support this goal by:</p>
-<p>那些运行在iOS 3.0及之后版本的iPhone应用程序，应该支持VoiceOver用户访问. iOS和iOS SDK通过以下方式支持该目标:</p>
-<ul class="ul"><li class="li"><p>Making standard UIKit controls and views accessible by default</p><p>默认情况下，标准UIKit控件和视图是无障碍的</p></li><li class="li"><p>Supplying
+<p>运行在iOS 3.0及之后版本的iPhone应用程序，应该可以让VoiceOver用户访问。iOS和iOS SDK是通过以下方式实现VoiceOver用户访问的:</p>
+<ul class="ul"><li class="li"><p>Making standard UIKit controls and views accessible by default</p><p>默认情况下，标准UIKit控件和视图是可访问的</p></li><li class="li"><p>Supplying
  the UI Accessibility programming interface, which defines a streamlined
- process for making an iPhone application accessible</p><p>提供UI无障碍编程接口，此接口定义了开发iPhone无障碍应用程序的合理化流程</p></li><li class="li"><p>Providing tools that help you implement accessibility in your code and test the accessibility of your application</p><p>提供相关工具，帮您在代码实施和测试应用程序中的无障碍特性
+ process for making an iPhone application accessible</p><p>提供UI无障碍编程接口，此接口定义了为iPhone应用程序构建可访问性的合理化流程</p></li><li class="li"><p>Providing tools that help you implement accessibility in your code and test the accessibility of your application</p><p>提供相关工具，在代码中实施、并在应用程序中测试无障碍特性
 </p></li></ul><p>If
  you’re developing or updating an iPhone application, you should read 
 this document to learn how to make your application accessible to 
-VoiceOver users.</p><p>如果你正在开发或升级一个iPhone应用程序，你应该阅读此文档以学习如何开发可被VoiceOver用户使用的无障碍应用程序。
+VoiceOver users.</p><p>如果您正在开发或升级一个iPhone应用程序，您应该阅读此文档以学习如何开发可被VoiceOver用户访问的应用。
 </p><a name="//apple_ref/doc/uid/TP40008785-CH1-DontLinkElementID_3" title="Organization of This Document"></a><h2 class="jump">Organization of This Document | 文档结构</h2><p>This document contains the following chapters:</p><p>该文档包含如下章节：</p><ul class="ul"><li class="li"><p><span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_3";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW1" data-renderer-version="1">Understanding Accessibility on iOS</a></span>
  briefly describes how VoiceOver works on the device and introduces the 
 programming interface and tools you can use to make your application 
-accessible.</p><p>“理解iOS上的无障碍特性”简要描述VoiceOver是如何在设备上的运行，同时介绍了可用于打造无障碍应用程序的编程接口及工具。</p></li><li class="li"><p><span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_4";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW5" data-renderer-version="1">Making Your iOS App Accessible</a></span> provides in-depth guidance for making your application accessible to VoiceOver users.</p><p>“让您的iOS应用程序无障碍” 深入指导如何让的应用程序可被VoiceOver用户无障碍使用。
 </p></li></ul><div id="seeAlsoSection"><a name="//apple_ref/doc/uid/TP40008785-CH1-DontLinkElementID_4" title="See Also"></a><h2 class="jump">See Also | 辅助参考</h2><p>This
  document used to contain information related to testing your app’s 
 accessibility experience with VoiceOver and Accessibility Inspector. 
-That content has moved to a dedicated document titled <em><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestingtheAccessi_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestingtheAccessibilityofiOSApps/TestingtheAccessibilityofiOSApps.html#//apple_ref/doc/uid/TP40012619" data-renderer-version="1" target="_self">Verifying App Accessibility on iOS</a></em>.</p><p>本文档之前包含的内容：通过VoiceOver和无障碍检测器对您的应用进行无障碍体验 - 已经被转移到文档 “在iOS中验证应用的无障碍性” 中。</p></div>
+That content has moved to a dedicated document titled <em><a onclick='s_objectID="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestingtheAccessi_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestingtheAccessibilityofiOSApps/TestingtheAccessibilityofiOSApps.html#//apple_ref/doc/uid/TP40012619" data-renderer-version="1" target="_self">Verifying App Accessibility on iOS</a></em>.</p><p>本文档之前包含的内容：通过VoiceOver和Accessibility Inspector对您的应用进行无障碍体验 - 已经被转移到文档 “在iOS中验证应用的无障碍特性” 中。</p></div>
         <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
             <a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_5";return this.s_oc?this.s_oc(e):true' class="nextLink" rel="next" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html">Next</a>
         </div><br>
