@@ -100,7 +100,7 @@
  be accessible, an iPhone application must supply information about its 
 user interface elements to VoiceOver users. At a high level, this means 
 you should make sure that:</p>
-<p>要做到可用性，一个iPhone应用必须提供用户界面元素中的相关信息提供给VoiceOver用户。更高层次上，这意味着您应该确保：
+<p>要做到可用性，一个iPhone应用必须将用户界面元素中的相关信息提供给VoiceOver用户。更高层次上，这意味着您应该确保：
 </p><ul class="ul"><li class="li"><p>Every 
 user interface element with which users can interact is accessible. This
  includes elements that merely supply information, such as static text, 
@@ -180,7 +180,7 @@ container view itself is not accessible. The reason is that users
 interact with the contents of the container, not with the container 
 itself.</p>
 
-<p>如果您的应用中展示了一个自定义视图，其包含其他与用户交互的元素，则您需要实现元素的单独具有无障碍特性。同时，您必须让容器视图本身不在具有无障碍特性，因为用户是与容器中内容交互，不是和容器本身交互。
+<p>如果应用中展示了一个自定义视图，包含其他与用户交互的元素，则需要实现元素分别具有无障碍特性。同时，您必须让容器视图本身不再具有无障碍特性，因为用户是与容器中内容交互，不是和容器本身交互。
 </p><p>To accomplish this, your custom container view should implement the <code>UIAccessibilityContainer</code> protocol. This protocol defines methods that make the contained elements available in an array. </p>
 
  
@@ -196,14 +196,14 @@ accessible elements only when methods of the <code>UIAccessibilityContainer</cod
 <p>提供准确和有用的属性信息有两个步骤：</p><ul class="ul"><li class="li"><p>Crafting concise, accurate, and helpful information</p>
 <p>制作简洁、准确、有用的信息</p></li><li class="li"><p>Ensuring that the accessible elements in your application report that content correctly</p>
 
-<p>确认您应用报告出的无障碍元素内容是正确的</p></li></ul><p>If you use custom views, you must supply all appropriate attribute information for them. For guidance, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_11";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW6" data-renderer-version="1">Crafting Useful Labels and Hints</a></span>, <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_12";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW11" data-renderer-version="1">Guidelines for Creating Hints</a></span>, and <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_13";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW7" data-renderer-version="1">Identifying Appropriate Traits</a></span>.</p>
+<p>确认应用中无障碍元素所给出的内容是正确的</p></li></ul><p>If you use custom views, you must supply all appropriate attribute information for them. For guidance, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_11";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW6" data-renderer-version="1">Crafting Useful Labels and Hints</a></span>, <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_12";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW11" data-renderer-version="1">Guidelines for Creating Hints</a></span>, and <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_13";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW7" data-renderer-version="1">Identifying Appropriate Traits</a></span>.</p>
 
-<p>如果您使用自定义的视窗，您必须提供为它们适当的属性信息。请参阅“制作有用的标签和提示”、“制作提供指南”、以及“定义恰当的特质”。</p><p>Even
+<p>如果您使用自定义的视窗，您必须为它们提供适当的属性信息。请参阅“制作有用的标签和提示”、“创建提示指南”、以及“定义恰当的特质”。</p><p>Even
  if you use only standard UIKit controls and views, you might find that 
 some of the default attribute information they supply could be enhanced 
 to make more sense in the context of your application. For more 
 information, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_14";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW8" data-renderer-version="1">Enhancing Default Attribute Information</a></span>.</p>
-<p>即使您只是用标准的UIKit控件和视图，您也可能找到比默认提供的属性信息更适合您应用环境的内容。更多信息，请阅读“优化默认属性信息”。</p><p>If
+<p>即使您只是用标准的UIKit控件和视图，也可能找到，比默认提供的属性信息更适合应用环境的内容。更多信息，请阅读“优化默认属性信息”。</p><p>If
  you need to supply or change accessibility attributes on either 
 standard or custom UI elements, you can do so either in Interface 
 Builder (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_15";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW1" data-renderer-version="1">Defining Custom Attribute Information in Interface Builder</a></span>) or programmatically (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_16";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW2" data-renderer-version="1">Defining Custom Attribute Information Programmatically</a></span>).</p>
@@ -223,7 +223,7 @@ However, there might be times when supplying custom attribute
 information can enhance a VoiceOver user’s experience with your 
 application:</p>
 
-<p>内建的标准UIKit控件和视图做为内建的无障碍特性部分，iOS为元素提供默认属性信息可以向VoiceOver用户描述这些元素。大多数情况下，应用使用标准控件和视图，相关信息是准确的。但是，自定义属性信息可以倍增VoiceOver用户的体验。
+<p>标准UIKit控件和视图做为内建的无障碍特性部分，iOS为元素提供默认属性信息可以向VoiceOver用户描述这些元素。大多数情况下，应用使用标准控件和视图，相关信息是准确的。但是，自定义属性信息可以倍增VoiceOver用户的体验。
 </p><ul class="ul"><li class="li"><p>If you use a standard 
 UIKit control or view that displays a system-provided icon or title, 
 first make sure you’re using it in accordance with its intended purpose 
@@ -232,7 +232,7 @@ first make sure you’re using it in accordance with its intended purpose
  accurately conveys the result of using that control or view in your 
 application. If not, consider providing a hint attribute.</p>
 
-<p>如果您用一个标准的UIKit控件和视图显示系统提供的图标和标题，首先确认您是在以预期的目的使用它（请参阅“iOS人机交互指南”了解更多信息）。然后认真考虑在您的应用中，默认的标签属性是否准确地传达结果，如果没有，考虑提供一个提示属性。
+<p>如果您用一个标准的UIKit控件和视图显示系统提供的图标和标题，首先确认您是在以预期的目的使用它（请参阅“iOS人机界面指南”了解更多信息）。然后认真考虑在您的应用中，默认的标签属性是否准确地传达结果，如果没有，考虑提供一个提示属性。
 </p><p>For example, if you place an Add button in your navigation bar by using the system-provided Add (+) icon in a <code>UIBarButtonItem</code>
  object, you get the default label attribute, Add, automatically. If 
 it’s always obvious which item the user is adding when they activate 
@@ -312,22 +312,23 @@ specifies in International settings.</p>
  hint attribute describes the results of performing an action on a 
 control or view. You should provide a hint only when the results of an 
 action are not obvious from the element’s label.</p>
-<p>提示属性描述是：在控件或视图上的执行一个行动的结果。仅在动作的结果在属性标签中不是很明显的时候您应该提供一个提示。</p><p>For example, if 
+<p>提示属性描述的是：在控件或视图上执行一个动作的结果。当元素的标签无法明确指出动作结果的时候，应该给出一个提示。</p><p>For example, if 
 you provide a Play button in your application, the context in which the 
 button appears should make it easy for users to understand what happens 
 when they tap it. However, if you allow users to play a song by tapping 
 the song title in a list, you might want to provide a hint that 
 describes this result. The reason is that the label of the list item 
 describes the item itself (in this case, the song title), not what 
-happens when a user taps it.</p><p>例如：如果您在应用中提供一个播放按钮，按钮周边环境可让用户很容易了解当他们
-按下按钮会发生的状况。然而，如果您允许用户通过歌曲列表中歌名点播歌曲，您可能要提供一个提示用以描述结果，因为列表项的标签仅介绍自己的属性（此例中
-指歌名），当用户点击时不知道会发生什么。</p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW22" title="Note"></a><p><strong>Note:</strong>&nbsp;VoiceOver
+happens when a user taps it.</p><p>例如：您在应用中提供一个播放按钮，按钮周边环境可让用户很容易明白，当他们按
+下按钮会发生什么。但是，如果允许用户通过轻敲歌曲列表中歌名播放歌曲，您就应该提供一个提示用以描述结果，因为列表项的标签仅介绍自己的属性（此例中指
+歌名），当用户点击时他不知道会发生什么。</p><div class="notebox"><aside><a name="//apple_ref/doc/uid/TP40008785-CH102-SW22" title="Note"></a><p><strong>Note:</strong>&nbsp;VoiceOver
  users can choose whether to hear available hints by selecting an option
  in VoiceOver settings on their device. Spoken hints are turned on by 
-default.</p><p></p></aside></div><p>If the results of a user’s action on a control or view are not clearly implied by its label, create a hint that:</p>
+default.</p><p><strong>注：</strong> VoiceOver的用户，在其设备上，通过VoiceOver设置中的选项，可以选择是否听取可用的提示。默认情况下，朗读提示是开启的。
+</p></aside></div><p>If the results of a user’s action on a control or view are not clearly implied by its label, create a hint that:</p>
 
 <p>
-如果用户在控件或者视窗上的动作并未在标签被指出，创建一个这样的提示：
+如果用户在控件或者视窗上的动作结果，不能通过标签清晰指出，创建一个这样的提示：
 </p>
 <ul class="ul"><li class="li"><p><strong>Very briefly describes the results</strong>.
  Even though few controls and views need hints, strive to make the hints
@@ -336,12 +337,12 @@ amount of time users must spend listening before they can use the
 element.</p>
 
 <p>
-<strong>尽量简单介绍结果：</strong>即使极少的控件和视图需要提示，尽可能的提供简短介绍。这样做可以让用户在使用元素前减少听描述的时间
+<strong>尽量简单介绍结果：</strong>尽管没有多少控件和视图需要提示，也应尽可能的提供简短的介绍。避免了用户还没使用元素，就浪费大量时间去听取相关信息
 </p><p>That said, however, avoid sacrificing clarity and good 
 grammar for brevity. For example, changing “Adds a city” to “Adds city” 
 does not significantly decrease the length of the hint, but does make it
  sound awkward and a bit less clear.</p>
-<p>然而，请避免为了简短而牺牲语法的清晰。例如，将“添加一个城市”，改为“添加城市”，并不意味着提示长度缩短，，反面使读音更别扭，而且不够清楚。
+<p>但是，不要为了提示的简短，而丧失语法的清晰和优雅。例如，将“添加一个城市”，改为“添加城市”，这并不意味着提示的长度简短了，反而听起来更别扭，并且表意不够清晰。
 </p></li><li class="li"><p><strong>Begins with a verb and omits the subject</strong>.
  Be sure to use the third-person singular declarative form of a verb, 
 such as “Plays,” and not the imperative, such as “Play.” You want to 
@@ -352,16 +353,17 @@ the song.”</p>
 
 
 <p>
-<strong>动词开头，省略主语：</strong>确认使用第三人称单数的动词形式。例如“Plays”不是祈使句。要避免使用祈使句，就为其放在提示中，像是一条件命令，不要告诉用户“Play the song”，要告诉用户按下元素会“Plays the song”。
+<strong>动词开头，省略主语：</strong>确认使用第三人称单数的动词形式。例如“Plays,” 而不是强制的，如“Play.”。要避免使用命令语式，因为其放在提示中，像是一条命令。比如，不要告诉用户“Play the song”，要告诉用户按下元素会“Plays the song.”。 
+
 </p><p>To help you find the right word, imagine that you’re 
 describing the use of a control to a friend. You might say something 
 like “Tapping this control plays the song.” Often, you can use the 
 second phrase in such a sentence (in this case, “Plays the song”) as a 
 hint.</p>
-<p>帮助您找到正确的用词，想像您正在为朋友介绍一个控件的用法。您可能会这样说，“点击这个控制播放歌典”。通常用该句话的第二个短语（此例中为“播放歌曲”）作为一个提示。</p></li><li class="li"><p><strong>Begins with a capitalized word and ends with a period</strong>.
+<p>要想找到正确的用词，想象一下，您正在为一位朋友介绍一个控件的用法，可能会这样说“点击这个控制播放歌曲”。通常该句话的第二个短语（此例中为“播放歌曲”）可以作为一个提示。</p></li><li class="li"><p><strong>Begins with a capitalized word and ends with a period</strong>.
  Even though a hint is a phrase, not a sentence, ending the hint with a 
 period helps VoiceOver speak it with the appropriate inflection.</p>
-<p><strong>大写字母开头，句号结尾：</strong>即使提示是一个短语，不是一个句子，使用句号结束这个句子是有助力于VoiceOver以恰当音调朗读它。</p></li><li class="li"><p><strong>Does not include the name of the action or gesture</strong>.
+<p><strong>大写字母开头，句号结尾：</strong>即使提示是一个短语，不是一个句子，也要在提示末尾使用句点，这样有助于VoiceOver以适当的语气进行播报。</p></li><li class="li"><p><strong>Does not include the name of the action or gesture</strong>.
  A hint does not tell users how to perform the action, it tells users 
 what will happen when that action occurs. Therefore, do not create hints
  such as “Tap to play the song,” “Tapping purchases the item,” or “Swipe
@@ -382,10 +384,10 @@ available in the element’s traits attribute. Therefore, do not create
 hints such as “Button that adds a name” or “Slider that controls the 
 scale.”</p>
 <p>
-不要包含控件和视图的类型：用户已经知道控件表象为一个按钮或者搜索域，因为此信息在元素特质属性中是可获取的。因此，不要创建类似于“按钮用于添加名称”或者“滑动用于控制比例”提示。
+<strong>不要包含控件和视图的类型：</strong>用户已经知道控件表象为一个按钮或者搜索域，因为此信息在元素特质属性中是可获取的。因此，不要创建类似于“按钮用于添加名称”或者“滑动用于控制比例”提示。
 </p></li><li class="li"><p><strong>Is localized</strong>. As with accessibility labels, hints should be available in the user’s preferred language.</p>
 
-<p>本地化：与无障碍标签类似，用户选择语言后，提示是可用的。</p>
+<p><strong>本地化：</strong>与无障碍标签类似，用户选择语言后，提示是可用的。</p>
 
 
 </li></ul></section></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW7" title="Identifying Appropriate Traits"></a><h3 class="jump">Identifying Appropriate Traits | 定义恰当的特质</h3><p>The
@@ -417,7 +419,7 @@ default traits. If you create a custom control or view, you need to
 provide content for the element’s traits attribute. </p>
 
 <p>
-如果是自定义行为的标准控件，您可能需要将某个新的特质与该控件默认的特质组合。如果创建算定义的控件视图，您需要提供该元素特质属性的内容。
+如果是自定义行为的标准控件，您可能需要将某个新的特质与该控件默认的特质组合。如果创建自定义的控件视图，您需要提供该元素特质属性的内容。
 </p><p></p><p>The UI
  Accessibility programming interface defines 12 individual traits, some 
 of which can be combined. Some traits characterize an element by 
@@ -605,7 +607,7 @@ label attribute. When you do this, VoiceOver users can get the meaning
 of the cell’s contents with one gesture, instead of having to access 
 each piece of information separately. </p>
 
-<p>如果表格包含在离散组块中提供信息的单元格，您应该考虑从这些在标签属性的组块中结合信息。当您做这个是，VoiceOver用户使用一个手势获取单元格的意义，而不需要访问每个独立块中的信息。
+<p>如果表格中包含单元格，这些单元格在离散组块中提供信息，您应该考虑从这些标签属性的组块中结合信息。做这个的意义是，VoiceOver用户仅使用一个手势获取单元格的内容，而不需要访问每个独立块中的信息。
 </p>
 <p>A good example of how this 
 can work is in the built-in Stocks application. Instead of providing the
@@ -617,7 +619,7 @@ this label. When you combine discrete pieces of information in this way,
 making it easier for users to understand the information.</p>
 
 <p>
-这个的工作原理用一个好例子解释，就是内建的股票应用。它不是用单独字符串去提供公司名、当前股票价格和价格波动，而是组合到一个标签中，这样听起来类
+这个的工作原理，可以用一个好例子解释，内建的股票应用，它不是用单独字符串去提供公司名、当前股票价格和价格波动，而是组合到一个标签中，这样听起来类
 似：“苹果公司，432.39美元，涨幅1.3%。”。注意标签中的逗号，当结合多个片段的时候，可以使用逗号， 
 这样VoiceOver就会在每个逗号短暂停留，让用户更容易理解信息。
 </p><p>Here’s a
@@ -637,9 +639,9 @@ of changes occur on the screen. (To learn about these notifications, see
  "Notifications” in <em><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibility_Protocol/in_1";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibility_Protocol/index.html#//apple_ref/doc/uid/TP40008786" data-renderer-version="2" target="_self">UIAccessibility Protocol Reference</a></em>.)</p>
 
 <p>
-如果您的应用中界面元素能够动态改变，您需要确认它们使用的无障碍信息准确及时的。当应用的屏幕改变发生时，您需要送一个通知，这样VoiceOver能
-够帮助用户导航新布局。UI无障碍编程界面提供两个通知类型，当这类事件发生时，可以被使用。（了解这些通知，请在“UIAccessibility协议
-参考”中的通知）
+如果应用中界面元素能够动态改变，您需要确认它们使用的无障碍信息是准确及时的。当应用的屏幕布局改变发生时，您需要发送一个通知，这样
+VoiceOver能够帮助用户导航新布局。UI无障碍编程界面提供两个通知类型，可以用在这类事件发生的情况下。（了解这些通知，请在
+“UIAccessibility协议参考”中的“通知”。）
 </p><p>If
  user interface elements can be in different states depending on other 
 conditions in your application, you need to add logic to your code that 
@@ -678,7 +680,7 @@ that displays stars, you should make sure the accessibility label
 conveys the meaning behind the graphical representation.</p>
 
 <p>
-有时应用会展示那些不是自动兼容无障碍方法的数据，比如，显示一个图像，应该在它的无障碍标签中提供它的介绍这，这样VoiceOver用户就可以理解图像传达的信息。或者如果通过图形方式提供形象，比如显示星级的评价系统，应该确认无障碍标签传达了图形所表达的意思。
+有时应用会展示那些不是自动兼容无障碍方法的数据，比如，显示一个图像，应该在它的无障碍标签中提供它的介绍，这样VoiceOver用户就可以理解图像传达的信息。或者如果通过图形方式提供形象，比如显示星级的评价系统，应该确认无障碍标签传达了图形所表达的意思。
 
 </p><p>The 
 following code snippet uses the example of a custom view that draws the 

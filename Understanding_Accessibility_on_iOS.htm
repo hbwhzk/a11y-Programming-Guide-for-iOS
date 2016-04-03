@@ -217,11 +217,11 @@ Standard UIKit controls and views implement the <code>UIAccessibility</code> pro
 elements. This is particularly useful when the objects contained in such
  a view are not themselves subclasses of <code>UIView</code> and, for this reason, are not automatically accessible.</p>
 <p>
-<code>UIAccessibilityContainer</code>非正式协议：此协议允许<code>UIView</code>中包含有部分或者全部无障碍对象的子类作为分离元素，当对象包含在视图中，其本身又不是<code>UIView</code>的子类，导致不能被自动无障碍访问，此时，该协议非常有用。
+<code>UIAccessibilityContainer</code>非正式协议：此协议允许<code>UIView</code>的子类构建部分或者全部对象作为分离元素具有无障碍特性。当对象包含在视图中，其本身又不是<code>UIView</code>的子类，导致不能被自动无障碍访问，此时，该协议非常有用。
 </p>  
 </li><li class="li"><p>The <code>UIAccessibilityElement</code> class. This class defines an object that can be returned through the <code>UIAccessibilityContainer</code> protocol. You can create an instance of <code>UIAccessibilityElement</code> to represent an item that isn’t automatically accessible, such as an object that does not inherit from <code>UIView</code>, or an object that does not exist.</p>
 <p>
-<code>UIAccessibilityElement</code>类：定义了一个能够通过<code>UIAccessibilityContainer</code>协议返回的对象。您可以创建一个<code>UIAccessibilityElement</code>实例用以代表无法自动无障碍访问的元素，例如一个并非从<code>UIView</code>继承的对象，或者一个不存在的对象。 
+<code>UIAccessibilityElement</code>类：这个类定义了一个能够通过<code>UIAccessibilityContainer</code>协议返回的对象。一个元素不是默认的可被访问，您可以通过<code>UIAccessibilityElement</code>实例化，以展示它，例如一个并非从<code>UIView</code>继承的对象，或者一个不存在的对象。 
 </p></li><li class="li"><p>The <code>UIAccessibilityConstants.h</code>
  header file. This header file defines the constants that describe the 
 traits that an accessibility element can exhibit and the notifications 
@@ -234,7 +234,7 @@ the core of the UI Accessibility API. VoiceOver supplies attribute
 information to users when they access or interact with a control or 
 view. </p>
 
-<p>无障碍属性是用来描述无障碍用户界面元素，也是UI Accessibility API的核心构成。用户访问或操作控件和视图时，VoiceOver会将无障碍属性信息告知给用户。</p><p>Attributes are also the components of the programming 
+<p>无障碍属性是用来描述无障碍用户界面元素，也是UI Accessibility API的核心构成。在用户访问、交互，控件和视图时，VoiceOver会将无障碍属性信息告知给用户。</p><p>Attributes are also the components of the programming 
 interface that you’re most likely to use. This is because attributes 
 encapsulate the information that differentiates one control or view from
  another. For standard UIKit controls and views, you might just need to 
@@ -242,14 +242,14 @@ ensure that the default attribute information is appropriate for your
 application; for custom controls and views, you might have to supply 
 most of the attribute information.</p>
 <p>
-无障碍属性是是您最有可能用到的编程界面组件。因为它封装了用于区分不同控件和视图的信息。标准UIKit控件和视图，您只需确保应用中默认的属性适当。对于自定义的控件和视图来说，您可能需要提供大部分的属性信息。
+无障碍属性是您最有可能用到的编程界面组件。因为它封装了用于区分不同控件和视图的信息。标准UIKit控件和视图，只需确保应用中默认的属性是适当的。对于自定义的控件和视图来说，可能需要提供大部分的属性信息。
 </p><p>The UI Accessibility programming interface defines the following attributes:</p>
 <p>UI Accessibility编程接口定义了如下属性：
 </p><ul class="ul"><li class="li"><p><strong>Label</strong>.
  A short, localized word or phrase that succinctly describes the control
  or view, but does not identify the element’s type. Examples are “Add” 
 or “Play.”</p>
-<p><strong>标签</strong>：一个简短的本地化词语或短语，用于简洁地描述控件或者视图，但是不用来定义元素类型。例如“添加”或“播放”。 </p>
+<p><strong>Label（标签）</strong>：一个简短的本地化词语或短语，用于简洁地描述控件或者视图，但是不用来定义元素类型。例如“添加”或“播放”。 </p>
 </li><li class="li"><p><strong>Traits</strong>. A 
 combination of one or more individual traits, each of which describes a 
 single aspect of an element’s state, behavior, or usage. For example, an
@@ -257,18 +257,18 @@ single aspect of an element’s state, behavior, or usage. For example, an
  can be characterized by the combination of the Keyboard Key and 
 Selected traits.</p>
 
-<p><strong>特质</strong>：一个或多个独立特质的组合。每个特质描述元素中状态、行为、用途的某一方面。例如，某个元素的表像为键盘按键且当前被选定，这个元素就有了Keyboard Key和Selected的组合特质。 </p></li><li class="li"><p><strong>Hint</strong>. A 
+<p><strong>Traits (特质)</strong>：一个或多个独立特质的组合。每个特质描述元素中状态、行为、用途的某一方面。例如，某个元素的表象为键盘按键且当前被选定，这个元素就有了Keyboard Key和Selected的组合特质。 </p></li><li class="li"><p><strong>Hint</strong>. A 
 brief, localized phrase that describes the results of an action on an 
 element. Examples are “Adds a title” or “Opens the shopping list.”</p>
 
-<p><strong>提示</strong>：简要的本地化语句，用于描述某元素动作的结果，例如：“添加标题”或者“打开购物清单”。</p></li><li class="li"><p><strong>Frame</strong>. The frame of the element in screen coordinates, which is given by the <code>CGRect</code> structure that specifies an element’s screen location and size.</p>
+<p><strong>Hint (提示)</strong>：简要的本地化语句，用于描述某元素动作的结果，例如：“添加标题”或者“打开购物清单”。</p></li><li class="li"><p><strong>Frame</strong>. The frame of the element in screen coordinates, which is given by the <code>CGRect</code> structure that specifies an element’s screen location and size.</p>
 
-<p><strong>框架</strong>：是指元素在屏幕上坐标，是由<code>CGRect</code>结构体提供，说明了元素的屏幕位置和大小。</p></li><li class="li"><p><strong>Value</strong>.
+<p><strong>Frame (框架)</strong>：是指元素在屏幕上坐标，是由<code>CGRect</code>结构体提供，说明了元素的屏幕位置和大小。</p></li><li class="li"><p><strong>Value</strong>.
  The current value of an element, when the value is not represented by 
 the label. For example, the label for a slider might be “Speed,” but its
  current value might be “50%.”</p>
 
-<p><strong>值</strong>：当一个元素的值没有被标签指定时，其当前值。例如，一个滑动条的标签可以是”速度”，但是它当前的值是“50%”。
+<p><strong>Value (值)</strong>：在没有被标签指定时，一个元素的当前值。例如，一个滑动条的标签可以是”速度”，但是它当前的值是“50%”。
 </p>
 
 </li>
@@ -296,9 +296,12 @@ provide a hint. </p>
  cannot always be described by the label. For example, a text field that
  contains an email address might have the label “Email address,” but its
  contents depends on user input and is usually of the form 
-“username@address.” <span class="content_text">Figure 1-1</span> shows some of the information VoiceOver might provide.</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH100-SW5" title="Figure 1-1VoiceOver speaks the information provided by accessible elements"></a><figcaption><strong class="caption_number">Figure 1-1</strong>&nbsp;&nbsp;VoiceOver speaks the information provided by accessible elements</figcaption>
+“username@address.” <span class="content_text">Figure 1-1</span> shows some of the information VoiceOver might provide.</p>
 
-<figcaption><strong class="caption_number">图 1-1</strong>&nbsp;&nbsp;VoiceOver朗读由无障碍原素提供的信息</figcaption><img src="Understanding_Accessibility_on_iOS_files/iphoneax_axinfo_2x.png" class="wide-image" alt="" height="515" width="670"><img src="Understanding_Accessibility_on_iOS_files/iphoneax_axinfo_2x.png" class="ipad-scaled-image" alt="" height="515" width="670"></figure><p>VoiceOver
+<p>只有元素内容是可改变的，不能通过标签描述时，无障碍元素才为值提供信息。例如，文本域包含一个邮件地址，可能有个标签描述“邮件地址”，然而其内
+容是基于用户输入的，并且内容通常的形式为“username@address”。图 1-1 展示了一些VoiceOver应该提供的信息。</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH100-SW5" title="Figure 1-1VoiceOver speaks the information provided by accessible elements"></a><figcaption><strong class="caption_number">Figure 1-1</strong>&nbsp;&nbsp;VoiceOver speaks the information provided by accessible elements</figcaption>
+
+<figcaption><strong class="caption_number">图 1-1</strong>&nbsp;&nbsp;VoiceOver朗读由无障碍元素提供的信息</figcaption><img src="Understanding_Accessibility_on_iOS_files/iphoneax_axinfo_2x.png" class="wide-image" alt="" height="515" width="670"><img src="Understanding_Accessibility_on_iOS_files/iphoneax_axinfo_2x.png" class="ipad-scaled-image" alt="" height="515" width="670"></figure><p>VoiceOver
  users rely on the labels and hints they hear to help them use your 
 application. For this reason, it’s especially important to make sure 
 that every accessible user interface element in your application 
@@ -308,8 +311,7 @@ appropriate, but you should inspect these elements to make sure. For
 custom controls and views, you may have to supply some or all of this 
 information yourself. For some guidelines on how to do this, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_6";return this.s_oc?this.s_oc(e):true' href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW6" data-renderer-version="1">Crafting Useful Labels and Hints</a></span>.</p>
 <p>VoiceOver用户在使用您的应用时，是依赖听觉获取标签和提示。因此，确保应用中的每一个无障碍元素提供准确全面的描述是极其重要的。标准
-UIKit控件和视图的默认值信息通常是准确的，但是您还是应该检查确保正确。对于自定义控件和视图，您可能不得不亲自提供部分或者全部信息。请参看“标
-记好用的标签和提示”中的指导，了解如何提供这些信息。
+UIKit控件和视图的默认值信息通常是准确的，但是您还是应该检查确保正确。对于自定义控件和视图，您可能不得不亲自提供部分或者全部信息。请参看“标记好用的标签和提示”中的指导，了解如何提供这些信息。
 </p></section></section>
         <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
             <a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_7";return this.s_oc?this.s_oc(e):true' class="nextLink" rel="next" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html">Next</a><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_8";return this.s_oc?this.s_oc(e):true' class="previousLink" rel="prev" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Introduction/Introduction.html">Previous</a>
