@@ -103,9 +103,9 @@ fonts in Mail, and zooming in webpages, photos, and maps. With the
 addition of the following accessibility features, it’s even easier for 
 people with visual, auditory, and physical disabilities to use their 
 devices:</p>
-<p>从一开始iOS的设备就包含了几个特性，能够帮助所有人简单使用设备。包括可视化的语音邮件、邮件中的大字体，以及网页、照片、地图的缩放。当前如下的无障碍特性，更加方便了有视碍、听碍、肢体残障的人士使用他们的设备。
+<p>从一开始iOS的设备就包含了几个特性，能够帮助所有人容易地使用设备。包括可视化的语音邮件、邮件中的大字体，以及网页、照片、地图的缩放。当前如下的无障碍特性，更加方便了有视障、听障、肢体残障的人士使用他们的设备:
 </p><ul class="ul"><li class="li"><p>Zoom. Magnifies the entire device screen.</p> <p>缩放：放大整个设备屏幕。</p></li><li class="li"><p>White on Black. Inverts the colors on the display.</p><p>黑底白色：可转换屏幕上的颜色。 </p></li><li class="li"><p>Mono Audio. Combines the sound of the left and right channels into a mono signal played on both sides.</p><p> 单声道音频：把左右声道混合成一个单声道信号，可以分别在两边播放。 </p></li><li class="li"><p>Speak Auto-text. Speaks the text corrections and suggestions iPhone makes while users type.</p><p>朗读自动文本：当用户在iPhone中打字时，朗读文本纠错与候选建议</p></li><li class="li"><p>Voice Control. Allows users to make phone calls and control iPod playback using voice commands.</p><p>语音控制：允许用户通过语音命令拨打电话和控制iPod回放。
-</p></li></ul><p>In addition, visually impaired users can rely on VoiceOver to help them use their devices. </p><p>此外，视力障碍用户能够依赖VoiceOver辅助其使用设备。</p><section><a name="//apple_ref/doc/uid/TP40008785-CH100-SW3" title="Accessibility and VoiceOver"></a><h2 class="jump">Accessibility and VoiceOver | 无障碍特性和VoiceOver</h2><p>VoiceOver
+</p></li></ul><p>In addition, visually impaired users can rely on VoiceOver to help them use their devices. </p><p>此外，视力障碍用户能够依赖VoiceOver使用设备。</p><section><a name="//apple_ref/doc/uid/TP40008785-CH100-SW3" title="Accessibility and VoiceOver"></a><h2 class="jump">Accessibility and VoiceOver | 无障碍特性和VoiceOver</h2><p>VoiceOver
  is Apple’s innovative screen-reading technology, which gives users 
 control over their devices without having to see the screen. VoiceOver 
 does this by acting as an intermediary between an application's user 
@@ -140,7 +140,7 @@ interface elements in your application are both accessible and useful
  increases your user base. You've worked hard to create a great 
 application; don’t miss the opportunity to make it available to even 
 more users.</p>
-<p>它能增加您的用户基数。您已经非常努力地创建了伟大应用，这是一个好机会让它被更多用户使用。
+<p>它能增加您的用户基数。您已经非常努力地创建了一个极好的应用，这是一个好机会让它被更多用户使用。
 </p>
 </li><li class="li"><p>It allows people to use your 
 application without seeing the screen. Users with visual impairments can
@@ -167,7 +167,7 @@ which is a lightweight API that helps an application provide all the
 information VoiceOver needs to describe the user interface and help 
 visually impaired people use the application.</p>
 <p>
-iOS 3.0及之后的版本包含了UI无障碍编程接口，这个轻量级的API可以让VoiceOve从一个应用中提取所需要的信息，用以描述用户界面，帮助视力障碍用户使用应用。  
+iOS 3.0及之后的版本包含了UI无障碍编程接口，这个轻量级的API可以让VoiceOver从一个应用中提取所需要的信息，用以描述用户界面，帮助视力障碍用户使用应用。  
 </p><p>The UI Accessibility
  programming interface is part of UIKit and is implemented on standard 
 UIKit controls and views by default. This means that, when you use 
@@ -212,29 +212,29 @@ UI无障碍编程接口是由两个非正式协议、一个类、一个函数，
 accessible) and supply descriptive information about themselves. 
 Standard UIKit controls and views implement the <code>UIAccessibility</code> protocol by default.</p>
 
-<p> <code>UIAccessibility</code>非正式协议：执行 <code>UIAccessibility</code>协议的对象，可以报告无障碍状态（即他们是否是可访问的），并且提供其自身的描述信息。 标准UIKit控件和视图默认已执行了<code>UIAccessibility</code>协议。 </p></li><li class="li"><p>The <code>UIAccessibilityContainer</code> informal protocol. This protocol allows a subclass of <code>UIView</code>
+<p> <code>UIAccessibility</code>非正式协议：实现 <code>UIAccessibility</code>协议的对象，可以报告无障碍状态（即他们是否是可访问的），并且提供其自身的描述信息。 标准UIKit控件和视图默认已执行了<code>UIAccessibility</code>协议。 </p></li><li class="li"><p>The <code>UIAccessibilityContainer</code> informal protocol. This protocol allows a subclass of <code>UIView</code>
  to make some or all of the objects it contains accessible as separate 
 elements. This is particularly useful when the objects contained in such
  a view are not themselves subclasses of <code>UIView</code> and, for this reason, are not automatically accessible.</p>
 <p>
-<code>UIAccessibilityContainer</code>非正式协议：此协议允许<code>UIView</code>的子类构建部分或者全部对象作为分离元素具有无障碍特性。当对象包含在视图中，其本身又不是<code>UIView</code>的子类，导致不能被自动无障碍访问，此时，该协议非常有用。
+<code>UIAccessibilityContainer</code>非正式协议：此协议允许<code>UIView</code>的子类作为分离元素，具有无障碍特性构建部分或者全部对象。当对象包含在视图中，其本身又不是<code>UIView</code>的子类，导致不能被自动地无障碍访问，此时，该协议非常有用。
 </p>  
 </li><li class="li"><p>The <code>UIAccessibilityElement</code> class. This class defines an object that can be returned through the <code>UIAccessibilityContainer</code> protocol. You can create an instance of <code>UIAccessibilityElement</code> to represent an item that isn’t automatically accessible, such as an object that does not inherit from <code>UIView</code>, or an object that does not exist.</p>
 <p>
-<code>UIAccessibilityElement</code>类：这个类定义了一个能够通过<code>UIAccessibilityContainer</code>协议返回的对象。一个元素不是默认的可被访问，您可以通过<code>UIAccessibilityElement</code>实例化，以展示它，例如一个并非从<code>UIView</code>继承的对象，或者一个不存在的对象。 
+<code>UIAccessibilityElement</code>类：这个类定义了一个能够通过<code>UIAccessibilityContainer</code>协议返回的对象。当一个元素不是自动地无障碍访问，您可以通过创建一个<code>UIAccessibilityElement</code>实例以展示它，例如一个并非从<code>UIView</code>继承的对象，或者一个不存在的对象。 
 </p></li><li class="li"><p>The <code>UIAccessibilityConstants.h</code>
  header file. This header file defines the constants that describe the 
 traits that an accessibility element can exhibit and the notifications 
 that an application can post.</p>
 <p>
-<code>UIAccessibilityConstants.h</code>头文件：这种头文件定义了某些常量，这些常量即可以描述一个可展示的无障碍元素的特征，也可描述应用发布的通知。
+<code>UIAccessibilityConstants.h</code>头文件：这个头文件定义了某些常量，这些常量即可以描述一个可展示的无障碍元素的特征，也可描述应用发布的通知。
 </p></li></ul></section><section><a name="//apple_ref/doc/uid/TP40008785-CH100-SW7" title="Accessibility Attributes"></a><h3 class="jump">Accessibility Attributes | 无障碍属性</h3><p>The
  attributes that describe an accessible user interface element make up 
 the core of the UI Accessibility API. VoiceOver supplies attribute 
 information to users when they access or interact with a control or 
 view. </p>
 
-<p>无障碍属性是用来描述无障碍用户界面元素，也是UI Accessibility API的核心构成。在用户访问、交互，控件和视图时，VoiceOver会将无障碍属性信息告知给用户。</p><p>Attributes are also the components of the programming 
+<p>用来描述无障碍用户界面元素的属性也是UI Accessibility API的核心构成。当用户访问控件和视图，或与之互时，VoiceOver会将无障碍属性信息告知给用户。</p><p>Attributes are also the components of the programming 
 interface that you’re most likely to use. This is because attributes 
 encapsulate the information that differentiates one control or view from
  another. For standard UIKit controls and views, you might just need to 
@@ -242,7 +242,7 @@ ensure that the default attribute information is appropriate for your
 application; for custom controls and views, you might have to supply 
 most of the attribute information.</p>
 <p>
-无障碍属性是您最有可能用到的编程界面组件。因为它封装了用于区分不同控件和视图的信息。标准UIKit控件和视图，只需确保应用中默认的属性是适当的。对于自定义的控件和视图来说，可能需要提供大部分的属性信息。
+无障碍属性是您最有可能用到的编程接口组件。因为它封装了用于区分不同控件和视图的信息。标准UIKit控件和视图，只需确保应用中默认的属性是适当的。对于自定义的控件和视图来说，可能需要提供大部分的属性信息。
 </p><p>The UI Accessibility programming interface defines the following attributes:</p>
 <p>UI Accessibility编程接口定义了如下属性：
 </p><ul class="ul"><li class="li"><p><strong>Label</strong>.
@@ -263,12 +263,12 @@ element. Examples are “Adds a title” or “Opens the shopping list.”</p>
 
 <p><strong>Hint (提示)</strong>：简要的本地化语句，用于描述某元素动作的结果，例如：“添加标题”或者“打开购物清单”。</p></li><li class="li"><p><strong>Frame</strong>. The frame of the element in screen coordinates, which is given by the <code>CGRect</code> structure that specifies an element’s screen location and size.</p>
 
-<p><strong>Frame (框架)</strong>：是指元素在屏幕上坐标，是由<code>CGRect</code>结构体提供，说明了元素的屏幕位置和大小。</p></li><li class="li"><p><strong>Value</strong>.
+<p><strong>Frame (框架)</strong>：元素的框架是元素在屏幕上的坐标，是由<code>CGRect</code>结构体提供，说明了元素的屏幕位置和大小。</p></li><li class="li"><p><strong>Value</strong>.
  The current value of an element, when the value is not represented by 
 the label. For example, the label for a slider might be “Speed,” but its
  current value might be “50%.”</p>
 
-<p><strong>Value (值)</strong>：在没有被标签指定时，一个元素的当前值。例如，一个滑动条的标签可以是”速度”，但是它当前的值是“50%”。
+<p><strong>Value (值)</strong>：当值无法被标签代表时，一个元素的当前值。例如，一个滑动条的标签可以是”速度”，但是它当前的值是“50%”。
 </p>
 
 </li>
@@ -282,7 +282,7 @@ the user interface. (Note that an object that inherits from <code>UIView</code>
 required because it contains the name or description of the 
 accessibility element that VoiceOver speaks.</p>
 
-<p>无障碍元素需要为属性提供内容，无论这此内容是被默认提供还是由您提供。无障碍元素应该为框架和标签属性提供内容。框架属性是必须的，因为无障碍元素必须能够报告它在用户界面中的位置。（注意：一个由<code>UIView</code>继承的对象，默认是包含了框架属性的）。标签属性也是必须的，因为它包含了无障碍元素的名称和描述，这些是可以被VoiceOver朗读出来的。
+<p>无障碍元素需要为属性提供内容，无论这些内容是被默认提供还是由您提供。无障碍元素应该为框架和标签属性提供内容。框架属性是必须的，因为无障碍元素必须能够报告它在用户界面中的位置。（注意：一个由<code>UIView</code>继承的对象，默认是包含了框架属性的）。标签属性也是必须的，因为它包含了无障碍元素的名称和描述，这些是可以被VoiceOver朗读出来的。
 </p><p>An accessibility 
 element is not required to provide content for the hint and traits 
 attributes, if these attributes do not apply to the element. For 
@@ -298,7 +298,7 @@ provide a hint. </p>
  contents depends on user input and is usually of the form 
 “username@address.” <span class="content_text">Figure 1-1</span> shows some of the information VoiceOver might provide.</p>
 
-<p>只有元素内容是可改变的，不能通过标签描述时，无障碍元素才为值提供信息。例如，文本域包含一个邮件地址，可能有个标签描述“邮件地址”，然而其内
+<p>只有元素内容是可改变的且不能通过标签描述时，无障碍元素才为值提供信息。例如，文本域包含一个邮件地址，可能有个标签描述“邮件地址”，然而其内
 容是基于用户输入的，并且内容通常的形式为“username@address”。图 1-1 展示了一些VoiceOver应该提供的信息。</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40008785-CH100-SW5" title="Figure 1-1VoiceOver speaks the information provided by accessible elements"></a><figcaption><strong class="caption_number">Figure 1-1</strong>&nbsp;&nbsp;VoiceOver speaks the information provided by accessible elements</figcaption>
 
 <figcaption><strong class="caption_number">图 1-1</strong>&nbsp;&nbsp;VoiceOver朗读由无障碍元素提供的信息</figcaption><img src="Understanding_Accessibility_on_iOS_files/iphoneax_axinfo_2x.png" class="wide-image" alt="" height="515" width="670"><img src="Understanding_Accessibility_on_iOS_files/iphoneax_axinfo_2x.png" class="ipad-scaled-image" alt="" height="515" width="670"></figure><p>VoiceOver
