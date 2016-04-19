@@ -1,4 +1,4 @@
-# Accessibility Programming Guide for iOS 中文翻译
+# Accessibility Programming Guide for iOS 中文翻译（草稿）
 # 
 
 
