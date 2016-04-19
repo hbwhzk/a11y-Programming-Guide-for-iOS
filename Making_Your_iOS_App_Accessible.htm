@@ -205,7 +205,7 @@ accessible elements only when methods of the <code>UIAccessibilityContainer</cod
 some of the default attribute information they supply could be enhanced 
 to make more sense in the context of your application. For more 
 information, see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_14";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW8" data-renderer-version="1">Enhancing Default Attribute Information</a></span>.</p>
-<p>即使您只是用标准的UIKit控件和视图，也可能找到，比默认提供的属性信息更适合应用环境的内容。更多信息，请阅读“优化默认属性信息”。</p><p>If
+<p>即使您只是用标准的UIKit控件和视图，也可能找到比默认提供的属性信息更适合应用环境的内容。更多信息请阅读“优化默认属性信息”。</p><p>If
  you need to supply or change accessibility attributes on either 
 standard or custom UI elements, you can do so either in Interface 
 Builder (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_15";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW1" data-renderer-version="1">Defining Custom Attribute Information in Interface Builder</a></span>) or programmatically (see <span class="content_text"><a onclick='s_objectID="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibili_16";return this.s_oc?this.s_oc(e):true' href="#//apple_ref/doc/uid/TP40008785-CH102-SW2" data-renderer-version="1">Defining Custom Attribute Information Programmatically</a></span>).</p>
@@ -308,7 +308,7 @@ motivate users to stop using your application.</p>
 possible by localizing all strings, including accessibility attribute 
 strings. In general, VoiceOver speaks in the language that the user 
 specifies in International settings.</p>
-<p><strong>本地化：</strong>本地化包括无障碍属性事的字符串在内的所有的字符串，一定能让您的应用被更广泛的受众使用。通常情况，VoiceOver是以用户设置的语言进行朗读。
+<p><strong>本地化：</strong>本地化包括无障碍属性中的字符串在内的所有的字符串，一定能让您的应用被更广泛的受众使用。通常情况，VoiceOver是以用户设置的语言进行朗读。
 </p></li></ul></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW11" title="Guidelines for Creating Hints"></a><h4 class="jump">Guidelines for Creating Hints | 创建提示指南</h4><p>The
  hint attribute describes the results of performing an action on a 
 control or view. You should provide a hint only when the results of an 
@@ -388,7 +388,7 @@ scale.”</p>
 <strong>不要包含控件和视图的类型：</strong>用户已经知道控件表象为一个按钮或者搜索域，因为此信息在元素特质属性中是可获取的。因此，不要创建类似于“按钮用于添加名称”或者“滑动用于控制比例”的提示。
 </p></li><li class="li"><p><strong>Is localized</strong>. As with accessibility labels, hints should be available in the user’s preferred language.</p>
 
-<p><strong>本地化：</strong>与无障碍标签类似，用户选择语言后，提示可被读取。</p>
+<p><strong>本地化：</strong>与无障碍标签类似，提示可以用用户首选的语言被读取。</p>
 
 
 </li></ul></section></section><section><a name="//apple_ref/doc/uid/TP40008785-CH102-SW7" title="Identifying Appropriate Traits"></a><h3 class="jump">Identifying Appropriate Traits | 定义恰当的特质</h3><p>The
@@ -580,7 +580,7 @@ individual elements inside the cell. If users need to access individual
 elements inside the cell, you should:</p>
 
 <p>
-如果应用中的表格单元混合了的不同元素，检查用户交互是与单元还是与单元里的独立元素。如果用户需要访问单元里的独立元素，您应该：
+如果应用中的表格单元混合了不同元素，检查用户交互是与单元还是与单元里的独立元素。如果用户需要访问单元里的独立元素，您应该：
 </p><ul class="ul"><li class="li"><p>Make each individual element accessible separately.</p>
 <p>使每个独立元素具有分离的无障碍特性。</p></li><li class="li"><p>Make sure the table cell itself is <em>not</em> accessible.</p>
 
@@ -800,6 +800,7 @@ depending on how many stars it draws.</p>
     <script charset="utf-8" src="Making_Your_iOS_App_Accessible_files/prototype.js"></script>
     <script src="Making_Your_iOS_App_Accessible_files/library.js"></script>
     <script src="Making_Your_iOS_App_Accessible_files/feedback.js"></script>
+
 
 
 </body></html>
